@@ -40,6 +40,27 @@ Keep it up to date as the site diverges from the template.
   `pathPrefix` back to `/`, and update those three hardcoded hostnames.
 - **Deployment**: pushes to `main` build the site and deploy to GitHub Pages;
   pull requests run the build to catch errors but do not deploy.
+- **Color palette**: three brand accents in `variables.scss` (`$color-accent` green,
+  `$color-accent-blue`, `$color-accent-warm`) plus their pale `*-tint` backgrounds for
+  section washes (`.section--tint-green/blue/warm`) — deliberately kept to these three
+  plus a reserved `$color-safety` red used only by the crisis callout. Reuse these
+  rather than introducing a fourth decorative hue.
+- **Service icons**: `serviceIcon` filter (`eleventy.config.cjs`) maps a service title
+  to an emoji by keyword, shown in a `.service-card__badge` circle that cycles through
+  the three accent tints via `nth-child`. This is a stand-in for a real per-service
+  icon/photo — if `service.icon` (the CMS's image field) is set, `services.njk`
+  prefers that instead. Add a new keyword pair there before falling back to the
+  generic "✨" for a service that doesn't match anything.
+- **Crisis resources**: `components/crisis-callout.njk` (911 / 988 Suicide & Crisis
+  Lifeline / SAMHSA National Helpline) is included on Services and Contact. This is
+  general public-safety information, not claimed as 21st Century Care's own hotline —
+  don't reword it to imply otherwise, and don't remove it without a reason beyond
+  "the flyer didn't mention it" (it's standard duty-of-care content for a
+  behavioral-health-adjacent site, independent of what's on the flyer).
+- **Favicon/fonts**: `src/_includes/favicons/favicon.svg` (+ rasterized PNGs) is
+  original artwork, not traced from the flyer's photographed logo — see CREDITS.md.
+  Headings use Google Fonts "Poppins" (loaded in `base.njk`); body text stays the
+  system font stack for performance.
 
 ## Code style
 
@@ -77,6 +98,8 @@ Keep it up to date as the site diverges from the template.
 - Don't add a contact-form backend or claim the contact form is "connected" until one
   is actually wired up — the form markup in `contact.njk` stays commented out
   (per METHODOLOGY.md in `client-site-starter`) until then
-- Don't add stock photography of "clients" or "staff" to represent this real
-  organization — there's no licensed photography of the actual business on hand; a real
-  photo requires the client's own, not a stand-in
+- Don't add a photo that reads as a specific real client or staff member of this
+  business — the two photos currently on the site are generic New Mexico landscape
+  scenery (see CREDITS.md), chosen precisely to avoid that. A photo of an actual
+  person representing "our client" or "our staff" requires the client's own,
+  consented photography, not a stock stand-in

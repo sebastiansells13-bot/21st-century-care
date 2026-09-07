@@ -3,8 +3,10 @@ layout: layouts/page.njk
 title: Contact
 permalink: /contact/
 ---
-<div class="wrapper">
-  <h1>Contact</h1>
+<div class="hero">
+  <div class="wrapper">
+    <h1>Contact</h1>
+  </div>
 </div>
 <dl class="contact-details wrapper">
   {% if business.phone %}
@@ -21,7 +23,10 @@ permalink: /contact/
   {% endif %}
   {% if business.address %}
   <dt>Address</dt>
-  <dd>{{ business.address }}</dd>
+  <dd>
+    {{ business.address }}<br>
+    <a class="btn btn--primary" href="https://www.google.com/maps/search/?api=1&query={{ business.address | urlencode }}" target="_blank" rel="noopener">Get directions</a>
+  </dd>
   {% endif %}
 </dl>
 
@@ -35,3 +40,5 @@ permalink: /contact/
     <button type="submit">Send</button>
   </form>
 -->
+
+{% include "components/crisis-callout.njk" %}

@@ -71,6 +71,43 @@ module.exports = function (eleventyConfig) {
       .replace(/^-|-$/g, "");
   });
 
+  // Keyword → emoji lookup for service cards, so the 20-item services list
+  // (src/_data/services.json) gets a distinct, colorful glyph per card
+  // without needing a real photo/icon uploaded for each one. Matched by
+  // substring against the service title, first match wins, falls back to a
+  // generic icon for anything added later that doesn't match a keyword.
+  // Update this list rather than the (still-supported) per-service `icon`
+  // image field in .pages.yml if a client wants a real icon for one entry.
+  const serviceIconMap = [
+    [["housing", "homeless"], "🏠"],
+    [["transportation"], "🚐"],
+    [["utility"], "💡"],
+    [["stress"], "🌿"],
+    [["medication"], "💊"],
+    [["family therapy", "individual and family", "therapy"], "🤝"],
+    [["ssi"], "📝"],
+    [["medical appointment"], "🩺"],
+    [["financial assistance"], "💵"],
+    [["tutoring"], "📚"],
+    [["job search"], "🔍"],
+    [["interviewing", "presentation"], "🎤"],
+    [["social and communication", "communication skills"], "💬"],
+    [["recreational"], "🎨"],
+    [["financial literacy"], "📊"],
+    [["crisis"], "🆘"],
+    [["substance"], "🌱"],
+    [["reentry"], "🔑"],
+    [["drug screening"], "✅"],
+    [["parenting"], "👨‍👩‍👧"],
+  ];
+  eleventyConfig.addFilter("serviceIcon", (title) => {
+    const t = (title || "").toLowerCase();
+    for (const [keywords, icon] of serviceIconMap) {
+      if (keywords.some((k) => t.includes(k))) return icon;
+    }
+    return "✨";
+  });
+
   // During `npm start`, serve source images directly instead of copying
   // them into `dev/` on every rebuild. Production media is optimized by
   // the CI pipeline (scripts/optimize-media.mjs) after Eleventy runs.

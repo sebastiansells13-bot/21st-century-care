@@ -3,8 +3,12 @@ layout: layouts/page.njk
 title: Blog
 permalink: /blog/
 ---
+<div class="hero">
+  <div class="wrapper">
+    <h1>Blog</h1>
+  </div>
+</div>
 <div class="wrapper">
-  <h1>Blog</h1>
   <ul class="post-list">
     {% for post in collections.posts | reverse %}
     <li>

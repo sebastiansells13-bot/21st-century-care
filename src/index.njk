@@ -5,29 +5,46 @@ eleventyNavigation:
   key: Home
   order: 1
 ---
-<div class="hero wrapper">
-  <h1>{{ business.name }}</h1>
-  <p>{{ business.tagline }}</p>
+<div class="hero--photo">
+  <img class="hero__bg" src="/img/hero/organ-mountains-hero.jpg" alt="" width="2000" height="1360">
+  <div class="hero__content wrapper">
+    <h1>{{ business.name }}</h1>
+    <p>{{ business.tagline }}</p>
+  </div>
 </div>
 
-<div class="wrapper">
-  <p>
-    Comprehensive Community Support Services (CCSS) and Peer Support Services (PSS)
-    are available to Medicaid recipients. Services help clients develop skills and
-    connect to resources related to independent and community living, learning,
-    employment, socialization, and recreation.
-  </p>
+<div class="section section--tint-green">
+  <div class="wrapper">
+    <p>
+      Comprehensive Community Support Services (CCSS) and Peer Support Services (PSS)
+      are available to Medicaid recipients. Services help clients develop skills and
+      connect to resources related to independent and community living, learning,
+      employment, socialization, and recreation.
+    </p>
+  </div>
 </div>
 
 <section class="services-grid wrapper">
   {% for service in services.list | head(6) %}
   <div class="service-card">
+    <span class="service-card__badge">{{ service.title | serviceIcon }}</span>
     <h3>{{ service.title }}</h3>
     <p>{{ service.description }}</p>
   </div>
   {% endfor %}
 </section>
 
-<div class="wrapper">
-  <p><a href="/services/">See all services →</a></p>
+<div class="wrapper section-cta">
+  <a class="btn btn--primary" href="/services/">See all services →</a>
+</div>
+
+<div class="cta-band">
+  <div class="wrapper">
+    <h2>Ready to get started?</h2>
+    <p>
+      Call our office to learn more about eligibility and how to enroll in
+      Comprehensive Community Support Services or Peer Support Services.
+    </p>
+    <a class="btn btn--outline" href="tel:{{ business.phone }}">Call {{ business.phone }}</a>
+  </div>
 </div>

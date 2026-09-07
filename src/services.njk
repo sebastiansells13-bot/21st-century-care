@@ -3,21 +3,29 @@ layout: layouts/page.njk
 title: Services
 permalink: /services/
 ---
-<div class="wrapper">
-  <h1>Services</h1>
-  <p>
-    Comprehensive Community Support Services (CCSS) and Peer Support Services (PSS)
-    are available to Medicaid recipients. Services help clients develop skills and
-    connect to resources related to independent and community living, learning,
-    employment, socialization, and recreation.
-  </p>
+<div class="hero">
+  <div class="wrapper">
+    <h1>Services</h1>
+    <p>
+      Comprehensive Community Support Services (CCSS) and Peer Support Services (PSS)
+      are available to Medicaid recipients. Services help clients develop skills and
+      connect to resources related to independent and community living, learning,
+      employment, socialization, and recreation.
+    </p>
+  </div>
 </div>
 <section class="services-grid wrapper">
   {% for service in services.list %}
   <div class="service-card">
-    {% if service.icon %}<img src="{{ service.icon }}" alt="">{% endif %}
+    {% if service.icon %}
+      <img src="{{ service.icon }}" alt="" class="service-card__icon">
+    {% else %}
+      <span class="service-card__badge">{{ service.title | serviceIcon }}</span>
+    {% endif %}
     <h3>{{ service.title }}</h3>
     <p>{{ service.description | safe }}</p>
   </div>
   {% endfor %}
 </section>
+
+{% include "components/crisis-callout.njk" %}

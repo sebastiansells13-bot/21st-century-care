@@ -1,6 +1,8 @@
 .site-header {
-  border-bottom: 1px solid $color-border;
+  border-bottom: 3px solid transparent;
+  border-image: linear-gradient(90deg, $color-accent, $color-accent-blue, $color-accent-warm) 1;
   padding: 1.25rem 0;
+  background: $color-bg;
 
   .wrapper {
     display: flex;
@@ -11,10 +13,11 @@
   }
 
   .site-header__brand {
+    font-family: $font-heading;
     font-weight: 700;
     text-decoration: none;
-    color: $color-text;
-    font-size: 1.125rem;
+    color: $color-accent;
+    font-size: 1.25rem;
   }
 
   nav ul {
@@ -28,10 +31,13 @@
   nav a {
     text-decoration: none;
     color: $color-text;
+    padding-bottom: 0.2rem;
+    border-bottom: 2px solid transparent;
 
     &:hover,
     &.is-active {
       color: $color-accent;
+      border-bottom-color: $color-accent;
     }
   }
 }
@@ -42,6 +48,7 @@
   padding: 2rem 0;
   color: $color-muted;
   font-size: 0.9rem;
+  background: $color-accent-tint;
 
   .wrapper {
     display: flex;
@@ -49,15 +56,24 @@
     flex-wrap: wrap;
     gap: 1rem;
   }
+
+  a {
+    color: $color-accent;
+  }
 }
 
+// Plain text hero — About/Services/Contact use this (no photo); the
+// homepage uses .hero--photo below instead.
 .hero {
-  padding: 4rem 0;
+  padding: 3rem 0;
   text-align: center;
+  background: $color-accent-tint;
 
   h1 {
-    font-size: 2.5rem;
+    font-family: $font-heading;
+    font-size: 2.75rem;
     margin-bottom: 0.5rem;
+    color: $color-text;
   }
 
   p {
@@ -66,21 +82,229 @@
   }
 }
 
+// Homepage hero: full-width photo with a color-washed overlay (green→blue,
+// echoing the header's accent stripe) so white text stays readable over any
+// part of the photo. See src/index.njk.
+.hero--photo {
+  position: relative;
+  padding: 5rem 0;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+
+  .hero__bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, rgba(46, 125, 79, 0.82), rgba(47, 102, 144, 0.78));
+    z-index: 1;
+  }
+
+  .hero__content {
+    position: relative;
+    z-index: 2;
+  }
+
+  h1 {
+    font-family: $font-heading;
+    font-size: 2.75rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+  }
+
+  p {
+    font-size: 1.25rem;
+    max-width: 40rem;
+    margin: 0 auto;
+    color: #fff;
+  }
+}
+
+// Alternating section backgrounds for visual rhythm down the homepage/about
+// page — a plain wash, no photo, so they stay cheap and always-legible.
+.section--tint-green {
+  background: $color-accent-tint;
+}
+
+.section--tint-blue {
+  background: $color-accent-blue-tint;
+}
+
+.section--tint-warm {
+  background: $color-accent-warm-tint;
+}
+
+.section {
+  padding: 3rem 0;
+}
+
+// Pill CTA buttons, used for "See all services", "Get directions", the
+// homepage's "Contact us" band, etc. — plain text links otherwise disappear
+// against the more colorful sections above.
+.btn {
+  display: inline-block;
+  font-family: $font-heading;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 999px;
+  border: 2px solid transparent;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+
+  &:hover {
+    transform: translateY(-1px);
+  }
+}
+
+.btn--primary {
+  background: $color-accent;
+  color: #fff;
+
+  &:hover {
+    background: #256a42; // $color-accent, ~6% darker (hand-picked — avoids the
+                          // deprecated darken() global, same as index.scss's
+                          // other @import-era Sass usage)
+  }
+}
+
+.btn--outline {
+  background: transparent;
+  border-color: currentColor;
+  color: inherit;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.15);
+  }
+}
+
+.section-cta {
+  padding-bottom: 3rem;
+  text-align: center;
+}
+
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
-  gap: 2rem;
+  gap: 1.75rem;
   padding: 2rem 0 4rem;
 }
 
 .service-card {
   border: 1px solid $color-border;
-  border-radius: 0.5rem;
+  border-radius: 0.75rem;
   padding: 1.5rem;
+  background: $color-bg;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+  }
 
   h3 {
+    margin: 0 0 0.5rem;
+    font-family: $font-heading;
+    font-size: 1.05rem;
+  }
+
+  p {
+    color: $color-muted;
+    margin: 0;
+  }
+
+  img.service-card__icon {
+    width: 100%;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.service-card__badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  font-size: 1.4rem;
+  margin-bottom: 0.75rem;
+}
+
+// Cycle the three brand accents across cards so a 20-item grid reads as
+// deliberately colorful rather than flat, without introducing a fourth hue.
+.services-grid .service-card:nth-child(3n + 1) .service-card__badge {
+  background: $color-accent-tint;
+}
+
+.services-grid .service-card:nth-child(3n + 2) .service-card__badge {
+  background: $color-accent-blue-tint;
+}
+
+.services-grid .service-card:nth-child(3n) .service-card__badge {
+  background: $color-accent-warm-tint;
+}
+
+// "In crisis right now?" safety callout — a real behavioral-health-adjacent
+// site's expected duty of care, not client-specific content, so it's fine
+// to include even though the flyer itself doesn't mention it. See
+// components/crisis-callout.njk.
+.callout--crisis {
+  border: 1px solid rgba($color-safety, 0.35);
+  background: rgba($color-safety, 0.06);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  margin: 2rem 0;
+
+  h2 {
+    margin-top: 0;
+    color: $color-safety;
+    font-family: $font-heading;
+    font-size: 1.15rem;
+  }
+
+  p {
+    margin: 0.4rem 0;
+  }
+
+  a {
+    color: $color-safety;
+    font-weight: 600;
+  }
+}
+
+// "Ready to get started" band on the homepage — a full-width colored strip
+// distinct from the tinted sections above, so the final CTA stands out.
+.cta-band {
+  background: linear-gradient(120deg, $color-accent, $color-accent-blue);
+  color: #fff;
+  text-align: center;
+  padding: 3rem 0;
+
+  h2 {
+    font-family: $font-heading;
     margin-top: 0;
   }
+
+  p {
+    max-width: 36rem;
+    margin: 0 auto 1.5rem;
+  }
+}
+
+.about-photo-block img {
+  border-radius: 0.75rem;
+  max-height: 26rem;
+  width: 100%;
+  object-fit: cover;
 }
 
 .post-list {
@@ -103,6 +327,7 @@
 
   dt {
     font-weight: 700;
+    color: $color-accent;
   }
 
   dd {
