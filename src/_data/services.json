@@ -1,0 +1,84 @@
+{
+  "list": [
+    {
+      "title": "Housing and Homeless Prevention",
+      "description": "Help finding and keeping stable, safe housing, and support for clients at risk of homelessness."
+    },
+    {
+      "title": "Transportation Services",
+      "description": "Assistance getting to appointments, services, and other essential destinations."
+    },
+    {
+      "title": "Utility Assistance",
+      "description": "Support applying for programs that help cover utility costs."
+    },
+    {
+      "title": "Stress Management",
+      "description": "Coping strategies and techniques for managing everyday stress."
+    },
+    {
+      "title": "Medication Management",
+      "description": "Support staying on track with prescribed medications."
+    },
+    {
+      "title": "Individual and Family Therapy",
+      "description": "Therapeutic support for clients and their families."
+    },
+    {
+      "title": "SSI Application",
+      "description": "Guidance through the Supplemental Security Income application process."
+    },
+    {
+      "title": "Managing Medical Appointments",
+      "description": "Help scheduling, preparing for, and keeping medical appointments."
+    },
+    {
+      "title": "Applying for Financial Assistance",
+      "description": "Support applying for available financial assistance programs."
+    },
+    {
+      "title": "Tutoring",
+      "description": "Academic support to help clients build learning skills."
+    },
+    {
+      "title": "Job Search",
+      "description": "Help identifying job openings and preparing to apply."
+    },
+    {
+      "title": "Interviewing and Presentation Skills",
+      "description": "Practice and coaching for job interviews and presentations."
+    },
+    {
+      "title": "Social and Communication Skills",
+      "description": "Skill-building for effective social interaction and communication."
+    },
+    {
+      "title": "Recreational Outlets",
+      "description": "Connections to recreational activities that support healthy socialization."
+    },
+    {
+      "title": "Financial Literacy Skills",
+      "description": "Guidance on budgeting, saving, and managing personal finances."
+    },
+    {
+      "title": "Crisis Intervention",
+      "description": "Support and stabilization during a mental health or personal crisis."
+    },
+    {
+      "title": "Substance Abuse Therapy, Support, and Intervention",
+      "description": "Therapy, support, and intervention services for substance use."
+    },
+    {
+      "title": "Community Reentry",
+      "description": "Support transitioning back into the community."
+    },
+    {
+      "title": "Drug Screening",
+      "description": "Drug screening services as part of a client's care plan."
+    },
+    {
+      "title": "Parenting Support",
+      "description": "Guidance and support for parents and families."
+    }
+  ]
+}

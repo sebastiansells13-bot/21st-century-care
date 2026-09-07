@@ -1,0 +1,49 @@
+---
+layout: layouts/page.njk
+title: About
+permalink: /about/
+---
+<div class="wrapper">
+  <h1>About {{ business.name }}</h1>
+  <p>{{ business.tagline }}</p>
+
+  <h2>Our Approach</h2>
+  <p>
+    Clients meet with support staff to identify needs, goals, and obstacles. Goals and
+    services are meant to promote recovery, rehabilitation, and resiliency by addressing
+    the barriers that impede the development of skills necessary for independent
+    functioning in the community. Clients are assigned a support team to help them reach
+    these goals by coordinating desired client services to support a comprehensive and
+    collaborative service plan. Clients receive this through practicing new skills,
+    helping them monitor their progress, assisting with their treatment, modeling
+    effective coping techniques, and self-help strategies. Peer Support Specialists
+    (PSS) focus on various therapeutic and supportive tasks emphasizing self-advocacy.
+    Community Support Workers (CSWs) connect clients to available resources and provide
+    assistance and support.
+  </p>
+
+  <h2>Why {{ business.name }}?</h2>
+  <p>
+    Staff is dedicated to providing each client with the individualized and
+    collaborative care they deserve. Our team of professionals has over ten years of
+    experience in the Southern New Mexico region with Master's Degrees in Psychology,
+    Social Work, and Curriculum and Instruction. Our services are designed to provide
+    clients with the support needed to establish a personal foundation to grow.
+    Together, we work toward developing the necessary skills and connecting to
+    available resources needed to live independent and fulfilling lives.
+  </p>
+
+  {% if team.list.length %}
+  <h2>Team</h2>
+  <div class="services-grid">
+    {% for member in team.list %}
+    <div class="service-card">
+      {% if member.photo %}<img src="{{ member.photo }}" alt="{{ member.name }}">{% endif %}
+      <h3>{{ member.name }}</h3>
+      <p><em>{{ member.role }}</em></p>
+      <p>{{ member.bio | safe }}</p>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+</div>
