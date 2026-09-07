@@ -6,7 +6,7 @@ eleventyNavigation:
   order: 1
 ---
 <div class="hero--photo">
-  <img class="hero__bg" src="/img/hero/organ-mountains-hero.jpg" alt="" width="2000" height="1360">
+  <img class="hero__bg" src="/img/hero/organ-mountains-hero.jpg" alt="" width="2000" height="1442">
   <div class="hero__content wrapper">
     <h1>{{ business.name }}</h1>
     <p>{{ business.tagline }}</p>
@@ -27,7 +27,11 @@ eleventyNavigation:
 <section class="services-grid wrapper">
   {% for service in services.list | head(6) %}
   <div class="service-card">
-    <span class="service-card__badge">{{ service.title | serviceIcon }}</span>
+    {% if service.icon %}
+      <img src="{{ service.icon }}" alt="" class="service-card__icon">
+    {% else %}
+      <span class="service-card__badge">{{ service.title | serviceIcon }}</span>
+    {% endif %}
     <h3>{{ service.title }}</h3>
     <p>{{ service.description }}</p>
   </div>

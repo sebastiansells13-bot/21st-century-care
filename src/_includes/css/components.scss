@@ -147,6 +147,24 @@
   padding: 3rem 0;
 }
 
+// Services page: one band per service category (see the groupby loop in
+// services.njk). Padding is lighter than .section and the nested
+// .services-grid's own top/bottom padding is zeroed out, since the band
+// itself already supplies the spacing — stacking both left visibly
+// oversized gaps between categories.
+.category-section {
+  padding: 2.5rem 0;
+
+  h2 {
+    font-family: $font-heading;
+    margin: 0 0 0.5rem;
+  }
+
+  .services-grid {
+    padding: 1rem 0 0;
+  }
+}
+
 // Pill CTA buttons, used for "See all services", "Get directions", the
 // homepage's "Contact us" band, etc. — plain text links otherwise disappear
 // against the more colorful sections above.

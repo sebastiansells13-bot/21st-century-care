@@ -81,6 +81,15 @@ content:
             type: string
             required: true
 
+          - name: category
+            label: Category
+            type: select
+            required: true
+            description: Groups services into a labeled section on the Services page.
+            options:
+              values: [Housing & Basic Needs, Health & Wellness, Skills & Independence, Community & Family]
+              creatable: true
+
           - name: description
             label: Description
             type: rich-text

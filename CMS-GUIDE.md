@@ -11,7 +11,9 @@ You can update your site's content without touching any code.
 
 - **Blog Posts** — add, edit, or remove posts. Each post has a title, short
   description, date, tags, an optional cover image, and the body text.
-- **Services** — the list of services shown on the Home and Services pages.
+- **Services** — the list of services shown on the Home and Services pages. Each
+  one has a Category, which controls which labeled section it appears under on
+  the Services page.
 - **Team Members** — names, roles, photos, and short bios shown on the About page.
 
 ## 3. Making a change

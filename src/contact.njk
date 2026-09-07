@@ -2,12 +2,15 @@
 layout: layouts/page.njk
 title: Contact
 permalink: /contact/
+ogImage: /img/hero/contact-hero.jpg
 ---
-<div class="hero">
-  <div class="wrapper">
+<div class="hero--photo">
+  <img class="hero__bg" src="/img/hero/contact-hero.jpg" alt="" width="2000" height="1211">
+  <div class="hero__content wrapper">
     <h1>Contact</h1>
   </div>
 </div>
+
 <dl class="contact-details wrapper">
   {% if business.phone %}
   <dt>Phone</dt>
@@ -25,7 +28,7 @@ permalink: /contact/
   <dt>Address</dt>
   <dd>
     {{ business.address }}<br>
-    <a class="btn btn--primary" href="https://www.google.com/maps/search/?api=1&query={{ business.address | urlencode }}" target="_blank" rel="noopener">Get directions</a>
+    <a class="btn btn--primary" href="https://www.google.com/maps/search/?api=1&amp;query={{ business.address | urlencode }}" target="_blank" rel="noopener">Get directions</a>
   </dd>
   {% endif %}
 </dl>

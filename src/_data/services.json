@@ -2,83 +2,103 @@
   "list": [
     {
       "title": "Housing and Homeless Prevention",
-      "description": "Help finding and keeping stable, safe housing, and support for clients at risk of homelessness."
+      "description": "Help finding and keeping stable, safe housing, and support for clients at risk of homelessness.",
+      "category": "Housing & Basic Needs"
     },
     {
       "title": "Transportation Services",
-      "description": "Assistance getting to appointments, services, and other essential destinations."
+      "description": "Assistance getting to appointments, services, and other essential destinations.",
+      "category": "Housing & Basic Needs"
     },
     {
       "title": "Utility Assistance",
-      "description": "Support applying for programs that help cover utility costs."
+      "description": "Support applying for programs that help cover utility costs.",
+      "category": "Housing & Basic Needs"
     },
     {
       "title": "Stress Management",
-      "description": "Coping strategies and techniques for managing everyday stress."
+      "description": "Coping strategies and techniques for managing everyday stress.",
+      "category": "Health & Wellness"
     },
     {
       "title": "Medication Management",
-      "description": "Support staying on track with prescribed medications."
+      "description": "Support staying on track with prescribed medications.",
+      "category": "Health & Wellness"
     },
     {
       "title": "Individual and Family Therapy",
-      "description": "Therapeutic support for clients and their families."
+      "description": "Therapeutic support for clients and their families.",
+      "category": "Health & Wellness"
     },
     {
       "title": "SSI Application",
-      "description": "Guidance through the Supplemental Security Income application process."
+      "description": "Guidance through the Supplemental Security Income application process.",
+      "category": "Skills & Independence"
     },
     {
       "title": "Managing Medical Appointments",
-      "description": "Help scheduling, preparing for, and keeping medical appointments."
+      "description": "Help scheduling, preparing for, and keeping medical appointments.",
+      "category": "Health & Wellness"
     },
     {
       "title": "Applying for Financial Assistance",
-      "description": "Support applying for available financial assistance programs."
+      "description": "Support applying for available financial assistance programs.",
+      "category": "Housing & Basic Needs"
     },
     {
       "title": "Tutoring",
-      "description": "Academic support to help clients build learning skills."
+      "description": "Academic support to help clients build learning skills.",
+      "category": "Skills & Independence"
     },
     {
       "title": "Job Search",
-      "description": "Help identifying job openings and preparing to apply."
+      "description": "Help identifying job openings and preparing to apply.",
+      "category": "Skills & Independence"
     },
     {
       "title": "Interviewing and Presentation Skills",
-      "description": "Practice and coaching for job interviews and presentations."
+      "description": "Practice and coaching for job interviews and presentations.",
+      "category": "Skills & Independence"
     },
     {
       "title": "Social and Communication Skills",
-      "description": "Skill-building for effective social interaction and communication."
+      "description": "Skill-building for effective social interaction and communication.",
+      "category": "Skills & Independence"
     },
     {
       "title": "Recreational Outlets",
-      "description": "Connections to recreational activities that support healthy socialization."
+      "description": "Connections to recreational activities that support healthy socialization.",
+      "category": "Community & Family"
     },
     {
       "title": "Financial Literacy Skills",
-      "description": "Guidance on budgeting, saving, and managing personal finances."
+      "description": "Guidance on budgeting, saving, and managing personal finances.",
+      "category": "Housing & Basic Needs"
     },
     {
       "title": "Crisis Intervention",
-      "description": "Support and stabilization during a mental health or personal crisis."
+      "description": "Support and stabilization during a mental health or personal crisis.",
+      "category": "Health & Wellness"
     },
     {
       "title": "Substance Abuse Therapy, Support, and Intervention",
-      "description": "Therapy, support, and intervention services for substance use."
+      "description": "Therapy, support, and intervention services for substance use.",
+      "category": "Health & Wellness"
     },
     {
       "title": "Community Reentry",
-      "description": "Support transitioning back into the community."
+      "description": "Support transitioning back into the community.",
+      "category": "Community & Family"
     },
     {
       "title": "Drug Screening",
-      "description": "Drug screening services as part of a client's care plan."
+      "description": "Drug screening services as part of a client's care plan.",
+      "category": "Health & Wellness"
     },
     {
       "title": "Parenting Support",
-      "description": "Guidance and support for parents and families."
+      "description": "Guidance and support for parents and families.",
+      "category": "Community & Family"
     }
   ]
 }

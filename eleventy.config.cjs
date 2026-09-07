@@ -24,6 +24,16 @@ const assetPaths = {
   stylesheet: `/assets/css/index.${contentHash(assetFiles.stylesheet)}.css`,
 };
 
+// No custom domain yet (see AGENTS.md's "No custom domain yet"), so the site
+// lives at a GitHub Pages *project* URL rather than its own origin. Defined
+// once here and exposed to templates as the `siteUrl`/`siteOrigin` globals
+// below (feed.njk, sitemap.xml.njk, robots.txt.njk, and base.njk's Open
+// Graph/Twitter tags all read one or the other) so a future domain switch is
+// a one-line change instead of hunting down the same hardcoded string across
+// files.
+const SITE_ORIGIN = "https://sebastiansells13-bot.github.io";
+const SITE_URL = `${SITE_ORIGIN}/21st-century-care`;
+
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginNavigation);
@@ -35,9 +45,18 @@ module.exports = function (eleventyConfig) {
   // this plugin's hostname, for that reason.
   eleventyConfig.addPlugin(sitemap, {
     sitemap: {
-      hostname: "https://sebastiansells13-bot.github.io",
+      hostname: SITE_ORIGIN,
     },
   });
+
+  eleventyConfig.addGlobalData("siteUrl", SITE_URL);
+  // Bare origin (no /21st-century-care path) — for anywhere that combines it
+  // with something already run through the `url` filter (which adds the
+  // path prefix itself): sitemap.xml.njk's `item.url | url`, and
+  // base.njk's `page.url | url` / `pageImage`. Using `siteUrl` (which
+  // already has the path) in those spots doubles the prefix — see the
+  // sitemap-plugin comment above for the same trap in a different place.
+  eleventyConfig.addGlobalData("siteOrigin", SITE_ORIGIN);
 
   eleventyConfig.setUseGitIgnore(false);
   eleventyConfig.ignores.add("**/.DS_Store");
@@ -107,6 +126,14 @@ module.exports = function (eleventyConfig) {
     }
     return "✨";
   });
+
+  // Cycles a 0-based index through the three section tints, so services.njk
+  // can give each service-category band a different wash (green, blue,
+  // warm, green, …) without hardcoding which tint goes with which category
+  // name — see the {% for category, items in services.list | groupby(...) %}
+  // loop there.
+  const sectionTints = ["section--tint-green", "section--tint-blue", "section--tint-warm"];
+  eleventyConfig.addFilter("tintClass", (index) => sectionTints[(index || 0) % sectionTints.length]);
 
   // During `npm start`, serve source images directly instead of copying
   // them into `dev/` on every rebuild. Production media is optimized by

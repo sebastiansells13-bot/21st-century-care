@@ -45,12 +45,19 @@ Keep it up to date as the site diverges from the template.
   section washes (`.section--tint-green/blue/warm`) — deliberately kept to these three
   plus a reserved `$color-safety` red used only by the crisis callout. Reuse these
   rather than introducing a fourth decorative hue.
+- **Service categories**: each entry in `src/_data/services.json` carries a
+  `category` (Housing & Basic Needs / Health & Wellness / Skills & Independence /
+  Community & Family — set in `.pages.yml` as a `creatable` select, so the client can
+  add a new category from the CMS if needed). `services.njk` groups the flat list
+  into one colored band per category via `services.list | groupby("category")` and
+  the `tintClass` filter; the homepage keeps a flat `head(6)` slice instead of
+  grouping, since it's only showing a preview.
 - **Service icons**: `serviceIcon` filter (`eleventy.config.cjs`) maps a service title
   to an emoji by keyword, shown in a `.service-card__badge` circle that cycles through
   the three accent tints via `nth-child`. This is a stand-in for a real per-service
-  icon/photo — if `service.icon` (the CMS's image field) is set, `services.njk`
-  prefers that instead. Add a new keyword pair there before falling back to the
-  generic "✨" for a service that doesn't match anything.
+  icon/photo — if `service.icon` (the CMS's image field) is set, both `index.njk` and
+  `services.njk` prefer that instead. Add a new keyword pair there before falling back
+  to the generic "✨" for a service that doesn't match anything.
 - **Crisis resources**: `components/crisis-callout.njk` (911 / 988 Suicide & Crisis
   Lifeline / SAMHSA National Helpline) is included on Services and Contact. This is
   general public-safety information, not claimed as 21st Century Care's own hotline —
@@ -61,6 +68,17 @@ Keep it up to date as the site diverges from the template.
   original artwork, not traced from the flyer's photographed logo — see CREDITS.md.
   Headings use Google Fonts "Poppins" (loaded in `base.njk`); body text stays the
   system font stack for performance.
+- **Social share image**: `base.njk`'s Open Graph/Twitter tags default to the
+  homepage hero photo; a page can override it with an `ogImage: /img/...` front-matter
+  value (About/Services/Contact all do — see their own hero photo).
+- **`siteUrl` vs. `siteOrigin`**: both are global data defined once in
+  `eleventy.config.cjs` so the absolute GitHub Pages project URL isn't hardcoded
+  separately in four files. `siteUrl` already includes the `/21st-century-care` path
+  (use it standalone, e.g. `feed.njk`, `robots.txt.njk`). `siteOrigin` is the bare
+  origin — use it only where it's combined with something already piped through the
+  `url` filter (which adds the path prefix itself), e.g. `sitemap.xml.njk`'s
+  `item.url | url` and `base.njk`'s `page.url | url` / `pageImage`. Using `siteUrl` in
+  those spots doubles the path prefix — see the comment by `siteOrigin`'s definition.
 
 ## Code style
 
@@ -99,7 +117,7 @@ Keep it up to date as the site diverges from the template.
   is actually wired up — the form markup in `contact.njk` stays commented out
   (per METHODOLOGY.md in `client-site-starter`) until then
 - Don't add a photo that reads as a specific real client or staff member of this
-  business — the two photos currently on the site are generic New Mexico landscape
+  business — the photos currently on the site are all generic New Mexico landscape
   scenery (see CREDITS.md), chosen precisely to avoid that. A photo of an actual
   person representing "our client" or "our staff" requires the client's own,
   consented photography, not a stock stand-in

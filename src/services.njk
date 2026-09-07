@@ -2,9 +2,11 @@
 layout: layouts/page.njk
 title: Services
 permalink: /services/
+ogImage: /img/hero/services-hero.jpg
 ---
-<div class="hero">
-  <div class="wrapper">
+<div class="hero--photo">
+  <img class="hero__bg" src="/img/hero/services-hero.jpg" alt="" width="2000" height="1500">
+  <div class="hero__content wrapper">
     <h1>Services</h1>
     <p>
       Comprehensive Community Support Services (CCSS) and Peer Support Services (PSS)
@@ -14,18 +16,26 @@ permalink: /services/
     </p>
   </div>
 </div>
-<section class="services-grid wrapper">
-  {% for service in services.list %}
-  <div class="service-card">
-    {% if service.icon %}
-      <img src="{{ service.icon }}" alt="" class="service-card__icon">
-    {% else %}
-      <span class="service-card__badge">{{ service.title | serviceIcon }}</span>
-    {% endif %}
-    <h3>{{ service.title }}</h3>
-    <p>{{ service.description | safe }}</p>
+
+{% for category, items in services.list | groupby("category") %}
+<div class="category-section {{ loop.index0 | tintClass }}">
+  <div class="wrapper">
+    {% if category %}<h2>{{ category }}</h2>{% endif %}
+    <div class="services-grid">
+      {% for service in items %}
+      <div class="service-card">
+        {% if service.icon %}
+          <img src="{{ service.icon }}" alt="" class="service-card__icon">
+        {% else %}
+          <span class="service-card__badge">{{ service.title | serviceIcon }}</span>
+        {% endif %}
+        <h3>{{ service.title }}</h3>
+        <p>{{ service.description | safe }}</p>
+      </div>
+      {% endfor %}
+    </div>
   </div>
-  {% endfor %}
-</section>
+</div>
+{% endfor %}
 
 {% include "components/crisis-callout.njk" %}

@@ -1,16 +1,28 @@
 <!doctype html>
 <html lang="{{ metadata.language }}">
 <head>
+  {% set pageTitle %}{% if title %}{{ title }} · {% endif %}{{ business.name or metadata.title }}{% endset %}
+  {% set pageDescription %}{{ description or business.tagline or metadata.description }}{% endset %}
+  {% set pageImage %}{{ (ogImage or "/img/hero/organ-mountains-hero.jpg") | url }}{% endset %}
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% if title %}{{ title }} · {% endif %}{{ business.name or metadata.title }}</title>
-  <meta name="description" content="{{ description or business.tagline or metadata.description }}">
+  <title>{{ pageTitle }}</title>
+  <meta name="description" content="{{ pageDescription }}">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ pageTitle }}">
+  <meta property="og:description" content="{{ pageDescription }}">
+  <meta property="og:url" content="{{ siteOrigin }}{{ page.url | url }}">
+  <meta property="og:image" content="{{ siteOrigin }}{{ pageImage }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ pageTitle }}">
+  <meta name="twitter:description" content="{{ pageDescription }}">
+  <meta name="twitter:image" content="{{ siteOrigin }}{{ pageImage }}">
   <link rel="icon" href="/favicons/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="/favicons/favicon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&amp;display=swap">
   <link rel="stylesheet" href="{{ assetPaths.stylesheet }}">
   {% if collections %}<link rel="alternate" href="/feed.xml" type="application/atom+xml" title="{{ business.name }}">{% endif %}
 </head>

@@ -19,9 +19,13 @@ Actions build/deploy to GitHub Pages.
 - No team members or contact form listed yet — see `AGENTS.md`'s "What NOT to do" for
   why those stay empty/commented out until the client supplies real content
 - A three-color accent palette (green/blue/warm terracotta, see `AGENTS.md`'s
-  "Color palette"), two freely-licensed New Mexico landscape photos, an emoji icon
-  per service, and an original (not traced) favicon — see [CREDITS.md](CREDITS.md)
-- A "In crisis right now?" callout (911 / 988 Lifeline / SAMHSA Helpline) on the
+  "Color palette"), four freely-licensed New Mexico landscape photos (one per main
+  page), an emoji icon per service, and an original (not traced) favicon — see
+  [CREDITS.md](CREDITS.md)
+- Services are grouped into four categories (Housing & Basic Needs, Health &
+  Wellness, Skills & Independence, Community & Family) — see `AGENTS.md`'s
+  "Service categories"
+- An "In crisis right now?" callout (911 / 988 Lifeline / SAMHSA Helpline) on the
   Services and Contact pages — see `AGENTS.md`'s "Crisis resources" note before
   editing or removing it
 
