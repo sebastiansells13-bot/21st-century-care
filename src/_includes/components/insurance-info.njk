@@ -1,0 +1,16 @@
+{% from "macros/bilingual.njk" import bilingual %}
+<div class="wrapper">
+  <h2 data-i18n="insurance.heading">Insurance &amp; Payment</h2>
+  <p class="sample-tag">Confirm the specifics below with the client before publishing.</p>
+  {{ bilingual(
+    "CCSS and PSS are behavioral health benefits under New Mexico Medicaid's managed care program, <strong>Turquoise Care</strong> (formerly Centennial Care) — eligible clients pay nothing out of pocket for these services.",
+    "CCSS y PSS son beneficios de salud conductual bajo el programa de atención administrada de Medicaid de Nuevo México, <strong>Turquoise Care</strong> (anteriormente Centennial Care) — los clientes elegibles no pagan de su bolsillo por estos servicios.",
+    tag="p",
+    isSafe=true
+  ) }}
+  <p>
+    <em>[Confirm which Turquoise Care managed care plan(s) {{ business.name }} is
+    contracted with, and whether any other insurance or a sliding-fee/self-pay
+    option is accepted.]</em>
+  </p>
+</div>

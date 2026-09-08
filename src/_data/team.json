@@ -1,3 +1,22 @@
 {
-  "list": []
+  "list": [
+    {
+      "name": "Maria Gonzales",
+      "role": "Executive Director",
+      "photo": "/img/team/avatar-green.svg",
+      "bio": "Maria has over a decade of experience in behavioral health administration in Southern New Mexico and holds a master's degree in social work. She oversees client services and community partnerships."
+    },
+    {
+      "name": "James Whitfield",
+      "role": "Community Support Worker",
+      "photo": "/img/team/avatar-blue.svg",
+      "bio": "James works directly with clients on housing, employment, and independent-living goals. He holds a master's degree in psychology and has worked in community support for eight years."
+    },
+    {
+      "name": "Destiny Ortiz",
+      "role": "Certified Peer Support Specialist",
+      "photo": "/img/team/avatar-warm.svg",
+      "bio": "Destiny brings her own lived recovery experience to her work supporting clients through self-advocacy, encouragement, and connection to community resources."
+    }
+  ]
 }

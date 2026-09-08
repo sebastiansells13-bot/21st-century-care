@@ -5,17 +5,18 @@ eleventyNavigation:
   key: Home
   order: 1
 ---
+{% from "macros/bilingual.njk" import bilingual %}
 <div class="hero--photo">
   <img class="hero__bg" src="/img/hero/organ-mountains-hero.jpg" alt="" width="2000" height="1442">
   <div class="hero__content wrapper">
     <h1>{{ business.name }}</h1>
-    <p>{{ business.tagline }}</p>
+    <p>{{ bilingual(business.tagline, business.taglineEs) }}</p>
   </div>
 </div>
 
 <div class="section section--tint-green">
   <div class="wrapper">
-    <p>
+    <p data-i18n="overview.ccssPss">
       Comprehensive Community Support Services (CCSS) and Peer Support Services (PSS)
       are available to Medicaid recipients. Services help clients develop skills and
       connect to resources related to independent and community living, learning,
@@ -39,16 +40,18 @@ eleventyNavigation:
 </section>
 
 <div class="wrapper section-cta">
-  <a class="btn btn--primary" href="/services/">See all services →</a>
+  <a class="btn btn--primary" href="/services/" data-i18n="cta.seeAllServices">See all services →</a>
 </div>
+
+{% include "components/testimonials.njk" %}
 
 <div class="cta-band">
   <div class="wrapper">
-    <h2>Ready to get started?</h2>
-    <p>
+    <h2 data-i18n="cta.readyToStart">Ready to get started?</h2>
+    <p data-i18n="cta.readyToStartBody">
       Call our office to learn more about eligibility and how to enroll in
       Comprehensive Community Support Services or Peer Support Services.
     </p>
-    <a class="btn btn--outline" href="tel:{{ business.phone }}">Call {{ business.phone }}</a>
+    <a class="btn btn--outline" href="tel:{{ business.phone }}"><span data-i18n="cta.call">Call</span> {{ business.phone }}</a>
   </div>
 </div>

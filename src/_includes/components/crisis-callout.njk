@@ -1,17 +1,22 @@
+{% from "macros/bilingual.njk" import bilingual %}
 <div class="callout--crisis wrapper">
-  <h2>In crisis right now?</h2>
-  <p>
-    If you or someone you know is in immediate danger, call <strong>911</strong>.
-  </p>
-  <p>
-    For a mental health, substance use, or suicide crisis, the
-    <strong>988 Suicide &amp; Crisis Lifeline</strong> is free, confidential, and
-    available 24/7 — call or text <a href="tel:988">988</a>, or chat at
-    <a href="https://988lifeline.org" target="_blank" rel="noopener">988lifeline.org</a>.
-  </p>
-  <p>
-    You can also reach the <strong>SAMHSA National Helpline</strong> at
-    <a href="tel:18006624357">1-800-662-4357</a> for free, confidential
-    treatment referral and information, 24/7.
-  </p>
+  <h2 data-i18n="crisis.heading">In crisis right now?</h2>
+  {{ bilingual(
+    "If you or someone you know is in immediate danger, call <strong>911</strong>.",
+    "Si usted o alguien que conoce está en peligro inmediato, llame al <strong>911</strong>.",
+    tag="p",
+    isSafe=true
+  ) }}
+  {{ bilingual(
+    "For a mental health, substance use, or suicide crisis, the <strong>988 Suicide &amp; Crisis Lifeline</strong> is free, confidential, and available 24/7 — call or text <a href=\"tel:988\">988</a>, or chat at <a href=\"https://988lifeline.org\" target=\"_blank\" rel=\"noopener\">988lifeline.org</a>.",
+    "Para una crisis de salud mental, uso de sustancias o suicidio, la <strong>Línea de Crisis y Suicidio 988</strong> es gratuita, confidencial y está disponible las 24 horas — llame o envíe un mensaje de texto al <a href=\"tel:988\">988</a>, o chatee en <a href=\"https://988lifeline.org\" target=\"_blank\" rel=\"noopener\">988lifeline.org</a>.",
+    tag="p",
+    isSafe=true
+  ) }}
+  {{ bilingual(
+    "You can also reach the <strong>SAMHSA National Helpline</strong> at <a href=\"tel:18006624357\">1-800-662-4357</a> for free, confidential treatment referral and information, 24/7.",
+    "También puede comunicarse con la <strong>Línea Nacional de Ayuda de SAMHSA</strong> al <a href=\"tel:18006624357\">1-800-662-4357</a> para obtener referencias de tratamiento e información confidencial y gratuita, las 24 horas.",
+    tag="p",
+    isSafe=true
+  ) }}
 </div>

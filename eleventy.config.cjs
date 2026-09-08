@@ -140,10 +140,12 @@ module.exports = function (eleventyConfig) {
   // the CI pipeline (scripts/optimize-media.mjs) after Eleventy runs.
   eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
   eleventyConfig.addPassthroughCopy({ "src/_includes/img": "img" });
+  eleventyConfig.addPassthroughCopy({ "src/_includes/js": "js" });
   eleventyConfig.addPassthroughCopy({
     [assetFiles.stylesheet]: assetPaths.stylesheet.slice(1),
   });
   eleventyConfig.addPassthroughCopy({ "src/_includes/favicons": "favicons" });
+  eleventyConfig.addPassthroughCopy({ "src/_includes/files": "files" });
   eleventyConfig.addPassthroughCopy("CNAME");
   eleventyConfig.addPassthroughCopy(".nojekyll");
 

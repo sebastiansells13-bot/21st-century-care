@@ -27,10 +27,20 @@
   {% if collections %}<link rel="alternate" href="/feed.xml" type="application/atom+xml" title="{{ business.name }}">{% endif %}
 </head>
 <body>
+  <a class="skip-link" href="#main-content" data-i18n="skip.toContent">Skip to content</a>
   {% include "components/header.njk" %}
-  <main>
+  <main id="main-content">
     {{ content | safe }}
   </main>
   {% include "components/footer.njk" %}
+  <script type="application/json" id="i18n-data">{{ i18n | dump | safe }}</script>
+  <!--
+    i18n-runtime.js has no dependencies of its own, so it loads first, then
+    i18n.js (applies [data-i18n]/[data-i18n-lang] to the DOM). See
+    AGENTS.md's "Spanish-language toggle" note before adding a new
+    translated string.
+  -->
+  <script src="/js/i18n-runtime.js" defer></script>
+  <script src="/js/i18n.js" defer></script>
 </body>
 </html>

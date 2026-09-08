@@ -1,0 +1,39 @@
+---
+layout: layouts/page.njk
+title: Accessibility
+permalink: /accessibility/
+---
+{% from "macros/bilingual.njk" import bilingual %}
+{% set p1en %}{{ business.name }} is committed to making our website usable by everyone, including people with disabilities. We aim to meet the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA wherever possible, and we treat accessibility as an ongoing effort rather than a one-time fix.{% endset %}
+{% set p1es %}{{ business.name }} se compromete a que nuestro sitio web sea utilizable por todas las personas, incluidas las personas con discapacidades. Buscamos cumplir con las Pautas de Accesibilidad para el Contenido Web (WCAG) 2.1 Nivel AA en la medida de lo posible, y tratamos la accesibilidad como un esfuerzo continuo, no como una solución de una sola vez.{% endset %}
+
+{% set p3en %}If any part of this website is difficult for you to use, you don't need to use the website at all to reach us — call <a href="tel:{{ business.phone }}">{{ business.phone }}</a>{% if business.email %} or email <a href="mailto:{{ business.email }}">{{ business.email }}</a>{% endif %} and we'll help you directly.{% endset %}
+{% set p3es %}Si alguna parte de este sitio web le resulta difícil de usar, no necesita usar el sitio web para comunicarse con nosotros — llame al <a href="tel:{{ business.phone }}">{{ business.phone }}</a>{% if business.email %} o envíe un correo a <a href="mailto:{{ business.email }}">{{ business.email }}</a>{% endif %} y le ayudaremos directamente.{% endset %}
+
+{% set p4en %}If you encounter an accessibility barrier on this site, please tell us — contact information is on our <a href="/contact/">Contact page</a>. Include the page you were on and what happened, and we'll work to fix it.{% endset %}
+{% set p4es %}Si encuentra una barrera de accesibilidad en este sitio, por favor avísenos — la información de contacto está en nuestra <a href="/contact/">página de Contacto</a>. Incluya la página en la que estaba y lo que sucedió, y trabajaremos para solucionarlo.{% endset %}
+
+<div class="hero">
+  <div class="wrapper">
+    <h1 data-i18n="accessibility.heading">Accessibility Statement</h1>
+  </div>
+</div>
+
+<div class="section">
+  <div class="wrapper">
+    {{ bilingual(p1en, p1es, tag="p", isSafe=true) }}
+
+    <h2 data-i18n="accessibility.whatWereDoing">What we're doing</h2>
+    <p data-i18n="accessibility.whatWereDoingBody">
+      This site is built with semantic HTML, keyboard-navigable menus and controls,
+      readable color contrast, and text that resizes without breaking the layout.
+      We review new pages against these standards as we add them.
+    </p>
+
+    <h2 data-i18n="accessibility.anotherWay">Accessing our services in another way</h2>
+    {{ bilingual(p3en, p3es, tag="p", isSafe=true) }}
+
+    <h2 data-i18n="accessibility.letUsKnow">Let us know about a problem</h2>
+    {{ bilingual(p4en, p4es, tag="p", isSafe=true) }}
+  </div>
+</div>

@@ -1,7 +1,9 @@
 [
-  { "text": "Home", "url": "/" },
-  { "text": "About", "url": "/about/" },
-  { "text": "Services", "url": "/services/" },
-  { "text": "Blog", "url": "/blog/" },
-  { "text": "Contact", "url": "/contact/" }
+  { "text": "Home", "url": "/", "i18nKey": "nav.home" },
+  { "text": "About", "url": "/about/", "i18nKey": "nav.about" },
+  { "text": "Services", "url": "/services/", "i18nKey": "nav.services" },
+  { "text": "FAQ", "url": "/faq/", "i18nKey": "nav.faq" },
+  { "text": "Blog", "url": "/blog/", "i18nKey": "nav.blog" },
+  { "text": "Careers", "url": "/careers/", "i18nKey": "nav.careers" },
+  { "text": "Contact", "url": "/contact/", "i18nKey": "nav.contact" }
 ]

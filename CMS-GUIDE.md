@@ -15,6 +15,13 @@ You can update your site's content without touching any code.
   one has a Category, which controls which labeled section it appears under on
   the Services page.
 - **Team Members** — names, roles, photos, and short bios shown on the About page.
+  **The three profiles on the site right now are placeholders** — replace them
+  with your real team before sharing the site publicly.
+- **FAQ** — the questions and answers shown on the FAQ page.
+- **Testimonials** — quotes shown on the Home page. **The two quotes on the site
+  right now are samples** — only replace them with a real quote once you have a
+  client's permission to use it. Leave this list empty rather than publish
+  anything you're not sure is real and consented.
 
 ## 3. Making a change
 

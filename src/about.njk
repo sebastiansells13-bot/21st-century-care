@@ -4,17 +4,18 @@ title: About
 permalink: /about/
 ogImage: /img/about/corrales-sunset.jpg
 ---
+{% from "macros/bilingual.njk" import bilingual %}
 <div class="hero">
   <div class="wrapper">
-    <h1>About {{ business.name }}</h1>
-    <p>{{ business.tagline }}</p>
+    <h1>{{ bilingual("About " + business.name, "Acerca de " + business.name, tag="span") }}</h1>
+    <p>{{ bilingual(business.tagline, business.taglineEs) }}</p>
   </div>
 </div>
 
 <div class="section section--tint-green">
   <div class="wrapper">
-    <h2>Our Approach</h2>
-    <p>
+    <h2 data-i18n="about.ourApproach">Our Approach</h2>
+    <p data-i18n="about.ourApproachBody">
       Clients meet with support staff to identify needs, goals, and obstacles. Goals
       and services are meant to promote recovery, rehabilitation, and resiliency by
       addressing the barriers that impede the development of skills necessary for
@@ -38,8 +39,8 @@ ogImage: /img/about/corrales-sunset.jpg
 
 <div class="section section--tint-blue">
   <div class="wrapper">
-    <h2>Why {{ business.name }}?</h2>
-    <p>
+    <h2>{{ bilingual("Why " + business.name + "?", "¿Por Qué " + business.name + "?", tag="span") }}</h2>
+    <p data-i18n="about.whyUsBody">
       Staff is dedicated to providing each client with the individualized and
       collaborative care they deserve. Our team of professionals has over ten years
       of experience in the Southern New Mexico region with master's degrees in
@@ -55,11 +56,12 @@ ogImage: /img/about/corrales-sunset.jpg
 {% if team.list.length %}
 <div class="section">
   <div class="wrapper">
-    <h2>Team</h2>
+    <h2 data-i18n="about.teamHeading">Team</h2>
+    <p class="sample-tag">Sample profiles — replace with the real team once photos and bios are provided.</p>
     <div class="services-grid">
       {% for member in team.list %}
       <div class="service-card">
-        {% if member.photo %}<img src="{{ member.photo }}" alt="{{ member.name }}">{% endif %}
+        {% if member.photo %}<img src="{{ member.photo }}" alt="{{ member.name }}" class="team-avatar">{% endif %}
         <h3>{{ member.name }}</h3>
         <p><em>{{ member.role }}</em></p>
         <p>{{ member.bio | safe }}</p>

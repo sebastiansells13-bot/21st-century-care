@@ -20,10 +20,18 @@
     font-size: 1.25rem;
   }
 
+  nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+  }
+
   nav ul {
     list-style: none;
     display: flex;
-    gap: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1.25rem;
     margin: 0;
     padding: 0;
   }
@@ -38,6 +46,35 @@
     &.is-active {
       color: $color-accent;
       border-bottom-color: $color-accent;
+    }
+  }
+
+  .lang-toggle {
+    display: flex;
+    flex-shrink: 0;
+    border: 1px solid $color-border;
+    border-radius: 2rem;
+    overflow: hidden;
+  }
+
+  .lang-toggle__btn {
+    border: none;
+    background: #fff;
+    color: $color-muted;
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 0.02em;
+    padding: 0.3rem 0.65rem;
+    cursor: pointer;
+
+    &[aria-pressed="true"] {
+      background: $color-accent;
+      color: #fff;
+    }
+
+    &:focus-visible {
+      outline: 2px solid $color-accent;
+      outline-offset: 2px;
     }
   }
 }
@@ -59,6 +96,17 @@
 
   a {
     color: $color-accent;
+  }
+
+  .site-footer__links {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    a {
+      display: inline-flex;
+      align-items: center;
+    }
   }
 }
 
@@ -350,5 +398,143 @@
 
   dd {
     margin: 0 0 1rem;
+  }
+}
+
+.hours-list {
+  list-style: none;
+  margin: 0.5rem 0 0;
+  padding: 0;
+
+  li {
+    display: flex;
+    justify-content: space-between;
+    max-width: 20rem;
+    padding: 0.25rem 0;
+    border-bottom: 1px solid $color-border;
+  }
+}
+
+// A visible, unmissable flag on fictitious/sample content (team bios,
+// testimonials, careers listings, sample hours) that's ready to look at
+// but not ready to publish as fact — see AGENTS.md's "Needs client review"
+// list. Deliberately NOT translated by the language toggle (data-i18n) —
+// it's an editorial note for whoever manages the site, not real content
+// for a visitor.
+.sample-tag {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-style: italic;
+  color: $color-safety;
+  background: rgba($color-safety, 0.08);
+  border: 1px dashed rgba($color-safety, 0.4);
+  border-radius: 0.4rem;
+  padding: 0.3rem 0.6rem;
+  margin: 0 0 1rem;
+}
+
+.team-avatar {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 44rem;
+}
+
+.faq-item {
+  border: 1px solid $color-border;
+  border-radius: 0.5rem;
+  padding: 1rem 1.25rem;
+
+  summary {
+    font-family: $font-heading;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  p {
+    color: $color-muted;
+    margin: 0.75rem 0 0;
+  }
+
+  &[open] summary {
+    color: $color-accent;
+  }
+}
+
+.steps {
+  list-style: none;
+  margin: 1.5rem 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 40rem;
+}
+
+.steps__item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+
+  h3 {
+    margin: 0 0 0.25rem;
+    font-family: $font-heading;
+    font-size: 1.05rem;
+  }
+
+  p {
+    margin: 0;
+    color: $color-muted;
+  }
+}
+
+.steps__number {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  background: $color-accent;
+  color: #fff;
+  font-family: $font-heading;
+  font-weight: 700;
+}
+
+.referral-download {
+  margin-top: 1.5rem;
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.testimonial-card {
+  margin: 0;
+  padding: 1.5rem;
+  background: $color-bg;
+  border-radius: 0.75rem;
+  border-left: 4px solid $color-accent-warm;
+
+  p {
+    margin: 0 0 0.75rem;
+    font-style: italic;
+  }
+
+  cite {
+    color: $color-muted;
+    font-style: normal;
+    font-size: 0.9rem;
   }
 }

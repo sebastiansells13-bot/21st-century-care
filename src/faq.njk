@@ -1,0 +1,33 @@
+---
+layout: layouts/page.njk
+title: FAQ
+permalink: /faq/
+---
+<div class="hero">
+  <div class="wrapper">
+    <h1 data-i18n="faq.heading">Frequently Asked Questions</h1>
+    <p data-i18n="faq.intro">Answers to the questions we hear most before someone's first call.</p>
+  </div>
+</div>
+
+<div class="section">
+  <div class="wrapper">
+    <div class="faq-list">
+      {% for item in faq.list %}
+      <details class="faq-item">
+        <summary>{{ item.question }}</summary>
+        <p>{{ item.answer | safe }}</p>
+      </details>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<div class="section section--tint-green">
+  <div class="wrapper">
+    <h2 data-i18n="getStarted.heading">How to Get Started</h2>
+    {% include "components/get-started-steps.njk" %}
+  </div>
+</div>
+
+{% include "components/crisis-callout.njk" %}

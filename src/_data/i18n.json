@@ -1,0 +1,99 @@
+{
+  "nav.home": { "en": "Home", "es": "Inicio" },
+  "nav.about": { "en": "About", "es": "Acerca de" },
+  "nav.services": { "en": "Services", "es": "Servicios" },
+  "nav.faq": { "en": "FAQ", "es": "Preguntas Frecuentes" },
+  "nav.blog": { "en": "Blog", "es": "Blog" },
+  "nav.careers": { "en": "Careers", "es": "Empleos" },
+  "nav.contact": { "en": "Contact", "es": "Contacto" },
+
+  "skip.toContent": { "en": "Skip to content", "es": "Saltar al contenido" },
+  "footer.accessibility": { "en": "Accessibility", "es": "Accesibilidad" },
+
+  "cta.call": { "en": "Call", "es": "Llamar" },
+  "cta.seeAllServices": { "en": "See all services →", "es": "Ver todos los servicios →" },
+  "cta.getDirections": { "en": "Get directions", "es": "Cómo llegar" },
+  "cta.readyToStart": { "en": "Ready to get started?", "es": "¿Listo para comenzar?" },
+  "cta.readyToStartBody": {
+    "en": "Call our office to learn more about eligibility and how to enroll in Comprehensive Community Support Services or Peer Support Services.",
+    "es": "Llame a nuestra oficina para obtener más información sobre la elegibilidad y cómo inscribirse en los Servicios Integrales de Apoyo Comunitario o los Servicios de Apoyo entre Pares."
+  },
+
+  "overview.ccssPss": {
+    "en": "Comprehensive Community Support Services (CCSS) and Peer Support Services (PSS) are available to Medicaid recipients. Services help clients develop skills and connect to resources related to independent and community living, learning, employment, socialization, and recreation.",
+    "es": "Los Servicios Integrales de Apoyo Comunitario (CCSS) y los Servicios de Apoyo entre Pares (PSS) están disponibles para los beneficiarios de Medicaid. Estos servicios ayudan a los clientes a desarrollar habilidades y a conectarse con recursos relacionados con la vida independiente y comunitaria, el aprendizaje, el empleo, la socialización y la recreación."
+  },
+
+  "contact.heading": { "en": "Contact", "es": "Contacto" },
+  "contact.phone": { "en": "Phone", "es": "Teléfono" },
+  "contact.fax": { "en": "Fax", "es": "Fax" },
+  "contact.email": { "en": "Email", "es": "Correo electrónico" },
+  "contact.address": { "en": "Address", "es": "Dirección" },
+  "contact.hours": { "en": "Hours", "es": "Horario" },
+
+  "getStarted.heading": { "en": "How to Get Started", "es": "Cómo Empezar" },
+  "getStarted.step1.title": { "en": "Reach out", "es": "Comuníquese" },
+  "getStarted.step1.body": {
+    "en": "Call, email, or send a referral form — yours or a case manager's, family member's, or provider's on your behalf.",
+    "es": "Llame, envíe un correo electrónico o envíe un formulario de remisión — el suyo o el de un administrador de casos, familiar o proveedor en su nombre."
+  },
+  "getStarted.step2.title": { "en": "Brief assessment", "es": "Evaluación breve" },
+  "getStarted.step2.body": {
+    "en": "A short conversation to understand your needs, goals, and Medicaid eligibility for CCSS or PSS.",
+    "es": "Una breve conversación para entender sus necesidades, metas y elegibilidad de Medicaid para CCSS o PSS."
+  },
+  "getStarted.step3.title": { "en": "Get matched", "es": "Le asignamos un apoyo" },
+  "getStarted.step3.body": {
+    "en": "You're assigned a Community Support Worker or Peer Support Specialist who becomes your ongoing point of contact.",
+    "es": "Se le asigna un Trabajador de Apoyo Comunitario o un Especialista de Apoyo entre Pares, quien se convierte en su punto de contacto continuo."
+  },
+  "getStarted.step4.title": { "en": "Build your plan", "es": "Construya su plan" },
+  "getStarted.step4.body": {
+    "en": "Together, you build a personalized service plan and start working toward your goals.",
+    "es": "Juntos, construyen un plan de servicios personalizado y comienzan a trabajar hacia sus metas."
+  },
+
+  "referral.prefix": { "en": "Have a referral to send in? Download the", "es": "¿Tiene una remisión para enviar? Descargue el" },
+  "referral.linkText": { "en": "CCSS / PSS referral form (PDF)", "es": "formulario de remisión de CCSS/PSS (PDF)" },
+  "referral.suffix": { "en": "and fax or email it to us.", "es": "y envíelo por fax o correo electrónico." },
+
+  "testimonials.heading": { "en": "What Clients Say", "es": "Lo Que Dicen Nuestros Clientes" },
+
+  "about.ourApproach": { "en": "Our Approach", "es": "Nuestro Enfoque" },
+  "about.ourApproachBody": {
+    "en": "Clients meet with support staff to identify needs, goals, and obstacles. Goals and services are meant to promote recovery, rehabilitation, and resiliency by addressing the barriers that impede the development of skills necessary for independent functioning in the community. Clients are assigned a support team to help them reach these goals by coordinating desired client services to support a comprehensive and collaborative service plan. Clients receive this through practicing new skills, helping them monitor their progress, assisting with their treatment, modeling effective coping techniques, and self-help strategies. Peer Support Specialists (PSS) focus on various therapeutic and supportive tasks emphasizing self-advocacy. Community Support Workers (CSWs) connect clients to available resources and provide assistance and support.",
+    "es": "Los clientes se reúnen con el personal de apoyo para identificar necesidades, metas y obstáculos. Las metas y los servicios buscan promover la recuperación, la rehabilitación y la resiliencia, abordando las barreras que impiden el desarrollo de las habilidades necesarias para funcionar de forma independiente en la comunidad. A cada cliente se le asigna un equipo de apoyo que le ayuda a alcanzar estas metas coordinando los servicios deseados para respaldar un plan de servicios integral y colaborativo. Los clientes reciben este apoyo mediante la práctica de nuevas habilidades, el monitoreo de su progreso, la asistencia con su tratamiento, el modelado de técnicas de afrontamiento efectivas y estrategias de autoayuda. Los Especialistas de Apoyo entre Pares (PSS) se enfocan en diversas tareas terapéuticas y de apoyo, con énfasis en la autodefensa. Los Trabajadores de Apoyo Comunitario (CSW) conectan a los clientes con los recursos disponibles y les brindan asistencia y apoyo."
+  },
+  "about.whyUsBody": {
+    "en": "Staff is dedicated to providing each client with the individualized and collaborative care they deserve. Our team of professionals has over ten years of experience in the Southern New Mexico region with master's degrees in psychology, social work, and curriculum and instruction. Our services are designed to provide clients with the support needed to establish a personal foundation to grow. Together, we work toward developing the necessary skills and connecting to available resources needed to live independent and fulfilling lives.",
+    "es": "Nuestro personal se dedica a brindar a cada cliente la atención individualizada y colaborativa que merece. Nuestro equipo de profesionales cuenta con más de diez años de experiencia en la región sur de Nuevo México, con maestrías en psicología, trabajo social, y currículo e instrucción. Nuestros servicios están diseñados para brindar a los clientes el apoyo necesario para establecer una base personal sobre la cual crecer. Juntos, trabajamos para desarrollar las habilidades necesarias y conectar con los recursos disponibles para vivir una vida independiente y plena."
+  },
+  "about.teamHeading": { "en": "Team", "es": "Equipo" },
+
+  "faq.heading": { "en": "Frequently Asked Questions", "es": "Preguntas Frecuentes" },
+  "faq.intro": {
+    "en": "Answers to the questions we hear most before someone's first call.",
+    "es": "Respuestas a las preguntas que más escuchamos antes de la primera llamada de alguien."
+  },
+
+  "careers.heading": { "en": "Join Our Team", "es": "Únase a Nuestro Equipo" },
+  "careers.intro": {
+    "en": "Help clients across Southern New Mexico build the skills and connections they need for independent, fulfilling lives.",
+    "es": "Ayude a los clientes del sur de Nuevo México a desarrollar las habilidades y conexiones que necesitan para vivir de forma independiente y plena."
+  },
+
+  "accessibility.heading": { "en": "Accessibility Statement", "es": "Declaración de Accesibilidad" },
+  "accessibility.whatWereDoing": { "en": "What we're doing", "es": "Qué estamos haciendo" },
+  "accessibility.whatWereDoingBody": {
+    "en": "This site is built with semantic HTML, keyboard-navigable menus and controls, readable color contrast, and text that resizes without breaking the layout. We review new pages against these standards as we add them.",
+    "es": "Este sitio está construido con HTML semántico, menús y controles navegables por teclado, contraste de color legible y texto que se ajusta de tamaño sin romper el diseño. Revisamos las páginas nuevas contra estos estándares a medida que las agregamos."
+  },
+  "accessibility.anotherWay": { "en": "Accessing our services in another way", "es": "Cómo acceder a nuestros servicios de otra manera" },
+  "accessibility.letUsKnow": { "en": "Let us know about a problem", "es": "Infórmenos sobre un problema" },
+
+  "insurance.heading": { "en": "Insurance & Payment", "es": "Seguro y Pago" },
+  "crisis.heading": { "en": "In crisis right now?", "es": "¿Está en crisis ahora mismo?" },
+
+  "notFound.heading": { "en": "Page not found", "es": "Página no encontrada" },
+  "notFound.body": { "en": "Sorry, that page doesn't exist.", "es": "Lo sentimos, esa página no existe." }
+}

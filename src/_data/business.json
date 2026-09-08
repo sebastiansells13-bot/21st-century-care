@@ -1,13 +1,18 @@
 {
   "name": "21st Century Care",
   "tagline": "The Specialists in Comprehensive Community Support Services — Southern New Mexico",
+  "taglineEs": "Los Especialistas en Servicios Integrales de Apoyo Comunitario — Sur de Nuevo México",
   "phone": "(575) 201-5700",
   "fax": "(575) 201-5701",
-  "email": "",
+  "email": "info@21stcenturycarenm.com",
   "address": "205 N First Street, Anthony, NM 88021",
+  "hours": [
+    { "days": "Monday – Friday", "time": "8:00 AM – 5:00 PM" },
+    { "days": "Saturday – Sunday", "time": "Closed" }
+  ],
   "social": {
-    "instagram": "",
-    "facebook": "",
+    "instagram": "21stcenturycarenm",
+    "facebook": "21stCenturyCareNM",
     "linkedin": ""
   }
 }
