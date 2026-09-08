@@ -1,0 +1,16 @@
+{% if testimonials.list.length %}
+<div class="section section--tint-warm">
+  <div class="wrapper">
+    <h2 data-i18n="testimonials.heading">What Clients Say</h2>
+    <p class="sample-tag">Sample quotes — replace with real, consented client feedback before publishing.</p>
+    <div class="testimonial-grid">
+      {% for item in testimonials.list %}
+      <blockquote class="testimonial-card">
+        <p>&ldquo;{{ item.quote }}&rdquo;</p>
+        <cite>— {{ item.attribution }}</cite>
+      </blockquote>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endif %}

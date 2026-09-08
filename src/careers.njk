@@ -1,0 +1,41 @@
+---
+layout: layouts/page.njk
+title: Careers
+permalink: /careers/
+---
+{% from "macros/bilingual.njk" import bilingual %}
+{% set applyEn %}Interested? Send your resume to <a href="mailto:{{ business.email }}">{{ business.email }}</a> or call <a href="tel:{{ business.phone }}">{{ business.phone }}</a>.{% endset %}
+{% set applyEs %}¿Interesado? Envíe su currículum a <a href="mailto:{{ business.email }}">{{ business.email }}</a> o llame al <a href="tel:{{ business.phone }}">{{ business.phone }}</a>.{% endset %}
+
+<div class="hero">
+  <div class="wrapper">
+    <h1 data-i18n="careers.heading">Join Our Team</h1>
+    <p data-i18n="careers.intro">Help clients across Southern New Mexico build the skills and connections
+      they need for independent, fulfilling lives.</p>
+  </div>
+</div>
+
+<div class="section">
+  <div class="wrapper">
+    <p class="sample-tag">Sample listings — confirm current openings with the client before publishing.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>Community Support Worker (CCSS)</h3>
+        <p>
+          Coordinate services and coach clients on skills for independent living,
+          employment, and community integration. Bachelor's degree in a
+          human-services field or equivalent experience preferred.
+        </p>
+      </div>
+      <div class="service-card">
+        <h3>Certified Peer Support Specialist (PSS)</h3>
+        <p>
+          Use your own lived recovery experience to support clients through
+          self-advocacy, encouragement, and recovery-oriented coaching. New
+          Mexico PSS certification required.
+        </p>
+      </div>
+    </div>
+    {{ bilingual(applyEn, applyEs, tag="p", isSafe=true) }}
+  </div>
+</div>

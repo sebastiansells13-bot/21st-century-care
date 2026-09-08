@@ -7,28 +7,39 @@ ogImage: /img/hero/contact-hero.jpg
 <div class="hero--photo">
   <img class="hero__bg" src="/img/hero/contact-hero.jpg" alt="" width="2000" height="1211">
   <div class="hero__content wrapper">
-    <h1>Contact</h1>
+    <h1 data-i18n="contact.heading">Contact</h1>
   </div>
 </div>
 
 <dl class="contact-details wrapper">
   {% if business.phone %}
-  <dt>Phone</dt>
+  <dt data-i18n="contact.phone">Phone</dt>
   <dd><a href="tel:{{ business.phone }}">{{ business.phone }}</a></dd>
   {% endif %}
   {% if business.fax %}
-  <dt>Fax</dt>
+  <dt data-i18n="contact.fax">Fax</dt>
   <dd>{{ business.fax }}</dd>
   {% endif %}
   {% if business.email %}
-  <dt>Email</dt>
+  <dt data-i18n="contact.email">Email</dt>
   <dd><a href="mailto:{{ business.email }}">{{ business.email }}</a></dd>
   {% endif %}
   {% if business.address %}
-  <dt>Address</dt>
+  <dt data-i18n="contact.address">Address</dt>
   <dd>
     {{ business.address }}<br>
-    <a class="btn btn--primary" href="https://www.google.com/maps/search/?api=1&amp;query={{ business.address | urlencode }}" target="_blank" rel="noopener">Get directions</a>
+    <a class="btn btn--primary" href="https://www.google.com/maps/search/?api=1&amp;query={{ business.address | urlencode }}" target="_blank" rel="noopener" data-i18n="cta.getDirections">Get directions</a>
+  </dd>
+  {% endif %}
+  {% if business.hours.length %}
+  <dt data-i18n="contact.hours">Hours</dt>
+  <dd>
+    <p class="sample-tag">Sample hours — confirm before publishing.</p>
+    <ul class="hours-list">
+      {% for slot in business.hours %}
+      <li><span>{{ slot.days }}</span><span>{{ slot.time }}</span></li>
+      {% endfor %}
+    </ul>
   </dd>
   {% endif %}
 </dl>
@@ -43,5 +54,21 @@ ogImage: /img/hero/contact-hero.jpg
     <button type="submit">Send</button>
   </form>
 -->
+
+<div class="section section--tint-green">
+  {% include "components/insurance-info.njk" %}
+</div>
+
+<div class="section">
+  <div class="wrapper">
+    <h2 data-i18n="getStarted.heading">How to Get Started</h2>
+    {% include "components/get-started-steps.njk" %}
+    <p class="referral-download">
+      <span data-i18n="referral.prefix">Have a referral to send in? Download the</span>
+      <a href="/files/referral-form.pdf" data-i18n="referral.linkText">CCSS / PSS referral form (PDF)</a>
+      <span data-i18n="referral.suffix">and fax or email it to us.</span>
+    </p>
+  </div>
+</div>
 
 {% include "components/crisis-callout.njk" %}
