@@ -9,9 +9,11 @@ eleventyNavigation:
 <div class="hero--photo">
   <img class="hero__bg" src="/img/hero/organ-mountains-hero.jpg" alt="" width="2000" height="1442">
   <div class="hero__content wrapper">
+    <span class="hero__eyebrow">CCSS · PSS</span>
     <h1>{{ business.name }}</h1>
     <p>{{ bilingual(business.tagline, business.taglineEs) }}</p>
   </div>
+  {% include "components/hero-wave.njk" %}
 </div>
 
 <div class="section section--tint-green">
