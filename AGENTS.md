@@ -45,6 +45,17 @@ Keep it up to date as the site diverges from the template.
   section washes (`.section--tint-green/blue/warm`) — deliberately kept to these three
   plus a reserved `$color-safety` red used only by the crisis callout. Reuse these
   rather than introducing a fourth decorative hue.
+- **Photo hero** (`.hero--photo` in `components.scss`, used by Home/Services/Contact):
+  the `::before` overlay layers two radial glows (warm bottom-left, blue top-right)
+  over the green→blue diagonal wash, so all three accents show on every photo
+  regardless of that photo's own colors. `.hero__eyebrow` is the small pill label
+  above the `<h1>` (translated via `data-i18n`, plain text only — see each page for
+  its own label, e.g. "What We Offer"). `components/hero-wave.njk`, included at the
+  end of every `.hero--photo` block, draws the bottom wave edge — its fill is a
+  literal `#ffffff` (not a Sass variable, since it isn't compiled through Sass); keep
+  it in sync if `$color-bg` ever stops being white. The plain (non-photo) `.hero`
+  used by About/Services-category-intro/FAQ/Careers/Accessibility/Contact-details
+  doesn't have a wave — only the three photo heroes do.
 - **Service categories**: each entry in `src/_data/services.json` carries a
   `category` (Housing & Basic Needs / Health & Wellness / Skills & Independence /
   Community & Family — set in `.pages.yml` as a `creatable` select, so the client can

@@ -1,0 +1,10 @@
+<!--
+  Decorative bottom edge for .hero--photo (see components.scss) — softens
+  the hard photo/content seam with a wave instead of a straight cut. Fill
+  is a literal "#ffffff" matching $color-bg (variables.scss) rather than a
+  Sass variable, since this file isn't compiled through Sass — keep the two
+  in sync if $color-bg ever changes from white.
+-->
+<svg class="hero__wave" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true">
+  <path fill="#ffffff" d="M0,32 C240,80 480,0 720,24 C960,48 1200,88 1440,40 L1440,80 L0,80 Z"/>
+</svg>

@@ -25,6 +25,8 @@
   },
 
   "contact.heading": { "en": "Contact", "es": "Contacto" },
+  "hero.whatWeOffer": { "en": "What We Offer", "es": "Lo Que Ofrecemos" },
+  "hero.wereHereToHelp": { "en": "We're Here to Help", "es": "Estamos Aquí para Ayudar" },
   "contact.phone": { "en": "Phone", "es": "Teléfono" },
   "contact.fax": { "en": "Fax", "es": "Fax" },
   "contact.email": { "en": "Email", "es": "Correo electrónico" },
