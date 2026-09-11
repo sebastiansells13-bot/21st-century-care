@@ -70,11 +70,26 @@ Keep it up to date as the site diverges from the template.
   `services.njk` prefer that instead. Add a new keyword pair there before falling back
   to the generic "✨" for a service that doesn't match anything.
 - **Crisis resources**: `components/crisis-callout.njk` (911 / 988 Suicide & Crisis
-  Lifeline / SAMHSA National Helpline) is included on Services and Contact. This is
-  general public-safety information, not claimed as 21st Century Care's own hotline —
-  don't reword it to imply otherwise, and don't remove it without a reason beyond
-  "the flyer didn't mention it" (it's standard duty-of-care content for a
-  behavioral-health-adjacent site, independent of what's on the flyer).
+  Lifeline / Crisis Text Line / SAMHSA National Helpline) is included on Services,
+  Contact, and Resources. This is general public-safety information, not claimed as
+  21st Century Care's own hotline — don't reword it to imply otherwise, and don't
+  remove it without a reason beyond "the flyer didn't mention it" (it's standard
+  duty-of-care content for a behavioral-health-adjacent site, independent of what's
+  on the flyer). The Crisis Text Line entry (741741) was added from the real
+  "Guide to Mental Wellness" pamphlet — see the Resources page note below.
+- **Resources page** (`src/resources.njk`, `/resources/`): "A Guide to Mental
+  Wellness," transcribed and lightly edited from a real scanned pamphlet the client
+  presents to families (kept on file — ask before re-scanning/re-transcribing it).
+  Unlike Team/Testimonials/Careers, this is **real client content, not a
+  placeholder** — no `.sample-tag`. Two intentional edits from the source pamphlet:
+  the legacy "1-800-273-TALK (8255)" Lifeline number was replaced with the current
+  988 short code (via the shared crisis-callout, which already used 988), and the
+  garbled survey-statistic sentence was rewritten for clarity while keeping the same
+  41%/31% figures and citation. Fully bilingual (see "Spanish-language toggle"
+  below) except the closing Sources paragraph, which stays English-only (citation
+  text, lower priority than the actionable content above it). `legalName` in
+  `business.json` ("21st Century Care, LLC") — this page's Sources line and the
+  footer copyright are the two places it's used instead of the shorter `name`.
 - **Favicon/fonts**: `src/_includes/favicons/favicon.svg` (+ rasterized PNGs) is
   original artwork, not traced from the flyer's photographed logo — see CREDITS.md.
   Headings use Google Fonts "Poppins" (loaded in `base.njk`); body text stays the

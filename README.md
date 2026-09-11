@@ -37,6 +37,9 @@ publicizing this site or its live URL to real prospective clients.**
 - An FAQ page, a "How to Get Started" walkthrough, an Accessibility statement, a
   Careers page, a downloadable referral-form PDF, footer social links, and a
   homepage testimonials section — see `AGENTS.md`'s architecture notes for each
+- A Resources page (`/resources/`), "A Guide to Mental Wellness" — real content
+  transcribed from the client's own printed pamphlet, not a placeholder. See
+  `AGENTS.md`'s "Resources page" note before editing hotline numbers or figures
 - A full English/Spanish language toggle in the header (see `AGENTS.md`'s
   "Spanish-language toggle") covering the site's static chrome and hardcoded
   copy — not CMS-edited content, which stays single-language
