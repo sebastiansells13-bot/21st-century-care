@@ -1,0 +1,290 @@
+---
+layout: layouts/page.njk
+title: Resources
+permalink: /resources/
+ogImage: /img/hero/organ-mountains-hero.jpg
+---
+{% from "macros/bilingual.njk" import bilingual %}
+
+{#
+  Adapted from 21st Century Care's own printed handout, "A Guide to Mental
+  Wellness" (scanned copy on file) — real client content, not placeholder.
+  See AGENTS.md's "Resources page" note for sourcing/update details before
+  editing the figures or hotline numbers here.
+#}
+
+{% set introEn %}The way adolescents spend their time can strongly influence their health later in life. For youth to maintain a healthy future, they need plenty of sleep, good nutrition, regular exercise, and time to form healthy relationships with family, friends, and caring adults. The amount of time they spend on screens and social media can also influence their development and their relationships with peers and adults. The time adolescents spend in school and in after-school activities with peers and adults can advance healthy academic, emotional, social, and physical development and overall well-being.{% endset %}
+{% set introEs %}La forma en que los adolescentes pasan su tiempo puede influir fuertemente en su salud más adelante en la vida. Para mantener un futuro saludable, los jóvenes necesitan suficiente sueño, buena nutrición, ejercicio regular y tiempo para formar relaciones saludables con la familia, los amigos y adultos que se preocupan por ellos. La cantidad de tiempo que pasan frente a pantallas y en redes sociales también puede influir en su desarrollo y en sus relaciones con compañeros y adultos. El tiempo que los adolescentes pasan en la escuela y en actividades después de clases con compañeros y adultos puede impulsar un desarrollo académico, emocional, social y físico saludable, así como su bienestar general.{% endset %}
+
+{% set whatIsEn %}Depression (major depressive disorder) is a medical illness that can interfere with your ability to handle daily activities, such as sleeping, eating, or managing schoolwork. Depression is common, but that doesn't mean it isn't serious. It can happen at any age, but symptoms often begin in the teens, early 20s, or 30s, and it can occur along with other health conditions, such as substance use.{% endset %}
+{% set whatIsEs %}La depresión (trastorno depresivo mayor) es una enfermedad médica que puede interferir con la capacidad de manejar las actividades diarias, como dormir, comer o cumplir con las tareas escolares. La depresión es común, pero eso no significa que no sea grave. Puede ocurrir a cualquier edad, aunque los síntomas suelen comenzar en la adolescencia, a los veintitantos o a los treinta años, y puede presentarse junto con otras afecciones de salud, como el uso de sustancias.{% endset %}
+
+{% set statEn %}A recent survey found that 41% of female students and 31% of male students consistently experienced symptoms of depression and anxiety over a 12-month period.<sup>†</sup> It's more common than it might feel — you are not alone, and it's treatable.{% endset %}
+{% set statEs %}Una encuesta reciente encontró que el 41% de las estudiantes mujeres y el 31% de los estudiantes hombres experimentaron síntomas constantes de depresión y ansiedad durante un período de 12 meses.<sup>†</sup> Es más común de lo que parece — no está solo o sola, y tiene tratamiento.{% endset %}
+
+{% set symptomListEn %}<ul class="symptom-list">
+<li>Do you constantly feel sad, anxious, or "empty," like you feel nothing?</li>
+<li>Do you feel hopeless, or like everything is going wrong?</li>
+<li>Do you feel worthless, or like a burden to others?</li>
+<li>Do you feel guilty about things without a clear reason?</li>
+<li>Do you find yourself withdrawing from friends and family?</li>
+<li>Do you feel irritable much of the time?</li>
+<li>Have you lost interest in activities and hobbies you used to enjoy?</li>
+<li>Are your grades dropping?</li>
+<li>Have you lost or gained weight recently without meaning to?</li>
+<li>Do you have unexplained aches, headaches, cramps, or stomach problems?</li>
+<li>Do you have trouble making decisions, remembering things, or concentrating?</li>
+<li>Do you feel restless, or have trouble sitting still?</li>
+<li>Do you always feel tired, or have less energy than usual?</li>
+<li>Have you ever tried to harm yourself?</li>
+</ul>{% endset %}
+{% set symptomListEs %}<ul class="symptom-list">
+<li>¿Se siente constantemente triste, ansioso o "vacío," como si no sintiera nada?</li>
+<li>¿Se siente sin esperanza, o como si todo estuviera saliendo mal?</li>
+<li>¿Se siente inútil, o como una carga para los demás?</li>
+<li>¿Se siente culpable por cosas sin una razón clara?</li>
+<li>¿Se encuentra alejándose de amigos y familiares?</li>
+<li>¿Se siente irritable la mayor parte del tiempo?</li>
+<li>¿Ha perdido interés en actividades y pasatiempos que solía disfrutar?</li>
+<li>¿Están bajando sus calificaciones?</li>
+<li>¿Ha perdido o subido de peso recientemente sin proponérselo?</li>
+<li>¿Tiene dolores, dolores de cabeza, calambres o problemas estomacales sin explicación?</li>
+<li>¿Tiene dificultad para tomar decisiones, recordar cosas o concentrarse?</li>
+<li>¿Se siente inquieto, o le cuesta quedarse quieto?</li>
+<li>¿Se siente cansado todo el tiempo, o con menos energía de lo normal?</li>
+<li>¿Alguna vez ha intentado hacerse daño?</li>
+</ul>{% endset %}
+
+{% set step1TitleEn %}Reach out to someone you trust{% endset %}
+{% set step1TitleEs %}Comuníquese con alguien de confianza{% endset %}
+{% set step2TitleEn %}See a doctor{% endset %}
+{% set step2TitleEs %}Consulte a un médico{% endset %}
+
+{% set yesNoteEn %}If you answered <strong>yes</strong> to that last question, please don't wait — see <a href="#crisis">what to do if someone is considering suicide</a> below, for yourself or for someone else.{% endset %}
+{% set yesNoteEs %}Si respondió <strong>sí</strong> a esa última pregunta, por favor no espere — consulte <a href="#crisis">qué hacer si alguien está pensando en el suicidio</a> más abajo, ya sea para usted o para alguien más.{% endset %}
+
+{% set step1BodyEn %}Talk to a trusted parent or guardian, teacher, or school counselor. If talking to an adult doesn't feel comfortable yet, start with a friend.{% endset %}
+{% set step1BodyEs %}Hable con un padre, madre o tutor de confianza, un maestro o un consejero escolar. Si todavía no se siente cómodo hablando con un adulto, empiece con un amigo.{% endset %}
+
+{% set step2BodyEn %}If you're under 18, ask your parent or guardian to schedule an evaluation with your doctor, who can rule out a physical cause and, if needed, refer you to a psychiatrist, counselor, psychologist, or therapist who can diagnose and treat depression.{% endset %}
+{% set step2BodyEs %}Si es menor de 18 años, pídale a su padre, madre o tutor que programe una evaluación con su médico, quien puede descartar una causa física y, de ser necesario, referirlo a un psiquiatra, consejero, psicólogo o terapeuta que pueda diagnosticar y tratar la depresión.{% endset %}
+
+{% set txt4helpEn %}National Safe Place's <strong>TXT 4 HELP</strong> line connects you with a live advisor by text — text <strong>"safe"</strong> plus your current location to <a href="sms:44357&amp;body=safe">4HELP (44357)</a>. Learn more at <a href="https://www.nationalsafeplace.org" target="_blank" rel="noopener">nationalsafeplace.org</a>.{% endset %}
+{% set txt4helpEs %}La línea <strong>TXT 4 HELP</strong> de National Safe Place le conecta con un asesor en tiempo real por mensaje de texto — envíe la palabra <strong>"safe"</strong> junto con su ubicación actual al <a href="sms:44357&amp;body=safe">4HELP (44357)</a>. Más información en <a href="https://www.nationalsafeplace.org" target="_blank" rel="noopener">nationalsafeplace.org</a>.{% endset %}
+
+{% set manageIntroEn %}Treatment takes time to work. In the meantime:{% endset %}
+{% set manageIntroEs %}El tratamiento toma tiempo para funcionar. Mientras tanto:{% endset %}
+
+{% set manageListEn %}<ul>
+<li>Stay active — even a short walk helps.</li>
+<li>Try to keep a regular sleep schedule.</li>
+<li>Spend time with friends and family.</li>
+<li>Break tasks down into smaller steps, and tackle them one at a time.</li>
+</ul>{% endset %}
+{% set manageListEs %}<ul>
+<li>Manténgase activo — hasta una caminata corta ayuda.</li>
+<li>Trate de mantener un horario de sueño regular.</li>
+<li>Pase tiempo con amigos y familiares.</li>
+<li>Divida las tareas en pasos más pequeños, y aborde uno a la vez.</li>
+</ul>{% endset %}
+
+{% set helpFriendIntroEn %}If you think a friend or someone you know might have depression, help them talk to a trusted adult and connect with a health professional — remind them that asking for help is a sign of strength, not weakness. You can also:{% endset %}
+{% set helpFriendIntroEs %}Si cree que un amigo o alguien que conoce podría tener depresión, ayúdelo a hablar con un adulto de confianza y a conectarse con un profesional de la salud — recuérdele que pedir ayuda es una señal de fortaleza, no de debilidad. También puede:{% endset %}
+
+{% set helpFriendListEn %}<ul>
+<li>Be supportive, patient, and encouraging, even if you don't fully understand what they're going through.</li>
+<li>Invite them to activities, social events, or just to hang out — don't let them isolate.</li>
+<li>Never ignore comments about death or suicide, even if they seem like a joke or "not serious." Take them seriously every time.</li>
+<li>Talk to a trusted adult — a parent, teacher, or older sibling — as soon as you can if it seems serious. You don't have to handle it alone either.</li>
+</ul>{% endset %}
+{% set helpFriendListEs %}<ul>
+<li>Sea comprensivo, paciente y alentador, aunque no entienda completamente lo que está pasando.</li>
+<li>Invítelo a actividades, eventos sociales, o simplemente a pasar tiempo juntos — no permita que se aísle.</li>
+<li>Nunca ignore comentarios sobre la muerte o el suicidio, aunque parezcan una broma o algo "no en serio." Tómelos en serio siempre.</li>
+<li>Hable con un adulto de confianza — un padre, maestro o hermano mayor — tan pronto como pueda si la situación parece grave. Usted tampoco tiene que manejarlo solo.</li>
+</ul>{% endset %}
+
+{% set samDescEn %}Self-help tools and information to help you understand and manage anxiety.{% endset %}
+{% set samDescEs %}Herramientas e información de autoayuda para comprender y manejar la ansiedad.{% endset %}
+{% set talklifeDescEn %}A large peer-support network for anyone working through a mental health struggle.{% endset %}
+{% set talklifeDescEs %}Una amplia red de apoyo entre pares para cualquier persona que esté superando una dificultad de salud mental.{% endset %}
+{% set dqDescEn %}An interactive experience illustrating how depression can affect someone's choices and daily life.{% endset %}
+{% set dqDescEs %}Una experiencia interactiva que ilustra cómo la depresión puede afectar las decisiones y la vida diaria de una persona.{% endset %}
+{% set lumosityDescEn %}Games designed to help strengthen cognitive abilities.{% endset %}
+{% set lumosityDescEs %}Juegos diseñados para ayudar a fortalecer las habilidades cognitivas.{% endset %}
+{% set superbetterDescEn %}Tools to help build resilience — the ability to stay strong, motivated, and optimistic through difficult obstacles.{% endset %}
+{% set superbetterDescEs %}Herramientas para ayudar a desarrollar resiliencia — la capacidad de mantenerse fuerte, motivado y optimista ante obstáculos difíciles.{% endset %}
+
+{% set appsIntroEn %}These apps (Android and iOS) are mentioned in our printed guide as extra support between appointments — they don't replace professional care:{% endset %}
+{% set appsIntroEs %}Estas aplicaciones (Android y iOS) se mencionan en nuestra guía impresa como apoyo adicional entre citas — no reemplazan la atención profesional:{% endset %}
+
+{% set suicideIntroEn %}Family and friends are often the first to recognize the warning signs of suicide, and can take the first step toward helping someone find help. If someone tells you they're thinking about ending their life:{% endset %}
+{% set suicideIntroEs %}La familia y los amigos suelen ser los primeros en reconocer las señales de advertencia del suicidio, y pueden dar el primer paso para ayudar a alguien a encontrar ayuda. Si alguien le dice que está pensando en quitarse la vida:{% endset %}
+
+{% set suicideListEn %}<ul>
+<li>Don't leave them alone.</li>
+<li>Don't promise to keep it a secret. Tell a trusted friend, family member, or another adult right away.</li>
+</ul>{% endset %}
+{% set suicideListEs %}<ul>
+<li>No lo deje solo.</li>
+<li>No prometa guardarlo en secreto. Avise de inmediato a un amigo de confianza, un familiar u otro adulto.</li>
+</ul>{% endset %}
+
+{% set socialIntroEn %}If you see messages or a livestream showing suicidal behavior, call 911 immediately — then use the Lifeline or Crisis Text Line above too. Most major platforms also have their own reporting tools for exactly this (search terms below are in English, since that's what each platform's help center uses):{% endset %}
+{% set socialIntroEs %}Si ve mensajes o una transmisión en vivo que muestre comportamiento suicida, llame al 911 de inmediato — y también use la Línea de Ayuda o la Línea de Texto de Crisis mencionadas arriba. La mayoría de las plataformas principales también tienen sus propias herramientas para reportar justamente esto (los términos de búsqueda abajo están en inglés, ya que es lo que usa el centro de ayuda de cada plataforma):{% endset %}
+
+{% set socialListEn %}<ul>
+<li><strong>Facebook</strong> — search "suicide prevention" at <a href="https://www.facebook.com/help" target="_blank" rel="noopener">facebook.com/help</a>.</li>
+<li><strong>Instagram</strong> — search "suicide," "self-harm," or "suicide prevention" at <a href="https://help.instagram.com" target="_blank" rel="noopener">help.instagram.com</a>.</li>
+<li><strong>Snapchat</strong> — search "suicide" or "suicide prevention" at <a href="https://support.snapchat.com" target="_blank" rel="noopener">support.snapchat.com</a>.</li>
+<li><strong>X (Twitter)</strong> — search "suicide," "self-harm," or "suicide prevention" at <a href="https://support.twitter.com" target="_blank" rel="noopener">support.twitter.com</a>.</li>
+<li><strong>YouTube</strong> — search "suicide and self-injury" at <a href="https://support.google.com/youtube" target="_blank" rel="noopener">support.google.com/youtube</a>.</li>
+</ul>{% endset %}
+{% set socialListEs %}<ul>
+<li><strong>Facebook</strong> — busque "suicide prevention" en <a href="https://www.facebook.com/help" target="_blank" rel="noopener">facebook.com/help</a>.</li>
+<li><strong>Instagram</strong> — busque "suicide," "self-harm," o "suicide prevention" en <a href="https://help.instagram.com" target="_blank" rel="noopener">help.instagram.com</a>.</li>
+<li><strong>Snapchat</strong> — busque "suicide" o "suicide prevention" en <a href="https://support.snapchat.com" target="_blank" rel="noopener">support.snapchat.com</a>.</li>
+<li><strong>X (Twitter)</strong> — busque "suicide," "self-harm," o "suicide prevention" en <a href="https://support.twitter.com" target="_blank" rel="noopener">support.twitter.com</a>.</li>
+<li><strong>YouTube</strong> — busque "suicide and self-injury" en <a href="https://support.google.com/youtube" target="_blank" rel="noopener">support.google.com/youtube</a>.</li>
+</ul>{% endset %}
+
+{% set socialClosingEn %}These platform tools can take time to respond. Don't wait on them — call 911 first if someone is in immediate danger. Even a stranger stepping in has saved lives.{% endset %}
+{% set socialClosingEs %}Estas herramientas de las plataformas pueden tardar en responder. No espere a que actúen — llame al 911 primero si alguien está en peligro inmediato. Incluso un desconocido que interviene ha salvado vidas.{% endset %}
+
+<div class="hero">
+  <div class="wrapper">
+    <h1 data-i18n="resources.heading">A Guide to Mental Wellness</h1>
+    <p data-i18n="resources.subtitle">For students, families, and anyone who wants to know the signs and how to help.</p>
+  </div>
+</div>
+
+<div class="section">
+  <div class="wrapper">
+    {{ bilingual(introEn, introEs, tag="p", isSafe=true) }}
+  </div>
+</div>
+
+<div class="section section--tint-blue">
+  <div class="wrapper">
+    <h2 data-i18n="resources.signsHeading">What Are the Signs and Symptoms of Depression?</h2>
+    {{ bilingual(symptomListEn, symptomListEs, tag="div", isSafe=true) }}
+    {{ bilingual(statEn, statEs, tag="p", isSafe=true) }}
+    <div class="callout--note">
+      {{ bilingual(yesNoteEn, yesNoteEs, tag="p", isSafe=true) }}
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="wrapper">
+    <h2 data-i18n="resources.whatIsHeading">What Is Depression?</h2>
+    {{ bilingual(whatIsEn, whatIsEs, tag="p", isSafe=true) }}
+  </div>
+</div>
+
+<div class="section section--tint-green">
+  <div class="wrapper">
+    <h2 data-i18n="resources.studentStepsHeading">What Should a Student Do If They Have Depression?</h2>
+    <ol class="steps">
+      <li class="steps__item">
+        <span class="steps__number">1</span>
+        <div>
+          <h3>{{ bilingual(step1TitleEn, step1TitleEs) }}</h3>
+          {{ bilingual(step1BodyEn, step1BodyEs, tag="p", isSafe=true) }}
+        </div>
+      </li>
+      <li class="steps__item">
+        <span class="steps__number">2</span>
+        <div>
+          <h3>{{ bilingual(step2TitleEn, step2TitleEs) }}</h3>
+          {{ bilingual(step2BodyEn, step2BodyEs, tag="p", isSafe=true) }}
+        </div>
+      </li>
+    </ol>
+    {{ bilingual(txt4helpEn, txt4helpEs, tag="p", isSafe=true) }}
+  </div>
+</div>
+
+<div class="section">
+  <div class="wrapper">
+    <h2 data-i18n="resources.manageHeading">What Else Can a Student Do to Manage Depression?</h2>
+    {{ bilingual(manageIntroEn, manageIntroEs, tag="p", isSafe=true) }}
+    {{ bilingual(manageListEn, manageListEs, tag="div", isSafe=true) }}
+  </div>
+</div>
+
+<div class="section section--tint-warm">
+  <div class="wrapper">
+    <h2 data-i18n="resources.helpFriendHeading">What Can I Do If Someone I Know Might Have Depression?</h2>
+    {{ bilingual(helpFriendIntroEn, helpFriendIntroEs, tag="p", isSafe=true) }}
+    {{ bilingual(helpFriendListEn, helpFriendListEs, tag="div", isSafe=true) }}
+  </div>
+</div>
+
+<div class="section">
+  <div class="wrapper">
+    <h2 data-i18n="resources.appsHeading">Helpful Apps for Anxiety Management</h2>
+    {{ bilingual(appsIntroEn, appsIntroEs, tag="p", isSafe=true) }}
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="service-card__badge">🧠</span>
+        <h3>SAM: Self-Help for Anxiety Management</h3>
+        {{ bilingual(samDescEn, samDescEs, tag="p", isSafe=true) }}
+      </div>
+      <div class="service-card">
+        <span class="service-card__badge">💬</span>
+        <h3>TalkLife</h3>
+        {{ bilingual(talklifeDescEn, talklifeDescEs, tag="p", isSafe=true) }}
+      </div>
+      <div class="service-card">
+        <span class="service-card__badge">🎮</span>
+        <h3>Depression Quest</h3>
+        {{ bilingual(dqDescEn, dqDescEs, tag="p", isSafe=true) }}
+      </div>
+      <div class="service-card">
+        <span class="service-card__badge">🧩</span>
+        <h3>Lumosity</h3>
+        {{ bilingual(lumosityDescEn, lumosityDescEs, tag="p", isSafe=true) }}
+      </div>
+      <div class="service-card">
+        <span class="service-card__badge">🌱</span>
+        <h3>SuperBetter</h3>
+        {{ bilingual(superbetterDescEn, superbetterDescEs, tag="p", isSafe=true) }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="crisis" class="section section--tint-blue">
+  <div class="wrapper">
+    <h2 data-i18n="resources.suicideHeading">What Should I Do If Someone I Know Is Considering Suicide?</h2>
+    {{ bilingual(suicideIntroEn, suicideIntroEs, tag="p", isSafe=true) }}
+    {{ bilingual(suicideListEn, suicideListEs, tag="div", isSafe=true) }}
+  </div>
+</div>
+
+{% include "components/crisis-callout.njk" %}
+
+<div class="section">
+  <div class="wrapper">
+    <h2 data-i18n="resources.socialHeading">Worried About a Post on Social Media?</h2>
+    {{ bilingual(socialIntroEn, socialIntroEs, tag="p", isSafe=true) }}
+    {{ bilingual(socialListEn, socialListEs, tag="div", isSafe=true) }}
+    {{ bilingual(socialClosingEn, socialClosingEs, tag="p", isSafe=true) }}
+  </div>
+</div>
+
+<div class="section section--tint-green">
+  <div class="wrapper">
+    <h2 data-i18n="resources.sourcesHeading">Sources</h2>
+    <p class="sources-note">
+      Adapted from {{ business.legalName or business.name }}'s printed patient-education
+      handout, <em>"A Guide to Mental Wellness."</em> Cited sources: Centers for Disease
+      Control and Prevention, Youth Risk Behavior Surveillance System; National Institute
+      of Mental Health, <a href="https://www.nimh.nih.gov/health/publications/teen-depression" target="_blank" rel="noopener">"Teen Depression"</a>;
+      Child Mind Institute, "A Day in the Life of a High School Teen." This page is
+      educational information, not a diagnosis or a substitute for professional care —
+      see a doctor or licensed mental health professional for that.
+    </p>
+  </div>
+</div>

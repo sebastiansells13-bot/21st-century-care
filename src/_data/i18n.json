@@ -6,6 +6,7 @@
   "nav.blog": { "en": "Blog", "es": "Blog" },
   "nav.careers": { "en": "Careers", "es": "Empleos" },
   "nav.contact": { "en": "Contact", "es": "Contacto" },
+  "nav.resources": { "en": "Resources", "es": "Recursos" },
 
   "skip.toContent": { "en": "Skip to content", "es": "Saltar al contenido" },
   "footer.accessibility": { "en": "Accessibility", "es": "Accesibilidad" },
@@ -95,6 +96,21 @@
 
   "insurance.heading": { "en": "Insurance & Payment", "es": "Seguro y Pago" },
   "crisis.heading": { "en": "In crisis right now?", "es": "¿Está en crisis ahora mismo?" },
+
+  "resources.heading": { "en": "A Guide to Mental Wellness", "es": "Una Guía para el Bienestar Mental" },
+  "resources.subtitle": {
+    "en": "For students, families, and anyone who wants to know the signs and how to help.",
+    "es": "Para estudiantes, familias y cualquier persona que quiera conocer las señales y cómo ayudar."
+  },
+  "resources.signsHeading": { "en": "What Are the Signs and Symptoms of Depression?", "es": "¿Cuáles Son las Señales y Síntomas de la Depresión?" },
+  "resources.whatIsHeading": { "en": "What Is Depression?", "es": "¿Qué Es la Depresión?" },
+  "resources.studentStepsHeading": { "en": "What Should a Student Do If They Have Depression?", "es": "¿Qué Debe Hacer un Estudiante Si Tiene Depresión?" },
+  "resources.manageHeading": { "en": "What Else Can a Student Do to Manage Depression?", "es": "¿Qué Más Puede Hacer un Estudiante Para Manejar la Depresión?" },
+  "resources.helpFriendHeading": { "en": "What Can I Do If Someone I Know Might Have Depression?", "es": "¿Qué Puedo Hacer Si Alguien Que Conozco Podría Tener Depresión?" },
+  "resources.appsHeading": { "en": "Helpful Apps for Anxiety Management", "es": "Aplicaciones Útiles para Manejar la Ansiedad" },
+  "resources.suicideHeading": { "en": "What Should I Do If Someone I Know Is Considering Suicide?", "es": "¿Qué Debo Hacer Si Alguien Que Conozco Está Pensando en el Suicidio?" },
+  "resources.socialHeading": { "en": "Worried About a Post on Social Media?", "es": "¿Le Preocupa una Publicación en Redes Sociales?" },
+  "resources.sourcesHeading": { "en": "Sources", "es": "Fuentes" },
 
   "notFound.heading": { "en": "Page not found", "es": "Página no encontrada" },
   "notFound.body": { "en": "Sorry, that page doesn't exist.", "es": "Lo sentimos, esa página no existe." }

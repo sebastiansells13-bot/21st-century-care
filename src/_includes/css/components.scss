@@ -381,6 +381,52 @@
   }
 }
 
+// A gentler cousin of .callout--crisis — points a reader from "here's a sign
+// you might recognize" toward the crisis resources below, without the full
+// safety-red urgency (this is a nudge, not an alarm). See resources.njk.
+.callout--note {
+  border-left: 4px solid $color-accent-warm;
+  background: $color-accent-warm-tint;
+  border-radius: 0 0.5rem 0.5rem 0;
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+
+  p {
+    margin: 0;
+  }
+
+  a {
+    font-weight: 600;
+  }
+}
+
+// Two-column checklist of yes/no questions (resources.njk's "signs and
+// symptoms" list) — plain list styling would read as a wall of text at 14
+// items; this gives each question room and a consistent marker.
+.symptom-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 0.5rem 1.5rem;
+  margin: 1.5rem 0;
+  padding: 0;
+
+  li {
+    position: relative;
+    padding-left: 1.5rem;
+    color: $color-text;
+
+    &::before {
+      content: "?";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: $color-accent-blue;
+      font-weight: 700;
+    }
+  }
+}
+
 // "Ready to get started" band on the homepage — a full-width colored strip
 // distinct from the tinted sections above, so the final CTA stands out.
 .cta-band {
