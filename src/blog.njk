@@ -2,13 +2,15 @@
 layout: layouts/page.njk
 title: Blog
 permalink: /blog/
+description: News and updates from 21st Century Care.
 ---
 <div class="hero">
   <div class="wrapper">
-    <h1>Blog</h1>
+    <h1 data-i18n="blog.heading">Blog</h1>
   </div>
 </div>
 <div class="wrapper">
+  {% if collections.posts.length %}
   <ul class="post-list">
     {% for post in collections.posts | reverse %}
     <li>
@@ -17,4 +19,7 @@ permalink: /blog/
     </li>
     {% endfor %}
   </ul>
+  {% else %}
+  <p class="empty-state" data-i18n="blog.empty">No posts yet — check back soon.</p>
+  {% endif %}
 </div>
