@@ -4,6 +4,8 @@
   "nav.services": { "en": "Services", "es": "Servicios" },
   "nav.faq": { "en": "FAQ", "es": "Preguntas Frecuentes" },
   "nav.blog": { "en": "Blog", "es": "Blog" },
+  "blog.heading": { "en": "Blog", "es": "Blog" },
+  "blog.empty": { "en": "No posts yet — check back soon.", "es": "Todavía no hay publicaciones — vuelva pronto." },
   "nav.careers": { "en": "Careers", "es": "Empleos" },
   "nav.contact": { "en": "Contact", "es": "Contacto" },
   "nav.resources": { "en": "Resources", "es": "Recursos" },

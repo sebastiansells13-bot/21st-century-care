@@ -97,6 +97,20 @@ Keep it up to date as the site diverges from the template.
 - **Social share image**: `base.njk`'s Open Graph/Twitter tags default to the
   homepage hero photo; a page can override it with an `ogImage: /img/...` front-matter
   value (About/Services/Contact all do — see their own hero photo).
+- **Meta descriptions**: every page sets its own `description:` front-matter value
+  (falls back to `business.tagline`, then `metadata.description`, per `base.njk`) —
+  don't let two pages share one again, search engines show a duplicate description
+  as a real quality signal against the site.
+- **Hero/photo source sizes**: the four hero/about photos are saved at 1600px wide
+  (not their Commons originals) specifically to keep the webp CI output reasonable
+  (each was ~300–450KB before this pass, now under it) — don't re-import a photo at
+  its full multi-thousand-pixel original width without re-checking the built webp
+  size in `docs/img/` after a build.
+- **No blog posts yet**: `src/posts/` ships with no posts (the starter's default
+  "sample blog post" — which told visitors to "edit or delete it from the Pages
+  CMS" — was removed; that sentence was live and public). `blog.njk` shows a plain
+  "No posts yet" state instead. Don't add a placeholder/sample post back in its
+  place — either a real post or nothing.
 - **`siteUrl` vs. `siteOrigin`**: both are global data defined once in
   `eleventy.config.cjs` so the absolute GitHub Pages project URL isn't hardcoded
   separately in four files. `siteUrl` already includes the `/21st-century-care` path
@@ -206,12 +220,13 @@ for real information about this business without the client confirming it first:
 - **Careers listings** (`src/careers.njk`) — "Community Support Worker" and
   "Certified Peer Support Specialist" are sample job postings, not confirmed open
   positions.
-- **Social handles** (`business.social` in `business.json`) — "21stcenturycarenm"
-  (Instagram) and "21stCenturyCareNM" (Facebook) are placeholder handles chosen to
-  be unlikely to collide with an unrelated real account, but they are NOT verified
-  to belong to this business. Confirm the client's actual handles (or that these
-  don't already belong to someone else) before treating the footer icons as real,
-  working links.
+- **Social handles** (`business.social` in `business.json`) — left empty on
+  purpose (the footer already skips an icon when its handle is empty, same
+  pattern as `team.list`/`testimonials.list`). A first guess
+  ("21stcenturycarenm" / "21stCenturyCareNM") was tried and reverted after
+  confirming those handles don't belong to this business — real ones don't
+  exist to link to yet, and a dead 404 behind a footer icon reads worse in a
+  client demo than no icon at all. Fill in real handles once the client has them.
 - **Email address** (`business.email`) — `info@21stcenturycarenm.com` is invented;
   the original flyer had no email address at all.
 - **"How to Get Started" steps** (`components/get-started-steps.njk`) and the
