@@ -25,6 +25,15 @@
     align-items: center;
     flex-wrap: wrap;
     gap: 1.25rem;
+    margin-left: auto;
+  }
+
+  // Language toggle + (on phones) the Menu button. Kept outside <nav> so
+  // EN/ES stays one tap away even while the menu is collapsed.
+  .site-header__actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
   }
 
   nav ul {
@@ -46,6 +55,104 @@
     &.is-active {
       color: $color-accent;
       border-bottom-color: $color-accent;
+    }
+  }
+
+  // Menu button: hidden on wide screens and whenever JS is off (nav.js adds
+  // .js to <html>), so the nav never ends up unreachable. Below 67.5rem the
+  // 8-link nav wraps (three rows on a phone, pushing the hero a third of the
+  // way down the screen; two rows on a tablet in Spanish, whose labels are
+  // longer), so it collapses behind this button instead.
+  .nav-toggle {
+    display: none;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid $color-border;
+    border-radius: 999px;
+    background: #fff;
+    color: $color-text;
+    font: inherit;
+    font-weight: 600;
+    padding: 0.4rem 0.9rem;
+    cursor: pointer;
+  }
+
+  .nav-toggle__bars {
+    position: relative;
+    width: 1rem;
+    height: 2px;
+    background: currentColor;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: currentColor;
+    }
+
+    &::before {
+      top: -5px;
+    }
+
+    &::after {
+      top: 5px;
+    }
+  }
+
+  @media (max-width: 67.5rem) {
+    .js & .nav-toggle {
+      display: inline-flex;
+    }
+
+    .js & nav {
+      display: none;
+      order: 3;
+      flex-basis: 100%;
+      margin-left: 0;
+      padding-top: 0.5rem;
+    }
+
+    .js &.is-open nav {
+      display: flex;
+    }
+
+    .js & nav ul {
+      flex-direction: column;
+      gap: 0.25rem;
+      width: 100%;
+    }
+
+    .js & nav ul a {
+      display: inline-block;
+      padding: 0.5rem 0 0.3rem;
+    }
+  }
+
+  // Small phones: shrink the wordmark and drop the word "Menu" (it stays as
+  // the button's accessible name) so brand + EN/ES + menu fit on one row.
+  @media (max-width: 30rem) {
+    .site-header__brand {
+      font-size: 1.1rem;
+    }
+
+    .site-header__actions {
+      gap: 0.5rem;
+    }
+
+    .js & .nav-toggle {
+      padding: 0.55rem 0.7rem;
+    }
+
+    .js & .nav-toggle__label {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
     }
   }
 
@@ -81,7 +188,6 @@
 
 .site-footer {
   border-top: 1px solid $color-border;
-  margin-top: 4rem;
   padding: 2rem 0;
   color: $color-muted;
   font-size: 0.9rem;
@@ -119,7 +225,7 @@
 
   h1 {
     font-family: $font-heading;
-    font-size: 2.75rem;
+    font-size: clamp(2rem, 6vw, 2.75rem);
     margin-bottom: 0.5rem;
     color: $color-text;
   }
@@ -127,6 +233,9 @@
   p {
     color: $color-muted;
     font-size: 1.125rem;
+    max-width: 40rem;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -187,7 +296,7 @@
 
   h1 {
     font-family: $font-heading;
-    font-size: 2.75rem;
+    font-size: clamp(2rem, 6vw, 2.75rem);
     margin-bottom: 0.5rem;
     color: #fff;
     text-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
@@ -208,6 +317,22 @@
     width: 100%;
     height: 3.5rem;
     display: block;
+    color: $color-bg;
+  }
+
+  // Match the wave to whatever section sits directly under the hero, so a
+  // tinted first section doesn't get a white stripe between it and the wave.
+  // Set `waveTint` before including hero-wave.njk (see index.njk).
+  .hero__wave--green {
+    color: $color-accent-tint;
+  }
+
+  .hero__wave--blue {
+    color: $color-accent-blue-tint;
+  }
+
+  .hero__wave--warm {
+    color: $color-accent-warm-tint;
   }
 }
 
@@ -229,6 +354,24 @@
   padding: 3rem 0;
 }
 
+// Long paragraphs ran the full 72rem wrapper (~170 characters a line on a
+// desktop), which is hard to read. Cards/grids are unaffected — only
+// paragraphs sitting directly in a section's wrapper.
+.section > .wrapper > p {
+  max-width: 70ch;
+}
+
+// Homepage intro under the hero: a short summary, centered and a size up
+// so it reads as a lead-in rather than a stray paragraph.
+.section--intro {
+  text-align: center;
+
+  p {
+    font-size: 1.15rem;
+    margin: 0 auto;
+  }
+}
+
 // Services page: one band per service category (see the groupby loop in
 // services.njk). Padding is lighter than .section and the nested
 // .services-grid's own top/bottom padding is zeroed out, since the band
@@ -243,7 +386,8 @@
   }
 
   .services-grid {
-    padding: 1rem 0 0;
+    padding-top: 1rem;
+    padding-bottom: 0;
   }
 }
 
@@ -295,7 +439,17 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
   gap: 1.75rem;
-  padding: 2rem 0 4rem;
+  // Top/bottom only — index.njk puts this class on the same element as
+  // .wrapper, and a `padding` shorthand here wipes out .wrapper's side
+  // gutter (cards ran edge to edge on phones).
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+}
+
+// Homepage preview (6 cards): cap at three columns so it lays out 3 + 3
+// instead of 4 + 2 with an orphaned second row.
+.services-grid--preview {
+  grid-template-columns: repeat(auto-fit, minmax(max(16rem, calc((100% - 3.5rem) / 3)), 1fr));
 }
 
 .service-card {
@@ -358,12 +512,9 @@
 // to include even though the flyer itself doesn't mention it. See
 // components/crisis-callout.njk.
 .callout--crisis {
-  // Longhand top/bottom only — the markup carries both this class and
-  // .wrapper on the same element (crisis-callout.njk is included directly,
-  // with no ancestor .wrapper to center it). A `margin: 2rem 0` shorthand
-  // here would overwrite .wrapper's `margin: 0 auto` left/right values
-  // (same specificity, this rule loads later), left-pinning the box
-  // instead of centering it — this bit us once already, don't reintroduce it.
+  // crisis-callout.njk wraps this box in its own .wrapper (it used to carry
+  // both classes on one element, which left-pinned the box on desktop and
+  // put its border flush against the screen edge on phones).
   border: 1px solid rgba($color-safety, 0.35);
   background: rgba($color-safety, 0.06);
   border-radius: 0.75rem;
@@ -481,7 +632,9 @@
 }
 
 .contact-details {
-  padding: 2rem 0 4rem;
+  // Top/bottom only — contact.njk puts .wrapper on this same element.
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 
   dt {
     font-weight: 700;
@@ -548,6 +701,26 @@
     font-family: $font-heading;
     font-weight: 600;
     cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    &::after {
+      content: "+";
+      flex-shrink: 0;
+      color: $color-accent;
+      font-size: 1.25rem;
+      line-height: 1;
+    }
+  }
+
+  &[open] summary::after {
+    content: "−";
   }
 
   p {

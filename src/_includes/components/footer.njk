@@ -3,7 +3,7 @@
     <span>&copy; {% year %} {{ business.legalName or business.name or metadata.title }}</span>
     <span>
       {% if business.email %}<a href="mailto:{{ business.email }}">{{ business.email }}</a>{% endif %}
-      {% if business.phone %} · {{ business.phone }}{% endif %}
+      {% if business.phone %} · <a href="tel:{{ business.phone }}">{{ business.phone }}</a>{% endif %}
     </span>
     <span class="site-footer__links">
       <a href="/accessibility/" data-i18n="footer.accessibility">Accessibility</a>

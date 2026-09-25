@@ -9,6 +9,7 @@
   "nav.careers": { "en": "Careers", "es": "Empleos" },
   "nav.contact": { "en": "Contact", "es": "Contacto" },
   "nav.resources": { "en": "Resources", "es": "Recursos" },
+  "nav.menu": { "en": "Menu", "es": "Menú" },
 
   "skip.toContent": { "en": "Skip to content", "es": "Saltar al contenido" },
   "footer.accessibility": { "en": "Accessibility", "es": "Accesibilidad" },
@@ -115,5 +116,6 @@
   "resources.sourcesHeading": { "en": "Sources", "es": "Fuentes" },
 
   "notFound.heading": { "en": "Page not found", "es": "Página no encontrada" },
-  "notFound.body": { "en": "Sorry, that page doesn't exist.", "es": "Lo sentimos, esa página no existe." }
+  "notFound.body": { "en": "Sorry, that page doesn't exist.", "es": "Lo sentimos, esa página no existe." },
+  "notFound.goHome": { "en": "Go back home", "es": "Volver al inicio" }
 }

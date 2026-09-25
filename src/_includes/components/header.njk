@@ -1,16 +1,22 @@
 <header class="site-header">
   <div class="wrapper">
     <a class="site-header__brand" href="/">{{ business.name or metadata.title }}</a>
-    <nav aria-label="Primary">
+    <nav id="primary-nav" aria-label="Primary">
       <ul>
         {% for item in navigation %}
         <li><a href="{{ item.url }}"{% if page.url == item.url %} class="is-active" aria-current="page"{% endif %} data-i18n="{{ item.i18nKey }}">{{ item.text }}</a></li>
         {% endfor %}
       </ul>
+    </nav>
+    <div class="site-header__actions">
       <div class="lang-toggle" role="group" aria-label="Language">
         <button type="button" class="lang-toggle__btn" data-lang-toggle="en" aria-pressed="true">EN</button>
         <button type="button" class="lang-toggle__btn" data-lang-toggle="es" aria-pressed="false">ES</button>
       </div>
-    </nav>
+      <button type="button" class="nav-toggle" aria-controls="primary-nav" aria-expanded="false">
+        <span class="nav-toggle__bars" aria-hidden="true"></span>
+        <span class="nav-toggle__label" data-i18n="nav.menu">Menu</span>
+      </button>
+    </div>
   </div>
 </header>
