@@ -51,9 +51,12 @@ Keep it up to date as the site diverges from the template.
   regardless of that photo's own colors. `.hero__eyebrow` is the small pill label
   above the `<h1>` (translated via `data-i18n`, plain text only — see each page for
   its own label, e.g. "What We Offer"). `components/hero-wave.njk`, included at the
-  end of every `.hero--photo` block, draws the bottom wave edge — its fill is a
-  literal `#ffffff` (not a Sass variable, since it isn't compiled through Sass); keep
-  it in sync if `$color-bg` ever stops being white. The plain (non-photo) `.hero`
+  end of every `.hero--photo` block, draws the bottom wave edge — its path fills
+  with `currentColor`, set by `.hero__wave` in `components.scss` (`$color-bg` by
+  default). When the section right under the hero is tinted, set
+  `{% set waveTint = "green" %}` (or `"blue"`/`"warm"`) before the include so the
+  wave matches it instead of leaving a white stripe (Home and Services both do;
+  Services' value must match `tintClass(0)`, its first category band). The plain (non-photo) `.hero`
   used by About/Services-category-intro/FAQ/Careers/Accessibility/Contact-details
   doesn't have a wave — only the three photo heroes do.
 - **Service categories**: each entry in `src/_data/services.json` carries a
@@ -90,6 +93,22 @@ Keep it up to date as the site diverges from the template.
   text, lower priority than the actionable content above it). `legalName` in
   `business.json` ("21st Century Care, LLC") — this page's Sources line and the
   footer copyright are the two places it's used instead of the shorter `name`.
+- **Header / mobile menu**: below 67.5rem the nav collapses behind a "Menu"
+  button (`.nav-toggle` in `header.njk`, toggled by `src/_includes/js/nav.js`). That
+  breakpoint is where the nav stops fitting on one row **in Spanish** (longer
+  labels, e.g. "Preguntas Frecuentes"), not English — re-check it in both languages
+  if a nav item is added. The collapse CSS is gated on a `.js` class that `nav.js`
+  adds to `<html>`, so with scripts off the nav simply stays expanded. The EN/ES
+  toggle sits outside `<nav>` (in `.site-header__actions`) so it's always one tap
+  away, even with the menu closed.
+- **`.wrapper` on the same element as another class**: several components
+  (`services-grid` on the homepage, `contact-details`) share an element with
+  `.wrapper`. Give those classes longhand `padding-top`/`padding-bottom` (and
+  `margin-top`/`margin-bottom`), never the `padding`/`margin` shorthand — the
+  shorthand silently wipes out `.wrapper`'s side gutter or centering (cards and
+  contact details ran flush against the screen edge on phones because of this).
+  `crisis-callout.njk` sidesteps it entirely by nesting the box inside its own
+  `.wrapper` div.
 - **Favicon/fonts**: `src/_includes/favicons/favicon.svg` (+ rasterized PNGs) is
   original artwork, not traced from the flyer's photographed logo — see CREDITS.md.
   Headings use Google Fonts "Poppins" (loaded in `base.njk`); body text stays the

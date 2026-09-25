@@ -14,10 +14,11 @@ eleventyNavigation:
     <h1>{{ business.name }}</h1>
     <p>{{ bilingual(business.tagline, business.taglineEs) }}</p>
   </div>
+  {% set waveTint = "green" %}
   {% include "components/hero-wave.njk" %}
 </div>
 
-<div class="section section--tint-green">
+<div class="section section--tint-green section--intro">
   <div class="wrapper">
     <p data-i18n="overview.ccssPss">
       Comprehensive Community Support Services (CCSS) and Peer Support Services (PSS)
@@ -28,7 +29,7 @@ eleventyNavigation:
   </div>
 </div>
 
-<section class="services-grid wrapper">
+<section class="services-grid services-grid--preview wrapper">
   {% for service in services.list | head(6) %}
   <div class="service-card">
     {% if service.icon %}

@@ -19,6 +19,39 @@ a {
   color: $color-accent;
 }
 
+// Page content gets the bottom breathing room the footer's margin used to
+// supply — except when main ends in a full-bleed band (the homepage's CTA),
+// which should sit flush against the footer instead of leaving a white gap.
+main {
+  padding-bottom: 4rem;
+
+  &:has(> .cta-band:last-child) {
+    padding-bottom: 0;
+  }
+}
+
+// One consistent keyboard focus ring for links, buttons, and FAQ toggles.
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+  outline: 2px solid $color-accent-blue;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
+
+  .btn:hover,
+  .service-card:hover {
+    transform: none;
+  }
+}
+
 .wrapper {
   max-width: $max-width;
   margin: 0 auto;
