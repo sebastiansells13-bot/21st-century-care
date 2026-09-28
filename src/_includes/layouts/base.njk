@@ -6,7 +6,7 @@
   {% set pageImage %}{{ (ogImage or "/img/hero/organ-mountains-hero.jpg") | url }}{% endset %}
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ pageTitle }}</title>
+  <title{% if titleKey %} data-i18n-title="{{ titleKey }}"{% endif %}>{{ pageTitle }}</title>
   <meta name="description" content="{{ pageDescription }}">
   <meta property="og:type" content="website">
   <meta property="og:title" content="{{ pageTitle }}">

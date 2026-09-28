@@ -8,8 +8,8 @@
   "email": "info@21stcenturycarenm.com",
   "address": "205 N First Street, Anthony, NM 88021",
   "hours": [
-    { "days": "Monday – Friday", "time": "8:00 AM – 5:00 PM" },
-    { "days": "Saturday – Sunday", "time": "Closed" }
+    { "days": "Monday – Friday", "daysEs": "Lunes – Viernes", "time": "8:00 AM – 5:00 PM", "timeEs": "8:00 a. m. – 5:00 p. m." },
+    { "days": "Saturday – Sunday", "daysEs": "Sábado – Domingo", "time": "Closed", "timeEs": "Cerrado" }
   ],
   "social": {
     "instagram": "",
