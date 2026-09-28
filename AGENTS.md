@@ -173,12 +173,18 @@ Keep it up to date as the site diverges from the template.
     acronyms, `.sample-tag` notes, and the insurance block's bracketed
     "[Confirm which … plan(s) …]" prompt, which is an editorial placeholder for the
     client, like a `.sample-tag`.
-  - **What does NOT get translated, by design**: anything edited through the CMS
-    (the services list, FAQ answers, team bios, testimonials, blog posts) or the
-    Careers page's two sample job listings — there's no translation pipeline for
-    content that changes as often as those do, so it stays in whatever language it
-    was written in, same as any real i18n setup with a single-language content
-    source. The one exception is service **category names**: they're CMS data, but
+  - **Services and FAQ (CMS, bilingual)**: each service has optional `titleEs` /
+    `descriptionEs` fields and each FAQ entry has `questionEs` / `answerEs`, editable
+    in Pages CMS next to the English fields ("… (Spanish)"). `index.njk`,
+    `services.njk` and `faq.njk` render them through the `bilingual()` macro, so a
+    blank Spanish field falls back to showing the English. All 20 services and 6 FAQ
+    entries currently have Spanish. When adding a new bilingual CMS field, follow the
+    same `<field>Es` naming and "Leave blank to show the English" description.
+  - **What does NOT get translated, by design**: the rest of the CMS content (team
+    bios, testimonials, blog posts) and the Careers page's two sample job listings.
+    Those are still placeholders or empty, so there's nothing real to translate yet.
+    Add `*Es` fields the same way as Services/FAQ when real content arrives. The one
+    exception is service **category names**: they're CMS data, but
     a small fixed set, so `services.njk` looks each one up in `i18n.json` under
     `serviceCategory.<English name>` at build time. A category the client creates
     from the CMS with no matching entry shows its English name in both languages
@@ -271,7 +277,10 @@ for real information about this business without the client confirming it first:
   restatements of how CCSS/PSS work, but not confirmed against this specific
   business's actual intake process, hours, or policies (e.g. the FAQ's
   confidentiality answer is a standard boilerplate, not a reviewed legal
-  statement).
+  statement). The Spanish versions (`questionEs`/`answerEs`, and the services'
+  `titleEs`/`descriptionEs`) are translations of that same unconfirmed English, not
+  reviewed by a native-speaking staff member. Have the client check both languages
+  together.
 
 ## What NOT to do
 

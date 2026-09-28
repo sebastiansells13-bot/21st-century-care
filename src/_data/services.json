@@ -2,102 +2,142 @@
   "list": [
     {
       "title": "Housing and Homeless Prevention",
+      "titleEs": "Vivienda y Prevención de la Falta de Vivienda",
       "description": "Help finding and keeping stable, safe housing, and support for clients at risk of homelessness.",
+      "descriptionEs": "Ayuda para encontrar y mantener una vivienda estable y segura, y apoyo para clientes en riesgo de quedarse sin hogar.",
       "category": "Housing & Basic Needs"
     },
     {
       "title": "Transportation Services",
+      "titleEs": "Servicios de Transporte",
       "description": "Assistance getting to appointments, services, and other essential destinations.",
+      "descriptionEs": "Asistencia para llegar a citas, servicios y otros destinos esenciales.",
       "category": "Housing & Basic Needs"
     },
     {
       "title": "Utility Assistance",
+      "titleEs": "Asistencia con Servicios Públicos",
       "description": "Support applying for programs that help cover utility costs.",
+      "descriptionEs": "Apoyo para solicitar programas que ayudan a cubrir los costos de servicios públicos.",
       "category": "Housing & Basic Needs"
     },
     {
       "title": "Stress Management",
+      "titleEs": "Manejo del Estrés",
       "description": "Coping strategies and techniques for managing everyday stress.",
+      "descriptionEs": "Estrategias y técnicas para afrontar el estrés cotidiano.",
       "category": "Health & Wellness"
     },
     {
       "title": "Medication Management",
+      "titleEs": "Manejo de Medicamentos",
       "description": "Support staying on track with prescribed medications.",
+      "descriptionEs": "Apoyo para seguir al día con los medicamentos recetados.",
       "category": "Health & Wellness"
     },
     {
       "title": "Individual and Family Therapy",
+      "titleEs": "Terapia Individual y Familiar",
       "description": "Therapeutic support for clients and their families.",
+      "descriptionEs": "Apoyo terapéutico para clientes y sus familias.",
       "category": "Health & Wellness"
     },
     {
       "title": "SSI Application",
+      "titleEs": "Solicitud de SSI",
       "description": "Guidance through the Supplemental Security Income application process.",
+      "descriptionEs": "Orientación durante el proceso de solicitud de la Seguridad de Ingreso Suplementario (SSI).",
       "category": "Skills & Independence"
     },
     {
       "title": "Managing Medical Appointments",
+      "titleEs": "Manejo de Citas Médicas",
       "description": "Help scheduling, preparing for, and keeping medical appointments.",
+      "descriptionEs": "Ayuda para programar, prepararse y asistir a citas médicas.",
       "category": "Health & Wellness"
     },
     {
       "title": "Applying for Financial Assistance",
+      "titleEs": "Solicitud de Asistencia Financiera",
       "description": "Support applying for available financial assistance programs.",
+      "descriptionEs": "Apoyo para solicitar los programas de asistencia financiera disponibles.",
       "category": "Housing & Basic Needs"
     },
     {
       "title": "Tutoring",
+      "titleEs": "Tutoría",
       "description": "Academic support to help clients build learning skills.",
+      "descriptionEs": "Apoyo académico para ayudar a los clientes a desarrollar habilidades de aprendizaje.",
       "category": "Skills & Independence"
     },
     {
       "title": "Job Search",
+      "titleEs": "Búsqueda de Empleo",
       "description": "Help identifying job openings and preparing to apply.",
+      "descriptionEs": "Ayuda para identificar vacantes de empleo y prepararse para solicitarlas.",
       "category": "Skills & Independence"
     },
     {
       "title": "Interviewing and Presentation Skills",
+      "titleEs": "Habilidades para Entrevistas y Presentaciones",
       "description": "Practice and coaching for job interviews and presentations.",
+      "descriptionEs": "Práctica y orientación para entrevistas de trabajo y presentaciones.",
       "category": "Skills & Independence"
     },
     {
       "title": "Social and Communication Skills",
+      "titleEs": "Habilidades Sociales y de Comunicación",
       "description": "Skill-building for effective social interaction and communication.",
+      "descriptionEs": "Desarrollo de habilidades para una interacción social y comunicación eficaces.",
       "category": "Skills & Independence"
     },
     {
       "title": "Recreational Outlets",
+      "titleEs": "Actividades Recreativas",
       "description": "Connections to recreational activities that support healthy socialization.",
+      "descriptionEs": "Conexión con actividades recreativas que fomentan una socialización saludable.",
       "category": "Community & Family"
     },
     {
       "title": "Financial Literacy Skills",
+      "titleEs": "Educación Financiera",
       "description": "Guidance on budgeting, saving, and managing personal finances.",
+      "descriptionEs": "Orientación sobre presupuestos, ahorro y manejo de las finanzas personales.",
       "category": "Housing & Basic Needs"
     },
     {
       "title": "Crisis Intervention",
+      "titleEs": "Intervención en Crisis",
       "description": "Support and stabilization during a mental health or personal crisis.",
+      "descriptionEs": "Apoyo y estabilización durante una crisis de salud mental o personal.",
       "category": "Health & Wellness"
     },
     {
       "title": "Substance Abuse Therapy, Support, and Intervention",
+      "titleEs": "Terapia, Apoyo e Intervención por Abuso de Sustancias",
       "description": "Therapy, support, and intervention services for substance use.",
+      "descriptionEs": "Servicios de terapia, apoyo e intervención para el uso de sustancias.",
       "category": "Health & Wellness"
     },
     {
       "title": "Community Reentry",
+      "titleEs": "Reintegración a la Comunidad",
       "description": "Support transitioning back into the community.",
+      "descriptionEs": "Apoyo durante la transición de regreso a la comunidad.",
       "category": "Community & Family"
     },
     {
       "title": "Drug Screening",
+      "titleEs": "Pruebas de Detección de Drogas",
       "description": "Drug screening services as part of a client's care plan.",
+      "descriptionEs": "Servicios de detección de drogas como parte del plan de atención del cliente.",
       "category": "Health & Wellness"
     },
     {
       "title": "Parenting Support",
+      "titleEs": "Apoyo para Padres",
       "description": "Guidance and support for parents and families.",
+      "descriptionEs": "Orientación y apoyo para padres y familias.",
       "category": "Community & Family"
     }
   ]

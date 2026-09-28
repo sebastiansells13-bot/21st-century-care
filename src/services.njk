@@ -44,8 +44,8 @@ ogImage: /img/hero/services-hero.jpg
         {% else %}
           <span class="service-card__badge">{{ service.title | serviceIcon }}</span>
         {% endif %}
-        <h3>{{ service.title }}</h3>
-        <p>{{ service.description | safe }}</p>
+        <h3>{{ bilingual(service.title, service.titleEs) }}</h3>
+        {{ bilingual(service.description, service.descriptionEs, tag="p", isSafe=true) }}
       </div>
       {% endfor %}
     </div>
