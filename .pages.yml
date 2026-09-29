@@ -81,6 +81,11 @@ content:
             type: string
             required: true
 
+          - name: titleEs
+            label: Service Name (Spanish)
+            type: string
+            description: Shown when a visitor switches the site to Spanish. Leave blank to show the English name instead.
+
           - name: category
             label: Category
             type: select
@@ -95,6 +100,11 @@ content:
             type: rich-text
             required: true
             description: What this service is and who it's for (1–3 sentences).
+
+          - name: descriptionEs
+            label: Description (Spanish)
+            type: rich-text
+            description: Spanish version of the description above. Leave blank to show the English one instead.
 
           - name: icon
             label: Icon Image
@@ -153,10 +163,20 @@ content:
             type: string
             required: true
 
+          - name: questionEs
+            label: Question (Spanish)
+            type: string
+            description: Shown when a visitor switches the site to Spanish. Leave blank to show the English question instead.
+
           - name: answer
             label: Answer
             type: rich-text
             required: true
+
+          - name: answerEs
+            label: Answer (Spanish)
+            type: rich-text
+            description: Spanish version of the answer above. Leave blank to show the English one instead.
 
   - name: testimonials
     label: Testimonials

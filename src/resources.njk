@@ -1,6 +1,7 @@
 ---
 layout: layouts/page.njk
 title: Resources
+titleKey: nav.resources
 permalink: /resources/
 description: A guide to mental wellness — signs of depression, how to help, and crisis resources, from 21st Century Care.
 ogImage: /img/hero/organ-mountains-hero.jpg
@@ -278,14 +279,15 @@ ogImage: /img/hero/organ-mountains-hero.jpg
 <div class="section section--tint-green">
   <div class="wrapper">
     <h2 data-i18n="resources.sourcesHeading">Sources</h2>
-    <p class="sources-note">
-      Adapted from {{ business.legalName or business.name }}'s printed patient-education
-      handout, <em>"A Guide to Mental Wellness."</em> Cited sources: Centers for Disease
-      Control and Prevention, Youth Risk Behavior Surveillance System; National Institute
-      of Mental Health, <a href="https://www.nimh.nih.gov/health/publications/teen-depression" target="_blank" rel="noopener">"Teen Depression"</a>;
-      Child Mind Institute, "A Day in the Life of a High School Teen." This page is
-      educational information, not a diagnosis or a substitute for professional care —
-      see a doctor or licensed mental health professional for that.
-    </p>
+    {#
+      The framing sentences are translated; the cited publications keep
+      their original English titles and agency names (that's what a reader
+      would search for), with a Spanish gloss in parentheses on first use.
+    #}
+    {% set legal = business.legalName or business.name %}
+    {% set nimhLink %}<a href="https://www.nimh.nih.gov/health/publications/teen-depression" target="_blank" rel="noopener">"Teen Depression"</a>{% endset %}
+    {% set sourcesEn %}Adapted from {{ legal }}'s printed patient-education handout, <em>"A Guide to Mental Wellness."</em> Cited sources: Centers for Disease Control and Prevention, Youth Risk Behavior Surveillance System; National Institute of Mental Health, {{ nimhLink | safe }}; Child Mind Institute, "A Day in the Life of a High School Teen." This page is educational information, not a diagnosis or a substitute for professional care — see a doctor or licensed mental health professional for that.{% endset %}
+    {% set sourcesEs %}Adaptado del folleto impreso de educación para pacientes de {{ legal }}, <em>"Una Guía para el Bienestar Mental" ("A Guide to Mental Wellness")</em>. Fuentes citadas (en inglés): Centers for Disease Control and Prevention (Centros para el Control y la Prevención de Enfermedades), Youth Risk Behavior Surveillance System; National Institute of Mental Health (Instituto Nacional de la Salud Mental), {{ nimhLink | safe }}; Child Mind Institute, "A Day in the Life of a High School Teen." Esta página es información educativa, no un diagnóstico ni un sustituto de la atención profesional — para eso, consulte a un médico o a un profesional de salud mental con licencia.{% endset %}
+    {{ bilingual(sourcesEn, sourcesEs, tag="p", isSafe=true) }}
   </div>
 </div>

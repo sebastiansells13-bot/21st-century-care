@@ -89,8 +89,10 @@ Keep it up to date as the site diverges from the template.
   988 short code (via the shared crisis-callout, which already used 988), and the
   garbled survey-statistic sentence was rewritten for clarity while keeping the same
   41%/31% figures and citation. Fully bilingual (see "Spanish-language toggle"
-  below) except the closing Sources paragraph, which stays English-only (citation
-  text, lower priority than the actionable content above it). `legalName` in
+  below), including the closing Sources paragraph — its framing sentences are
+  translated, but the cited publications/agencies keep their original English
+  titles (with a Spanish gloss in parentheses), since that's what a reader would
+  search for. `legalName` in
   `business.json` ("21st Century Care, LLC") — this page's Sources line and the
   footer copyright are the two places it's used instead of the shorter `name`.
 - **Header / mobile menu**: below 67.5rem the nav collapses behind a "Menu"
@@ -160,15 +162,37 @@ Keep it up to date as the site diverges from the template.
   The choice persists per visitor via `localStorage`.
   - **What gets translated**: this site's own static chrome and hardcoded template
     copy — nav, footer, buttons, the Home/About/Services/FAQ/Careers/Accessibility/404
-    pages' headings and prose, the "How to Get Started" steps, the crisis callout, and
-    the insurance info block.
-  - **What does NOT get translated, by design**: anything edited through the CMS
-    (the services list, FAQ answers, team bios, testimonials, blog posts) or the
-    Careers page's two sample job listings — there's no translation pipeline for
-    content that changes as often as those do, so it stays in whatever language it
-    was written in, same as any real i18n setup with a single-language content
-    source. This means service **category names** (CMS data) stay English even
-    when a visitor switches to Spanish — a known, accepted limitation, not a bug.
+    pages' headings and prose, the "How to Get Started" steps, the crisis callout, the
+    insurance info block, and the Resources page. Also: the browser tab title (each
+    page's `titleKey` front matter names the dictionary key for its page name — add
+    one to any new page), screen-reader labels and image alt text
+    (`data-i18n-aria-label` / `data-i18n-alt`), service **category names** (see
+    below), and office hours (`daysEs`/`timeEs` on each `business.hours` entry).
+    Checked page by page in Spanish mode: the only visible English left outside
+    CMS content is proper nouns (brand name, street address, email), the CCSS/PSS
+    acronyms, `.sample-tag` notes, and the insurance block's bracketed
+    "[Confirm which … plan(s) …]" prompt, which is an editorial placeholder for the
+    client, like a `.sample-tag`.
+  - **Services and FAQ (CMS, bilingual)**: each service has optional `titleEs` /
+    `descriptionEs` fields and each FAQ entry has `questionEs` / `answerEs`, editable
+    in Pages CMS next to the English fields ("… (Spanish)"). `index.njk`,
+    `services.njk` and `faq.njk` render them through the `bilingual()` macro, so a
+    blank Spanish field falls back to showing the English. All 20 services and 6 FAQ
+    entries currently have Spanish. When adding a new bilingual CMS field, follow the
+    same `<field>Es` naming and "Leave blank to show the English" description.
+  - **What does NOT get translated, by design**: the rest of the CMS content (team
+    bios, testimonials, blog posts) and the Careers page's two sample job listings.
+    Those are still placeholders or empty, so there's nothing real to translate yet.
+    Add `*Es` fields the same way as Services/FAQ when real content arrives. The one
+    exception is service **category names**: they're CMS data, but
+    a small fixed set, so `services.njk` looks each one up in `i18n.json` under
+    `serviceCategory.<English name>` at build time. A category the client creates
+    from the CMS with no matching entry shows its English name in both languages
+    (never a raw key) — add a `serviceCategory.*` entry when that happens.
+  - **Attributes and tab title**: `data-i18n-aria-label="key"` / `data-i18n-alt="key"`
+    swap that attribute (add the attribute name to `TRANSLATED_ATTRS` in `i18n.js` to
+    support another one). `<title data-i18n-title>` swaps only the page-name half of
+    the tab title, before the " · 21st Century Care" suffix.
   - **Markup contract**: `data-i18n="key"` on an element with ONLY text as its
     child replaces its `textContent` — never put it on an element that also has a
     nested tag (a link, `<strong>`, etc.), since that would delete the nested tag.
@@ -253,7 +277,10 @@ for real information about this business without the client confirming it first:
   restatements of how CCSS/PSS work, but not confirmed against this specific
   business's actual intake process, hours, or policies (e.g. the FAQ's
   confidentiality answer is a standard boilerplate, not a reviewed legal
-  statement).
+  statement). The Spanish versions (`questionEs`/`answerEs`, and the services'
+  `titleEs`/`descriptionEs`) are translations of that same unconfirmed English, not
+  reviewed by a native-speaking staff member. Have the client check both languages
+  together.
 
 ## What NOT to do
 

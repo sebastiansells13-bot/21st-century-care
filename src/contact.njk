@@ -1,10 +1,12 @@
 ---
 layout: layouts/page.njk
 title: Contact
+titleKey: nav.contact
 permalink: /contact/
 description: Contact 21st Century Care in Anthony, NM — phone, address, hours, and how to submit a referral.
 ogImage: /img/hero/contact-hero.jpg
 ---
+{% from "macros/bilingual.njk" import bilingual %}
 <div class="hero--photo">
   <img class="hero__bg" src="/img/hero/contact-hero.jpg" alt="" width="2000" height="1211">
   <div class="hero__content wrapper">
@@ -40,7 +42,7 @@ ogImage: /img/hero/contact-hero.jpg
     <p class="sample-tag">Sample hours — confirm before publishing.</p>
     <ul class="hours-list">
       {% for slot in business.hours %}
-      <li><span>{{ slot.days }}</span><span>{{ slot.time }}</span></li>
+      <li><span>{{ bilingual(slot.days, slot.daysEs) }}</span><span>{{ bilingual(slot.time, slot.timeEs) }}</span></li>
       {% endfor %}
     </ul>
   </dd>

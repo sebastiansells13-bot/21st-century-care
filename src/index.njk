@@ -1,6 +1,7 @@
 ---
 layout: layouts/page.njk
 title: Home
+titleKey: nav.home
 description: Comprehensive Community Support Services (CCSS) and Peer Support Services (PSS) for Medicaid recipients in Anthony, NM and Southern New Mexico.
 eleventyNavigation:
   key: Home
@@ -37,8 +38,8 @@ eleventyNavigation:
     {% else %}
       <span class="service-card__badge">{{ service.title | serviceIcon }}</span>
     {% endif %}
-    <h3>{{ service.title }}</h3>
-    <p>{{ service.description }}</p>
+    <h3>{{ bilingual(service.title, service.titleEs) }}</h3>
+    {{ bilingual(service.description, service.descriptionEs, tag="p", isSafe=true) }}
   </div>
   {% endfor %}
 </section>

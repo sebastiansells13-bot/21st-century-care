@@ -10,6 +10,12 @@
   "nav.contact": { "en": "Contact", "es": "Contacto" },
   "nav.resources": { "en": "Resources", "es": "Recursos" },
   "nav.menu": { "en": "Menu", "es": "Menú" },
+  "aria.primaryNav": { "en": "Primary", "es": "Principal" },
+  "aria.language": { "en": "Language", "es": "Idioma" },
+  "serviceCategory.Housing & Basic Needs": { "en": "Housing & Basic Needs", "es": "Vivienda y Necesidades Básicas" },
+  "serviceCategory.Health & Wellness": { "en": "Health & Wellness", "es": "Salud y Bienestar" },
+  "serviceCategory.Skills & Independence": { "en": "Skills & Independence", "es": "Habilidades e Independencia" },
+  "serviceCategory.Community & Family": { "en": "Community & Family", "es": "Comunidad y Familia" },
 
   "skip.toContent": { "en": "Skip to content", "es": "Saltar al contenido" },
   "footer.accessibility": { "en": "Accessibility", "es": "Accesibilidad" },
@@ -66,6 +72,7 @@
   "testimonials.heading": { "en": "What Clients Say", "es": "Lo Que Dicen Nuestros Clientes" },
 
   "about.ourApproach": { "en": "Our Approach", "es": "Nuestro Enfoque" },
+  "about.photoAlt": { "en": "Rio Grande valley at sunset, New Mexico", "es": "El valle del Río Grande al atardecer, Nuevo México" },
   "about.ourApproachBody": {
     "en": "Clients meet with support staff to identify needs, goals, and obstacles. Goals and services are meant to promote recovery, rehabilitation, and resiliency by addressing the barriers that impede the development of skills necessary for independent functioning in the community. Clients are assigned a support team to help them reach these goals by coordinating desired client services to support a comprehensive and collaborative service plan. Clients receive this through practicing new skills, helping them monitor their progress, assisting with their treatment, modeling effective coping techniques, and self-help strategies. Peer Support Specialists (PSS) focus on various therapeutic and supportive tasks emphasizing self-advocacy. Community Support Workers (CSWs) connect clients to available resources and provide assistance and support.",
     "es": "Los clientes se reúnen con el personal de apoyo para identificar necesidades, metas y obstáculos. Las metas y los servicios buscan promover la recuperación, la rehabilitación y la resiliencia, abordando las barreras que impiden el desarrollo de las habilidades necesarias para funcionar de forma independiente en la comunidad. A cada cliente se le asigna un equipo de apoyo que le ayuda a alcanzar estas metas coordinando los servicios deseados para respaldar un plan de servicios integral y colaborativo. Los clientes reciben este apoyo mediante la práctica de nuevas habilidades, el monitoreo de su progreso, la asistencia con su tratamiento, el modelado de técnicas de afrontamiento efectivas y estrategias de autoayuda. Los Especialistas de Apoyo entre Pares (PSS) se enfocan en diversas tareas terapéuticas y de apoyo, con énfasis en la autodefensa. Los Trabajadores de Apoyo Comunitario (CSW) conectan a los clientes con los recursos disponibles y les brindan asistencia y apoyo."

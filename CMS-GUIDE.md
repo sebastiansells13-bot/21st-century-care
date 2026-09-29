@@ -13,11 +13,20 @@ You can update your site's content without touching any code.
   description, date, tags, an optional cover image, and the body text.
 - **Services** — the list of services shown on the Home and Services pages. Each
   one has a Category, which controls which labeled section it appears under on
-  the Services page.
+  the Services page. The four existing categories already have Spanish names for
+  the site's Spanish (ES) button; if you create a new category, its name will show in
+  English for Spanish-language visitors until your web developer adds a
+  translation. Each service also has **Service Name (Spanish)** and **Description
+  (Spanish)** fields, which are shown when a visitor switches the site to Spanish.
+  If you change the English text, update the Spanish to match. If you leave a
+  Spanish field blank, Spanish-language visitors see the English instead.
 - **Team Members** — names, roles, photos, and short bios shown on the About page.
   **The three profiles on the site right now are placeholders** — replace them
   with your real team before sharing the site publicly.
-- **FAQ** — the questions and answers shown on the FAQ page.
+- **FAQ** — the questions and answers shown on the FAQ page. Like Services, each
+  one has **Question (Spanish)** and **Answer (Spanish)** fields. Keep them in step
+  with the English, or leave them blank to show the English to Spanish-language
+  visitors.
 - **Testimonials** — quotes shown on the Home page. **The two quotes on the site
   right now are samples** — only replace them with a real quote once you have a
   client's permission to use it. Leave this list empty rather than publish

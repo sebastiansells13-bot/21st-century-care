@@ -1,9 +1,11 @@
 ---
 layout: layouts/page.njk
 title: FAQ
+titleKey: nav.faq
 permalink: /faq/
 description: Answers to common questions about CCSS and PSS eligibility, cost, and how to get started with 21st Century Care.
 ---
+{% from "macros/bilingual.njk" import bilingual %}
 <div class="hero">
   <div class="wrapper">
     <h1 data-i18n="faq.heading">Frequently Asked Questions</h1>
@@ -16,8 +18,8 @@ description: Answers to common questions about CCSS and PSS eligibility, cost, a
     <div class="faq-list">
       {% for item in faq.list %}
       <details class="faq-item">
-        <summary>{{ item.question }}</summary>
-        <p>{{ item.answer | safe }}</p>
+        <summary>{{ bilingual(item.question, item.questionEs) }}</summary>
+        {{ bilingual(item.answer, item.answerEs, tag="p", isSafe=true) }}
       </details>
       {% endfor %}
     </div>

@@ -14,6 +14,12 @@
 //
 // Markup contract:
 //   data-i18n="key"          → element's text content is replaced
+//   data-i18n-aria-label="key" / data-i18n-alt="key"
+//                            → that attribute is replaced (screen-reader
+//     labels and image alt text, which data-i18n's text swap can't reach)
+//   <title data-i18n-title="key"> → the page-name half of the browser tab
+//     title is replaced; the " · 21st Century Care" suffix is kept as-is
+//     (set from each page's `titleKey` front matter — see base.njk)
 //   data-i18n-lang="en"|"es" → element is shown only when that's the
 //     current language (the other is `hidden`) — for content built with
 //     the bilingual() macro (macros/bilingual.njk), used wherever a
@@ -32,11 +38,37 @@
     el.textContent = lang === "en" ? el.dataset.i18nEnCache : window.t(el.dataset.i18n);
   }
 
+  var TRANSLATED_ATTRS = ["aria-label", "alt"];
+
+  function applyAttrs(lang) {
+    TRANSLATED_ATTRS.forEach(function (attr) {
+      var dataAttr = "data-i18n-" + attr;
+      var cacheAttr = "data-i18n-en-" + attr;
+      document.querySelectorAll("[" + dataAttr + "]").forEach(function (el) {
+        if (!el.hasAttribute(cacheAttr)) el.setAttribute(cacheAttr, el.getAttribute(attr) || "");
+        el.setAttribute(attr, lang === "en" ? el.getAttribute(cacheAttr) : window.t(el.getAttribute(dataAttr)));
+      });
+    });
+  }
+
+  function applyTitle(lang) {
+    var titleEl = document.querySelector("title[data-i18n-title]");
+    if (!titleEl) return;
+    if (titleEl.dataset.i18nEnCache === undefined) titleEl.dataset.i18nEnCache = document.title;
+    var english = titleEl.dataset.i18nEnCache;
+    var sep = english.indexOf(" · ");
+    document.title = lang === "en" || sep === -1
+      ? english
+      : window.t(titleEl.dataset.i18nTitle) + english.slice(sep);
+  }
+
   function applyAll(lang) {
     document.documentElement.lang = lang;
     document.querySelectorAll("[data-i18n]").forEach(function (el) {
       applyTo(el, lang);
     });
+    applyAttrs(lang);
+    applyTitle(lang);
     document.querySelectorAll("[data-i18n-lang]").forEach(function (el) {
       el.hidden = el.dataset.i18nLang !== lang;
     });

@@ -1,10 +1,12 @@
 ---
 layout: layouts/page.njk
 title: Services
+titleKey: nav.services
 permalink: /services/
 description: Housing, health, skills, and community support services available to Medicaid recipients through 21st Century Care in Southern New Mexico.
 ogImage: /img/hero/services-hero.jpg
 ---
+{% from "macros/bilingual.njk" import bilingual %}
 <div class="hero--photo">
   <img class="hero__bg" src="/img/hero/services-hero.jpg" alt="" width="1600" height="1200">
   <div class="hero__content wrapper">
@@ -25,7 +27,15 @@ ogImage: /img/hero/services-hero.jpg
 {% for category, items in services.list | groupby("category") %}
 <div class="category-section {{ loop.index0 | tintClass }}">
   <div class="wrapper">
-    {% if category %}<h2>{{ category }}</h2>{% endif %}
+    {#
+      Category names are CMS data (a creatable select in .pages.yml), so
+      their Spanish lives in i18n.json under "serviceCategory.<English name>"
+      and is looked up here at build time. A category the client adds from
+      the CMS with no matching entry just shows its English name in both
+      languages rather than a raw key.
+    #}
+    {% set categoryEs = i18n["serviceCategory." + category].es if i18n["serviceCategory." + category] else "" %}
+    {% if category %}{{ bilingual(category, categoryEs, tag="h2") }}{% endif %}
     <div class="services-grid">
       {% for service in items %}
       <div class="service-card">
@@ -34,8 +44,8 @@ ogImage: /img/hero/services-hero.jpg
         {% else %}
           <span class="service-card__badge">{{ service.title | serviceIcon }}</span>
         {% endif %}
-        <h3>{{ service.title }}</h3>
-        <p>{{ service.description | safe }}</p>
+        <h3>{{ bilingual(service.title, service.titleEs) }}</h3>
+        {{ bilingual(service.description, service.descriptionEs, tag="p", isSafe=true) }}
       </div>
       {% endfor %}
     </div>
