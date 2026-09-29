@@ -1,10 +1,13 @@
 <!--
-  Decorative bottom edge for .hero--photo (see components.scss) — softens
-  the hard photo/content seam with a wave instead of a straight cut. The
-  path fills with currentColor, set in components.scss (.hero__wave): white
-  by default, or a section tint when the page sets `waveTint` ("green",
-  "blue" or "warm") before including this, to match a tinted first section.
+  Bottom edge for .hero--photo (see components.scss): a silhouette of the
+  Organ Mountains' jagged "organ pipe" ridgeline above Southern New Mexico,
+  in two layers for depth: a faint juniper far ridge (.hero__ridge-far) behind
+  a solid near one. The near ridge fills with currentColor, set in
+  components.scss (.hero__wave): the page's sand background by default, or a section tint when the page sets
+  `waveTint` ("green", "blue" or "warm") before including this, to match a
+  tinted first section.
 -->
-<svg class="hero__wave{% if waveTint %} hero__wave--{{ waveTint }}{% endif %}" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true">
-  <path fill="currentColor" d="M0,32 C240,80 480,0 720,24 C960,48 1200,88 1440,40 L1440,80 L0,80 Z"/>
+<svg class="hero__wave{% if waveTint %} hero__wave--{{ waveTint }}{% endif %}" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+  <path class="hero__ridge-far" d="M0,120 L0,86 L140,78 L260,70 L380,74 L480,60 L560,64 L640,46 L700,52 L748,26 L772,40 L796,12 L820,34 L842,8 L866,30 L890,14 L916,38 L950,28 L1000,50 L1080,44 L1180,58 L1300,54 L1440,66 L1440,120 Z"/>
+  <path fill="currentColor" d="M0,120 L0,100 L180,94 L320,88 L440,92 L560,82 L680,86 L760,70 L820,78 L880,62 L940,74 L1020,68 L1120,80 L1240,76 L1360,86 L1440,84 L1440,120 Z"/>
 </svg>

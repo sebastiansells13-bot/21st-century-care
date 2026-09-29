@@ -9,11 +9,19 @@ eleventyNavigation:
 ---
 {% from "macros/bilingual.njk" import bilingual %}
 <div class="hero--photo">
-  <img class="hero__bg" src="/img/hero/organ-mountains-hero.jpg" alt="" width="1600" height="1153">
-  <div class="hero__content wrapper">
-    <span class="hero__eyebrow">CCSS · PSS</span>
-    <h1>{{ business.name }}</h1>
-    <p>{{ bilingual(business.tagline, business.taglineEs) }}</p>
+  <div class="hero__inner wrapper">
+    <div class="hero__content">
+      <span class="hero__eyebrow">CCSS · PSS</span>
+      <h1>{{ business.name }}</h1>
+      <p>{{ bilingual(business.tagline, business.taglineEs) }}</p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="tel:{{ business.phone }}"><span data-i18n="cta.call">Call</span> {{ business.phone }}</a>
+        <a class="btn btn--outline" href="/services/" data-i18n="cta.seeAllServices">See all services →</a>
+      </div>
+    </div>
+    <div class="hero__media">
+      <img class="hero__bg" src="/img/hero/organ-mountains-hero.jpg" alt="" width="1600" height="1153">
+    </div>
   </div>
   {% set waveTint = "green" %}
   {% include "components/hero-wave.njk" %}
@@ -57,6 +65,6 @@ eleventyNavigation:
       Call our office to learn more about eligibility and how to enroll in
       Comprehensive Community Support Services or Peer Support Services.
     </p>
-    <a class="btn btn--outline" href="tel:{{ business.phone }}"><span data-i18n="cta.call">Call</span> {{ business.phone }}</a>
+    <a class="btn btn--light" href="tel:{{ business.phone }}"><span data-i18n="cta.call">Call</span> {{ business.phone }}</a>
   </div>
 </div>

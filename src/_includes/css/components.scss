@@ -1,8 +1,17 @@
+// ---------------------------------------------------------------------------
+// Header
+// ---------------------------------------------------------------------------
+// Sticky, translucent sand bar so the nav (and the EN/ES toggle) stay in reach
+// on long pages like Resources and Services.
 .site-header {
-  border-bottom: 3px solid transparent;
-  border-image: linear-gradient(90deg, $color-accent, $color-accent-blue, $color-accent-warm) 1;
-  padding: 1.25rem 0;
-  background: $color-bg;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 0.9rem 0;
+  background: rgba($color-bg, 0.88);
+  -webkit-backdrop-filter: saturate(1.4) blur(10px);
+  backdrop-filter: saturate(1.4) blur(10px);
+  border-bottom: 1px solid rgba($color-border, 0.8);
 
   .wrapper {
     display: flex;
@@ -13,11 +22,22 @@
   }
 
   .site-header__brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
     font-family: $font-heading;
-    font-weight: 700;
+    font-variation-settings: "SOFT" 100, "opsz" 36;
+    font-weight: 600;
     text-decoration: none;
-    color: $color-accent;
-    font-size: 1.25rem;
+    color: $color-text;
+    font-size: 1.3rem;
+    letter-spacing: -0.01em;
+  }
+
+  .site-header__logo {
+    width: 2.1rem;
+    height: 2.1rem;
+    flex-shrink: 0;
   }
 
   nav {
@@ -40,26 +60,35 @@
     list-style: none;
     display: flex;
     flex-wrap: wrap;
-    gap: 1.25rem;
+    gap: 0.15rem;
     margin: 0;
     padding: 0;
   }
 
   nav a {
+    display: inline-block;
     text-decoration: none;
     color: $color-text;
-    padding-bottom: 0.2rem;
-    border-bottom: 2px solid transparent;
+    font-weight: 500;
+    font-size: 0.97rem;
+    padding: 0.4rem 0.6rem;
+    border-radius: 999px;
+    transition: background-color 0.15s ease, color 0.15s ease;
 
-    &:hover,
-    &.is-active {
+    &:hover {
+      background: rgba($color-accent, 0.08);
       color: $color-accent;
-      border-bottom-color: $color-accent;
+    }
+
+    &.is-active {
+      background: $color-accent-tint;
+      color: $color-accent;
+      font-weight: 600;
     }
   }
 
   // Menu button: hidden on wide screens and whenever JS is off (nav.js adds
-  // .js to <html>), so the nav never ends up unreachable. Below 67.5rem the
+  // .js to <html>), so the nav never ends up unreachable. Below 70rem the
   // 8-link nav wraps (three rows on a phone, pushing the hero a third of the
   // way down the screen; two rows on a tablet in Spanish, whose labels are
   // longer), so it collapses behind this button instead.
@@ -69,7 +98,7 @@
     gap: 0.5rem;
     border: 1px solid $color-border;
     border-radius: 999px;
-    background: #fff;
+    background: $color-surface;
     color: $color-text;
     font: inherit;
     font-weight: 600;
@@ -102,7 +131,7 @@
     }
   }
 
-  @media (max-width: 67.5rem) {
+  @media (max-width: 70rem) {
     .js & .nav-toggle {
       display: inline-flex;
     }
@@ -112,7 +141,7 @@
       order: 3;
       flex-basis: 100%;
       margin-left: 0;
-      padding-top: 0.5rem;
+      padding: 0.5rem 0 0.25rem;
     }
 
     .js &.is-open nav {
@@ -121,21 +150,34 @@
 
     .js & nav ul {
       flex-direction: column;
-      gap: 0.25rem;
+      gap: 0.15rem;
       width: 100%;
     }
 
     .js & nav ul a {
-      display: inline-block;
-      padding: 0.5rem 0 0.3rem;
+      display: block;
+      padding: 0.65rem 0.9rem;
+      border-radius: $radius-sm;
     }
   }
 
   // Small phones: shrink the wordmark and drop the word "Menu" (it stays as
   // the button's accessible name) so brand + EN/ES + menu fit on one row.
   @media (max-width: 30rem) {
+    .wrapper {
+      gap: 0.5rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
     .site-header__brand {
-      font-size: 1.1rem;
+      font-size: 1.05rem;
+      gap: 0.4rem;
+    }
+
+    .site-header__logo {
+      width: 1.6rem;
+      height: 1.6rem;
     }
 
     .site-header__actions {
@@ -159,18 +201,22 @@
   .lang-toggle {
     display: flex;
     flex-shrink: 0;
+    padding: 0.2rem;
+    gap: 0.1rem;
+    background: $color-surface;
     border: 1px solid $color-border;
-    border-radius: 2rem;
-    overflow: hidden;
+    border-radius: 999px;
   }
 
   .lang-toggle__btn {
     border: none;
-    background: #fff;
+    border-radius: 999px;
+    background: transparent;
     color: $color-muted;
+    font: inherit;
     font-weight: 700;
     font-size: 0.75rem;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.04em;
     padding: 0.3rem 0.65rem;
     cursor: pointer;
 
@@ -178,30 +224,32 @@
       background: $color-accent;
       color: #fff;
     }
-
-    &:focus-visible {
-      outline: 2px solid $color-accent;
-      outline-offset: 2px;
-    }
   }
 }
 
+// ---------------------------------------------------------------------------
+// Footer
+// ---------------------------------------------------------------------------
 .site-footer {
-  border-top: 1px solid $color-border;
-  padding: 2rem 0;
-  color: $color-muted;
-  font-size: 0.9rem;
-  background: $color-accent-tint;
+  padding: 2.5rem 0;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.93rem;
+  background: $color-accent-dark;
 
   .wrapper {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 1rem 2rem;
   }
 
   a {
-    color: $color-accent;
+    color: $color-accent-warm-tint;
+
+    &:hover {
+      color: #fff;
+    }
   }
 
   .site-footer__links {
@@ -216,60 +264,52 @@
   }
 }
 
-// Plain text hero — About/Services/Contact use this (no photo); the
-// homepage uses .hero--photo below instead.
+// ---------------------------------------------------------------------------
+// Heroes
+// ---------------------------------------------------------------------------
+// Plain text hero (About/FAQ/Resources/Careers/Accessibility/Blog/404): left-
+// aligned editorial heading with a faint rising-sun arc in the corner — the
+// same sun motif as the photo heroes and the CTA band, without a photo.
 .hero {
-  padding: 3rem 0;
-  text-align: center;
-  background: $color-accent-tint;
+  position: relative;
+  overflow: hidden;
+  padding: 4.5rem 0 3.5rem;
+  background:
+    radial-gradient(circle at 100% 100%, rgba($color-accent-warm, 0.16) 0 9rem, rgba($color-accent-warm, 0.07) 9rem 15rem, transparent 15rem),
+    $color-bg;
+  border-bottom: 1px solid $color-border;
 
   h1 {
-    font-family: $font-heading;
-    font-size: clamp(2rem, 6vw, 2.75rem);
-    margin-bottom: 0.5rem;
-    color: $color-text;
+    max-width: 16em;
+    margin-bottom: 0.75rem;
   }
 
   p {
     color: $color-muted;
-    font-size: 1.125rem;
+    font-size: 1.2rem;
     max-width: 40rem;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0;
   }
 }
 
-// Photo hero (Home/Services/Contact — see components/hero-wave.njk for the
-// bottom edge, included at the end of each): full-width photo under a
-// three-color, multi-layer wash (a warm glow bottom-left, a blue glow top-
-// right, both over the green→blue diagonal that echoes the header's accent
-// stripe) so all three brand accents show up here, not just two, and white
-// text stays readable over any part of the photo.
+// Photo hero (Home/Services/Contact): text on the left, the photo on the
+// right framed in an adobe-style arch with a terracotta "sun" rising behind
+// it — New Mexico architecture plus a quiet nod to new beginnings, which is
+// what CCSS/PSS are about. components/hero-wave.njk draws an Organ Mountains
+// ridgeline along the bottom edge (see there for `waveTint`).
 .hero--photo {
   position: relative;
-  padding: 5.5rem 0 6.5rem;
-  text-align: center;
-  color: #fff;
   overflow: hidden;
+  padding: 4rem 0 7rem;
+  background:
+    radial-gradient(ellipse at 0% 0%, rgba($color-accent-tint, 0.9), transparent 55%),
+    $color-bg;
 
-  .hero__bg {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 0;
-  }
-
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(circle at 12% 85%, rgba($color-accent-warm, 0.55), transparent 45%),
-      radial-gradient(circle at 90% 10%, rgba($color-accent-blue, 0.5), transparent 50%),
-      linear-gradient(120deg, rgba($color-accent, 0.82), rgba($color-accent-blue, 0.68));
-    z-index: 1;
+  .hero__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: 3rem;
+    align-items: center;
   }
 
   .hero__content {
@@ -278,51 +318,94 @@
   }
 
   .hero__eyebrow {
-    display: inline-block;
-    background: rgba(255, 255, 255, 0.18);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    -webkit-backdrop-filter: blur(2px);
-    backdrop-filter: blur(2px);
-    color: #fff;
-    font-family: $font-heading;
-    font-weight: 600;
-    font-size: 0.8rem;
-    letter-spacing: 0.04em;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: $color-accent-warm-tint;
+    color: #8f4222; // $color-accent-warm darkened for AA contrast on its tint
+    font-weight: 700;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    padding: 0.4rem 1rem;
+    padding: 0.45rem 0.9rem;
     border-radius: 999px;
     margin-bottom: 1.25rem;
+
+    &::before {
+      content: "";
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 50%;
+      background: $color-accent-warm;
+    }
   }
 
   h1 {
-    font-family: $font-heading;
-    font-size: clamp(2rem, 6vw, 2.75rem);
-    margin-bottom: 0.5rem;
-    color: #fff;
-    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1rem;
   }
 
   p {
-    font-size: 1.25rem;
-    max-width: 40rem;
-    margin: 0 auto;
-    color: #fff;
+    font-size: 1.2rem;
+    color: $color-muted;
+    max-width: 34rem;
+    margin: 0;
+  }
+
+  .hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 2rem;
+  }
+
+  .hero__media {
+    position: relative;
+    justify-self: center;
+    width: min(100%, 26rem);
+
+    // The sun: a warm disc with a soft halo, offset up and to the right so
+    // it peeks out from behind the arch.
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: 0;
+      width: 72%;
+      aspect-ratio: 1;
+      top: -6%;
+      right: -14%;
+      border-radius: 50%;
+      background: radial-gradient(circle, #e08a5c 0 55%, rgba($color-accent-warm, 0.35) 55.5% 72%, rgba($color-accent-warm, 0.12) 72.5% 100%);
+    }
+  }
+
+  .hero__bg {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: 999px 999px $radius-lg $radius-lg;
+    box-shadow: $shadow-lift;
   }
 
   .hero__wave {
     position: absolute;
-    z-index: 2;
+    z-index: 1;
     bottom: -1px;
     left: 0;
     width: 100%;
-    height: 3.5rem;
+    height: 6.5rem;
     display: block;
     color: $color-bg;
   }
 
-  // Match the wave to whatever section sits directly under the hero, so a
-  // tinted first section doesn't get a white stripe between it and the wave.
-  // Set `waveTint` before including hero-wave.njk (see index.njk).
+  .hero__ridge-far {
+    fill: rgba($color-accent, 0.13);
+  }
+
+  // Match the ridgeline to whatever section sits directly under the hero, so
+  // a tinted first section doesn't get a sand stripe between it and the
+  // ridge. Set `waveTint` before including hero-wave.njk (see index.njk).
   .hero__wave--green {
     color: $color-accent-tint;
   }
@@ -334,10 +417,32 @@
   .hero__wave--warm {
     color: $color-accent-warm-tint;
   }
+
+  @media (max-width: 52rem) {
+    padding: 2.5rem 0 5rem;
+
+    .hero__inner {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+
+    .hero__media {
+      width: min(80%, 20rem);
+    }
+
+    .hero__bg {
+      aspect-ratio: 1 / 1;
+    }
+
+    .hero__wave {
+      height: 3.5rem;
+    }
+  }
 }
 
-// Alternating section backgrounds for visual rhythm down the homepage/about
-// page — a plain wash, no photo, so they stay cheap and always-legible.
+// ---------------------------------------------------------------------------
+// Sections
+// ---------------------------------------------------------------------------
 .section--tint-green {
   background: $color-accent-tint;
 }
@@ -351,7 +456,11 @@
 }
 
 .section {
-  padding: 3rem 0;
+  padding: 4.5rem 0;
+
+  h2:not(:first-child) {
+    margin-top: 2.5rem;
+  }
 }
 
 // Long paragraphs ran the full 72rem wrapper (~170 characters a line on a
@@ -361,27 +470,41 @@
   max-width: 70ch;
 }
 
-// Homepage intro under the hero: a short summary, centered and a size up
-// so it reads as a lead-in rather than a stray paragraph.
+// Homepage intro under the hero: set as a large, centered pull statement in
+// the heading serif, so it reads as the site's thesis rather than body copy.
 .section--intro {
   text-align: center;
+  padding: 3.5rem 0 4rem;
 
   p {
-    font-size: 1.15rem;
+    font-family: $font-heading;
+    font-variation-settings: "SOFT" 100, "opsz" 36;
+    font-size: clamp(1.25rem, 2.4vw, 1.6rem);
+    line-height: 1.45;
+    max-width: 46rem;
     margin: 0 auto;
+    color: $color-text;
+    text-wrap: balance;
+  }
+
+  // Nine centered lines is hard to read on a phone; left-align it there.
+  @media (max-width: 36rem) {
+    text-align: left;
+
+    p {
+      font-size: 1.2rem;
+      text-wrap: pretty;
+    }
   }
 }
 
 // Services page: one band per service category (see the groupby loop in
-// services.njk). Padding is lighter than .section and the nested
-// .services-grid's own top/bottom padding is zeroed out, since the band
-// itself already supplies the spacing — stacking both left visibly
-// oversized gaps between categories.
+// services.njk). The nested .services-grid's own top/bottom padding is
+// trimmed, since the band itself already supplies the spacing.
 .category-section {
-  padding: 2.5rem 0;
+  padding: 3.5rem 0;
 
   h2 {
-    font-family: $font-heading;
     margin: 0 0 0.5rem;
   }
 
@@ -391,18 +514,22 @@
   }
 }
 
-// Pill CTA buttons, used for "See all services", "Get directions", the
-// homepage's "Contact us" band, etc. — plain text links otherwise disappear
-// against the more colorful sections above.
+// ---------------------------------------------------------------------------
+// Buttons
+// ---------------------------------------------------------------------------
 .btn {
-  display: inline-block;
-  font-family: $font-heading;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: $font-body;
   font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.2;
   text-decoration: none;
-  padding: 0.7rem 1.5rem;
+  padding: 0.85rem 1.6rem;
   border-radius: 999px;
   border: 2px solid transparent;
-  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
 
   &:hover {
     transform: translateY(-1px);
@@ -412,11 +539,11 @@
 .btn--primary {
   background: $color-accent;
   color: #fff;
+  box-shadow: 0 6px 16px rgba($color-accent, 0.25);
 
   &:hover {
-    background: #256a42; // $color-accent, ~6% darker (hand-picked — avoids the
-                          // deprecated darken() global, same as index.scss's
-                          // other @import-era Sass usage)
+    background: $color-accent-dark;
+    color: #fff;
   }
 }
 
@@ -426,7 +553,18 @@
   color: inherit;
 
   &:hover {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba($color-accent, 0.06);
+  }
+}
+
+// Sand-colored button for dark backgrounds (the homepage CTA band).
+.btn--light {
+  background: $color-bg;
+  color: $color-accent-dark;
+
+  &:hover {
+    background: #fff;
+    color: $color-accent-dark;
   }
 }
 
@@ -435,39 +573,42 @@
   text-align: center;
 }
 
+// ---------------------------------------------------------------------------
+// Cards
+// ---------------------------------------------------------------------------
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
-  gap: 1.75rem;
+  gap: 1.25rem;
   // Top/bottom only — index.njk puts this class on the same element as
   // .wrapper, and a `padding` shorthand here wipes out .wrapper's side
   // gutter (cards ran edge to edge on phones).
-  padding-top: 2rem;
-  padding-bottom: 4rem;
+  padding-top: 2.5rem;
+  padding-bottom: 3rem;
 }
 
 // Homepage preview (6 cards): cap at three columns so it lays out 3 + 3
 // instead of 4 + 2 with an orphaned second row.
 .services-grid--preview {
-  grid-template-columns: repeat(auto-fit, minmax(max(16rem, calc((100% - 3.5rem) / 3)), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(max(16rem, calc((100% - 2.5rem) / 3)), 1fr));
 }
 
 .service-card {
-  border: 1px solid $color-border;
-  border-radius: 0.75rem;
-  padding: 1.5rem;
-  background: $color-bg;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  border: 1px solid rgba($color-border, 0.7);
+  border-radius: $radius;
+  padding: 1.6rem;
+  background: $color-surface;
+  box-shadow: $shadow-soft;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 
   &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+    transform: translateY(-3px);
+    box-shadow: $shadow-lift;
   }
 
   h3 {
-    margin: 0 0 0.5rem;
-    font-family: $font-heading;
-    font-size: 1.05rem;
+    margin: 0 0 0.4rem;
+    font-size: 1.08rem;
   }
 
   p {
@@ -475,9 +616,13 @@
     margin: 0;
   }
 
+  p + p {
+    margin-top: 0.5rem;
+  }
+
   img.service-card__icon {
     width: 100%;
-    border-radius: 0.5rem;
+    border-radius: $radius-sm;
     margin-bottom: 1rem;
   }
 }
@@ -486,11 +631,11 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 2.75rem;
-  height: 2.75rem;
-  border-radius: 50%;
-  font-size: 1.4rem;
-  margin-bottom: 0.75rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.9rem;
+  font-size: 1.45rem;
+  margin-bottom: 1rem;
 }
 
 // Cycle the three brand accents across cards so a 20-item grid reads as
@@ -507,35 +652,48 @@
   background: $color-accent-warm-tint;
 }
 
+// On a tinted band, cards are already white against color — the shadow is
+// enough, the border just adds noise.
+.category-section .service-card,
+.section--tint-green .service-card,
+.section--tint-blue .service-card,
+.section--tint-warm .service-card {
+  border-color: transparent;
+}
+
+// ---------------------------------------------------------------------------
+// Callouts
+// ---------------------------------------------------------------------------
 // "In crisis right now?" safety callout — a real behavioral-health-adjacent
-// site's expected duty of care, not client-specific content, so it's fine
-// to include even though the flyer itself doesn't mention it. See
-// components/crisis-callout.njk.
+// site's expected duty of care, not client-specific content. See
+// components/crisis-callout.njk, which wraps this box in its own .wrapper.
 .callout--crisis {
-  // crisis-callout.njk wraps this box in its own .wrapper (it used to carry
-  // both classes on one element, which left-pinned the box on desktop and
-  // put its border flush against the screen edge on phones).
-  border: 1px solid rgba($color-safety, 0.35);
-  background: rgba($color-safety, 0.06);
-  border-radius: 0.75rem;
-  padding: 1.5rem;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  border: 1px solid rgba($color-safety, 0.25);
+  border-left: 5px solid $color-safety;
+  background: #fdf3f1;
+  border-radius: $radius;
+  padding: 1.75rem 2rem;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
 
   h2 {
     margin-top: 0;
     color: $color-safety;
-    font-family: $font-heading;
-    font-size: 1.15rem;
+    font-size: 1.4rem;
   }
 
   p {
-    margin: 0.4rem 0;
+    margin: 0.5rem 0;
+    max-width: 70ch;
   }
 
   a {
     color: $color-safety;
-    font-weight: 600;
+    font-weight: 700;
+  }
+
+  @media (max-width: 30rem) {
+    padding: 1.4rem 1.25rem;
   }
 }
 
@@ -545,9 +703,10 @@
 .callout--note {
   border-left: 4px solid $color-accent-warm;
   background: $color-accent-warm-tint;
-  border-radius: 0 0.5rem 0.5rem 0;
-  padding: 1rem 1.25rem;
-  margin: 1.5rem 0;
+  border-radius: 0 $radius-sm $radius-sm 0;
+  padding: 1.1rem 1.4rem;
+  margin: 1.75rem 0;
+  max-width: 70ch;
 
   p {
     margin: 0;
@@ -559,56 +718,80 @@
 }
 
 // Two-column checklist of yes/no questions (resources.njk's "signs and
-// symptoms" list) — plain list styling would read as a wall of text at 14
-// items; this gives each question room and a consistent marker.
+// symptoms" list) — each question gets a small sky-blue "?" chip.
 .symptom-list {
   list-style: none;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
-  gap: 0.5rem 1.5rem;
-  margin: 1.5rem 0;
+  gap: 0.75rem 2rem;
+  margin: 1.75rem 0;
   padding: 0;
 
   li {
     position: relative;
-    padding-left: 1.5rem;
+    padding-left: 2.1rem;
     color: $color-text;
 
     &::before {
       content: "?";
       position: absolute;
       left: 0;
-      top: 0;
-      color: $color-accent-blue;
+      top: 0.1rem;
+      width: 1.4rem;
+      height: 1.4rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
       font-weight: 700;
+      color: #fff;
+      background: $color-accent-blue;
     }
   }
 }
 
-// "Ready to get started" band on the homepage — a full-width colored strip
-// distinct from the tinted sections above, so the final CTA stands out.
+// ---------------------------------------------------------------------------
+// Homepage CTA band
+// ---------------------------------------------------------------------------
+// Full-width juniper band with the sun rising off its bottom-right corner —
+// the last thing on the homepage echoes the first (the hero's sun).
 .cta-band {
-  background: linear-gradient(120deg, $color-accent, $color-accent-blue);
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 88% 115%, #e08a5c 0 7rem, rgba($color-accent-warm, 0.45) 7rem 11rem, rgba($color-accent-warm, 0.18) 11rem 16rem, transparent 16rem),
+    $color-accent;
   color: #fff;
   text-align: center;
-  padding: 3rem 0;
+  padding: 5rem 0;
+
+  .wrapper {
+    position: relative;
+  }
 
   h2 {
-    font-family: $font-heading;
+    color: #fff;
     margin-top: 0;
   }
 
   p {
     max-width: 36rem;
-    margin: 0 auto 1.5rem;
+    margin: 0 auto 2rem;
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 1.1rem;
   }
 }
 
+// ---------------------------------------------------------------------------
+// Page-specific pieces
+// ---------------------------------------------------------------------------
 .about-photo-block img {
-  border-radius: 0.75rem;
-  max-height: 26rem;
+  border-radius: $radius-lg;
+  max-height: 28rem;
   width: 100%;
   object-fit: cover;
+  box-shadow: $shadow-soft;
 }
 
 .post-list {
@@ -628,35 +811,64 @@
 
 .empty-state {
   color: $color-muted;
-  padding: 2rem 0 4rem;
+  padding: 3rem 0 1rem;
 }
 
+// Contact: a two-column label/value list on wider screens.
 .contact-details {
   // Top/bottom only — contact.njk puts .wrapper on this same element.
-  padding-top: 2rem;
+  padding-top: 2.5rem;
   padding-bottom: 2rem;
+  display: grid;
+  grid-template-columns: 9rem minmax(0, 1fr);
+  gap: 0 2rem;
 
   dt {
     font-weight: 700;
     color: $color-accent;
+    padding: 1rem 0;
+    border-top: 1px solid $color-border;
   }
 
   dd {
-    margin: 0 0 1rem;
+    margin: 0;
+    padding: 1rem 0;
+    border-top: 1px solid $color-border;
+
+    .btn {
+      margin-top: 0.75rem;
+    }
+  }
+
+  @media (max-width: 36rem) {
+    grid-template-columns: 1fr;
+
+    dt {
+      padding-bottom: 0.1rem;
+    }
+
+    dd {
+      border-top: none;
+      padding-top: 0;
+    }
   }
 }
 
 .hours-list {
   list-style: none;
-  margin: 0.5rem 0 0;
+  margin: 0;
   padding: 0;
 
   li {
     display: flex;
     justify-content: space-between;
-    max-width: 20rem;
-    padding: 0.25rem 0;
-    border-bottom: 1px solid $color-border;
+    gap: 1rem;
+    max-width: 22rem;
+    padding: 0.3rem 0;
+  }
+
+  li + li {
+    border-top: 1px dashed $color-border;
   }
 }
 
@@ -685,26 +897,30 @@
   margin-bottom: 1rem;
 }
 
+// FAQ: white accordion cards with a round +/− button.
 .faq-list {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  max-width: 44rem;
+  max-width: 46rem;
 }
 
 .faq-item {
-  border: 1px solid $color-border;
-  border-radius: 0.5rem;
-  padding: 1rem 1.25rem;
+  background: $color-surface;
+  border: 1px solid rgba($color-border, 0.7);
+  border-radius: $radius;
+  box-shadow: $shadow-soft;
+  padding: 0;
 
   summary {
-    font-family: $font-heading;
-    font-weight: 600;
+    font-weight: 700;
     cursor: pointer;
     list-style: none;
     display: flex;
+    align-items: center;
     justify-content: space-between;
     gap: 1rem;
+    padding: 1.15rem 1.4rem;
 
     &::-webkit-details-marker {
       display: none;
@@ -713,93 +929,141 @@
     &::after {
       content: "+";
       flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.9rem;
+      height: 1.9rem;
+      border-radius: 50%;
+      background: $color-accent-tint;
       color: $color-accent;
-      font-size: 1.25rem;
+      font-size: 1.2rem;
+      font-weight: 600;
       line-height: 1;
     }
-  }
-
-  &[open] summary::after {
-    content: "−";
-  }
-
-  p {
-    color: $color-muted;
-    margin: 0.75rem 0 0;
   }
 
   &[open] summary {
     color: $color-accent;
   }
+
+  &[open] summary::after {
+    content: "−";
+    background: $color-accent;
+    color: #fff;
+  }
+
+  p {
+    color: $color-muted;
+    margin: 0;
+    padding: 0 1.4rem 1.3rem;
+  }
 }
 
+// "How to Get Started": the four steps are drawn as a journey — a dashed
+// adobe-colored path connects the stops, and the last stop (building your
+// plan) is filled in juniper as the destination.
 .steps {
+  position: relative;
   list-style: none;
-  margin: 1.5rem 0;
+  margin: 2rem 0;
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  max-width: 40rem;
+  gap: 1.75rem;
+  max-width: 42rem;
 }
 
 .steps__item {
+  position: relative;
   display: flex;
-  gap: 1rem;
+  gap: 1.25rem;
   align-items: flex-start;
 
   h3 {
-    margin: 0 0 0.25rem;
-    font-family: $font-heading;
-    font-size: 1.05rem;
+    margin: 0.3rem 0 0.25rem;
+    font-size: 1.08rem;
   }
 
   p {
     margin: 0;
     color: $color-muted;
   }
+
+  // Each stop draws the stretch of path down to the next one (so the path
+  // ends exactly at the last stop, however tall its text wraps).
+  &:not(:last-child)::before {
+    content: "";
+    position: absolute;
+    top: 2.5rem;
+    bottom: -1.75rem; // the list's gap
+    left: calc(1.25rem - 1px);
+    border-left: 2px dashed rgba($color-accent-warm, 0.55);
+  }
+
+  &:last-child .steps__number {
+    background: $color-accent;
+    border-color: $color-accent;
+    color: #fff;
+  }
 }
 
 .steps__number {
+  position: relative;
+  z-index: 1;
   flex-shrink: 0;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 2.25rem;
-  height: 2.25rem;
+  width: 2.5rem;
+  height: 2.5rem;
   border-radius: 50%;
-  background: $color-accent;
-  color: #fff;
-  font-family: $font-heading;
-  font-weight: 700;
+  background: $color-surface;
+  border: 2px solid $color-accent-warm;
+  color: #8f4222;
+  font-weight: 800;
 }
 
 .referral-download {
-  margin-top: 1.5rem;
+  margin-top: 2rem;
 }
 
+// Testimonials: white quote cards with an oversized serif quotation mark.
 .testimonial-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
-  gap: 1.5rem;
-  margin-top: 1rem;
+  gap: 1.25rem;
+  margin-top: 1.25rem;
 }
 
 .testimonial-card {
+  position: relative;
   margin: 0;
-  padding: 1.5rem;
-  background: $color-bg;
-  border-radius: 0.75rem;
-  border-left: 4px solid $color-accent-warm;
+  padding: 2.75rem 1.75rem 1.5rem;
+  background: $color-surface;
+  border-radius: $radius;
+  box-shadow: $shadow-soft;
+
+  &::before {
+    content: "\201C";
+    position: absolute;
+    top: 0.4rem;
+    left: 1.4rem;
+    font-family: $font-heading;
+    font-size: 4rem;
+    line-height: 1;
+    color: $color-accent-warm;
+  }
 
   p {
-    margin: 0 0 0.75rem;
-    font-style: italic;
+    margin: 0 0 1rem;
+    font-size: 1.08rem;
   }
 
   cite {
     color: $color-muted;
     font-style: normal;
     font-size: 0.9rem;
+    font-weight: 600;
   }
 }

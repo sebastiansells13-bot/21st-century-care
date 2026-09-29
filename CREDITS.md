@@ -19,7 +19,8 @@ originals are linked above. The Services and Contact photos are also used as tho
 pages' Open Graph/Twitter share image (see `ogImage` in each page's front matter).
 
 The favicon (`src/_includes/favicons/favicon.svg` and its rasterized PNGs) is
-original artwork made for this site — a swirl motif in the loop-and-dot spirit of
+original artwork made for this site (recolored to the site's juniper/sky/adobe
+palette, and also used as the header logo mark) — a swirl motif in the loop-and-dot spirit of
 21st Century Care's print-flyer logo, redrawn from scratch rather than traced from
 the flyer photo. Replace it with the client's real logo file whenever one is
 supplied in a usable (vector or high-res) format.
