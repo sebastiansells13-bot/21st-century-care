@@ -40,25 +40,39 @@ Keep it up to date as the site diverges from the template.
   `pathPrefix` back to `/`, and update those three hardcoded hostnames.
 - **Deployment**: pushes to `main` build the site and deploy to GitHub Pages;
   pull requests run the build to catch errors but do not deploy.
-- **Color palette**: three brand accents in `variables.scss` (`$color-accent` green,
-  `$color-accent-blue`, `$color-accent-warm`) plus their pale `*-tint` backgrounds for
-  section washes (`.section--tint-green/blue/warm`) — deliberately kept to these three
-  plus a reserved `$color-safety` red used only by the crisis callout. Reuse these
-  rather than introducing a fourth decorative hue.
+- **Design direction** ("a path forward, rooted in place"): the visual language is
+  meant to reflect what the site is about — recovery/community support in Southern
+  New Mexico. Recurring motifs: a terracotta **rising sun** (behind the photo-hero
+  arch, in the corner of plain heroes, off the corner of the homepage CTA band), an
+  **Organ Mountains ridgeline** at the bottom of photo heroes, **adobe-arch** photo
+  frames, and the "How to Get Started" steps drawn as a **dashed journey path** ending
+  at a filled juniper "destination" stop. Reuse these rather than adding unrelated
+  decoration.
+- **Color palette**: three brand accents in `variables.scss` (`$color-accent` juniper
+  green, `$color-accent-blue` desert sky, `$color-accent-warm` adobe terracotta) plus
+  their pale `*-tint` backgrounds for section washes (`.section--tint-green/blue/warm`)
+  — deliberately kept to these three plus a reserved `$color-safety` red used only by
+  the crisis callout. Reuse these rather than introducing a fourth decorative hue.
+  The page background is warm sand (`$color-bg`), with white (`$color-surface`) cards
+  on top. Every text/background pair was checked at WCAG AA (≥ 4.5:1) — re-check if
+  you change a color (note `#8f4222` is the AA-safe darker terracotta used for text on
+  the adobe tint and in the step numbers; plain `$color-accent-warm` is decoration-only).
 - **Photo hero** (`.hero--photo` in `components.scss`, used by Home/Services/Contact):
-  the `::before` overlay layers two radial glows (warm bottom-left, blue top-right)
-  over the green→blue diagonal wash, so all three accents show on every photo
-  regardless of that photo's own colors. `.hero__eyebrow` is the small pill label
+  a split layout — `.hero__content` (text, optional `.hero__actions` buttons) beside
+  `.hero__media`, which frames the photo (`.hero__bg`) in an arch with the sun disc
+  behind it (`.hero__media::before`); it stacks to one column below 52rem. The photo
+  is shown as-is, with no color overlay, so text never sits on top of it. `.hero__eyebrow` is the small pill label
   above the `<h1>` (translated via `data-i18n`, plain text only — see each page for
   its own label, e.g. "What We Offer"). `components/hero-wave.njk`, included at the
-  end of every `.hero--photo` block, draws the bottom wave edge — its path fills
+  end of every `.hero--photo` block, draws the Organ Mountains ridgeline along the
+  bottom edge (a faint juniper far ridge plus a solid near ridge) — the near ridge fills
   with `currentColor`, set by `.hero__wave` in `components.scss` (`$color-bg` by
   default). When the section right under the hero is tinted, set
   `{% set waveTint = "green" %}` (or `"blue"`/`"warm"`) before the include so the
-  wave matches it instead of leaving a white stripe (Home and Services both do;
+  ridge matches it instead of leaving a sand stripe (Home and Services both do;
   Services' value must match `tintClass(0)`, its first category band). The plain (non-photo) `.hero`
   used by About/Services-category-intro/FAQ/Careers/Accessibility/Contact-details
-  doesn't have a wave — only the three photo heroes do.
+  doesn't have a ridgeline — it gets a faint sun arc in its corner instead.
 - **Service categories**: each entry in `src/_data/services.json` carries a
   `category` (Housing & Basic Needs / Health & Wellness / Skills & Independence /
   Community & Family — set in `.pages.yml` as a `creatable` select, so the client can
@@ -95,7 +109,7 @@ Keep it up to date as the site diverges from the template.
   search for. `legalName` in
   `business.json` ("21st Century Care, LLC") — this page's Sources line and the
   footer copyright are the two places it's used instead of the shorter `name`.
-- **Header / mobile menu**: below 67.5rem the nav collapses behind a "Menu"
+- **Header / mobile menu**: below 70rem the nav collapses behind a "Menu"
   button (`.nav-toggle` in `header.njk`, toggled by `src/_includes/js/nav.js`). That
   breakpoint is where the nav stops fitting on one row **in Spanish** (longer
   labels, e.g. "Preguntas Frecuentes"), not English — re-check it in both languages
@@ -113,8 +127,12 @@ Keep it up to date as the site diverges from the template.
   `.wrapper` div.
 - **Favicon/fonts**: `src/_includes/favicons/favicon.svg` (+ rasterized PNGs) is
   original artwork, not traced from the flyer's photographed logo — see CREDITS.md.
-  Headings use Google Fonts "Poppins" (loaded in `base.njk`); body text stays the
-  system font stack for performance.
+  The header shows the favicon SVG as a logo mark beside the wordmark. After editing
+  `favicon.svg`, regenerate the PNGs with `sharp` (the apple-touch icon is rendered
+  square and opaque, since iOS applies its own rounded mask). Fonts (Google Fonts,
+  loaded in `base.njk`): **Fraunces**, a soft variable serif (`"SOFT" 100`), for
+  h1/h2, the wordmark and the homepage intro; **Figtree** for everything else,
+  including h3 card/step/FAQ titles.
 - **Social share image**: `base.njk`'s Open Graph/Twitter tags default to the
   homepage hero photo; a page can override it with an `ogImage: /img/...` front-matter
   value (About/Services/Contact all do — see their own hero photo).

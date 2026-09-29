@@ -8,10 +8,18 @@ ogImage: /img/hero/contact-hero.jpg
 ---
 {% from "macros/bilingual.njk" import bilingual %}
 <div class="hero--photo">
-  <img class="hero__bg" src="/img/hero/contact-hero.jpg" alt="" width="2000" height="1211">
-  <div class="hero__content wrapper">
-    <span class="hero__eyebrow" data-i18n="hero.wereHereToHelp">We're Here to Help</span>
-    <h1 data-i18n="contact.heading">Contact</h1>
+  <div class="hero__inner wrapper">
+    <div class="hero__content">
+      <span class="hero__eyebrow" data-i18n="hero.wereHereToHelp">We're Here to Help</span>
+      <h1 data-i18n="contact.heading">Contact</h1>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="tel:{{ business.phone }}"><span data-i18n="cta.call">Call</span> {{ business.phone }}</a>
+        <a class="btn btn--outline" href="/files/referral-form.pdf" data-i18n="referral.linkText">CCSS / PSS referral form (PDF)</a>
+      </div>
+    </div>
+    <div class="hero__media">
+      <img class="hero__bg" src="/img/hero/contact-hero.jpg" alt="" width="2000" height="1211">
+    </div>
   </div>
   {% include "components/hero-wave.njk" %}
 </div>

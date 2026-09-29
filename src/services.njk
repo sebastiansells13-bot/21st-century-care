@@ -8,16 +8,20 @@ ogImage: /img/hero/services-hero.jpg
 ---
 {% from "macros/bilingual.njk" import bilingual %}
 <div class="hero--photo">
-  <img class="hero__bg" src="/img/hero/services-hero.jpg" alt="" width="1600" height="1200">
-  <div class="hero__content wrapper">
-    <span class="hero__eyebrow" data-i18n="hero.whatWeOffer">What We Offer</span>
-    <h1 data-i18n="nav.services">Services</h1>
-    <p data-i18n="overview.ccssPss">
-      Comprehensive Community Support Services (CCSS) and Peer Support Services (PSS)
-      are available to Medicaid recipients. Services help clients develop skills and
-      connect to resources related to independent and community living, learning,
-      employment, socialization, and recreation.
-    </p>
+  <div class="hero__inner wrapper">
+    <div class="hero__content">
+      <span class="hero__eyebrow" data-i18n="hero.whatWeOffer">What We Offer</span>
+      <h1 data-i18n="nav.services">Services</h1>
+      <p data-i18n="overview.ccssPss">
+        Comprehensive Community Support Services (CCSS) and Peer Support Services (PSS)
+        are available to Medicaid recipients. Services help clients develop skills and
+        connect to resources related to independent and community living, learning,
+        employment, socialization, and recreation.
+      </p>
+    </div>
+    <div class="hero__media">
+      <img class="hero__bg" src="/img/hero/services-hero.jpg" alt="" width="1600" height="1200">
+    </div>
   </div>
   {# First category band uses tintClass(0), i.e. green — keep in sync. #}
   {% set waveTint = "green" %}

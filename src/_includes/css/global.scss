@@ -8,20 +8,32 @@ body {
   padding: 0;
 }
 
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
   font-family: $font-body;
+  font-size: 1.0625rem;
   color: $color-text;
   background: $color-bg;
-  line-height: 1.5;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
 
 a {
   color: $color-accent;
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 1px;
+
+  &:hover {
+    color: $color-accent-dark;
+  }
 }
 
 // Page content gets the bottom breathing room the footer's margin used to
 // supply — except when main ends in a full-bleed band (the homepage's CTA),
-// which should sit flush against the footer instead of leaving a white gap.
+// which should sit flush against the footer instead of leaving a gap.
 main {
   padding-bottom: 4rem;
 
@@ -36,7 +48,7 @@ button:focus-visible,
 summary:focus-visible {
   outline: 2px solid $color-accent-blue;
   outline-offset: 3px;
-  border-radius: 2px;
+  border-radius: 4px;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -78,7 +90,7 @@ img {
 
 // Visually hidden until keyboard-focused, then jumps above everything so a
 // keyboard/screen-reader user can bypass the header nav straight to <main>
-// (see AGENTS.md's "Accessibility" note and src/accessibility.njk).
+// (see src/accessibility.njk).
 .skip-link {
   position: absolute;
   top: -3rem;
@@ -87,19 +99,43 @@ img {
   background: $color-text;
   color: #fff;
   padding: 0.6rem 1rem;
-  border-radius: 0 0 0.3rem 0.3rem;
+  border-radius: 0 0 0.5rem 0.5rem;
   text-decoration: none;
   font-weight: 600;
   transition: top 0.15s ease;
 
   &:focus {
     top: 0;
+    color: #fff;
   }
 }
 
+// Fraunces is a soft, warm serif — used for h1/h2 only. Smaller headings
+// (card titles, step titles, FAQ questions) stay in the body sans so dense
+// UI reads clean and modern rather than bookish.
 h1,
-h2,
-h3 {
+h2 {
   font-family: $font-heading;
-  line-height: 1.2;
+  font-weight: 600;
+  font-variation-settings: "SOFT" 100, "opsz" 72;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  color: $color-text;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: clamp(2.25rem, 5.5vw, 3.75rem);
+  margin: 0 0 1rem;
+}
+
+h2 {
+  font-size: clamp(1.6rem, 3.2vw, 2.25rem);
+  margin: 0 0 1rem;
+}
+
+h3 {
+  font-family: $font-body;
+  font-weight: 700;
+  line-height: 1.3;
 }

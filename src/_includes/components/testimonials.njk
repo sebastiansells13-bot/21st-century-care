@@ -6,7 +6,7 @@
     <div class="testimonial-grid">
       {% for item in testimonials.list %}
       <blockquote class="testimonial-card">
-        <p>&ldquo;{{ item.quote }}&rdquo;</p>
+        <p>{{ item.quote }}</p>
         <cite>— {{ item.attribution }}</cite>
       </blockquote>
       {% endfor %}
