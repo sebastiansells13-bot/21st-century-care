@@ -6,8 +6,13 @@ permalink: /careers/
 description: Join the 21st Century Care team — openings for Community Support Workers and Peer Support Specialists in Southern New Mexico.
 ---
 {% from "macros/bilingual.njk" import bilingual %}
+{% if business.email %}
 {% set applyEn %}Interested? Send your resume to <a href="mailto:{{ business.email }}">{{ business.email }}</a> or call <a href="tel:{{ business.phone }}">{{ business.phone }}</a>.{% endset %}
 {% set applyEs %}¿Interesado? Envíe su currículum a <a href="mailto:{{ business.email }}">{{ business.email }}</a> o llame al <a href="tel:{{ business.phone }}">{{ business.phone }}</a>.{% endset %}
+{% else %}
+{% set applyEn %}Interested? Call us at <a href="tel:{{ business.phone }}">{{ business.phone }}</a>.{% endset %}
+{% set applyEs %}¿Interesado? Llámenos al <a href="tel:{{ business.phone }}">{{ business.phone }}</a>.{% endset %}
+{% endif %}
 
 <div class="hero">
   <div class="wrapper">

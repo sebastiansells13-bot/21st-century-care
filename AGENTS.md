@@ -288,8 +288,17 @@ for real information about this business without the client confirming it first:
   confirming those handles don't belong to this business — real ones don't
   exist to link to yet, and a dead 404 behind a footer icon reads worse in a
   client demo than no icon at all. Fill in real handles once the client has them.
-- **Email address** (`business.email`) — `info@21stcenturycarenm.com` is invented;
-  the original flyer had no email address at all.
+- **Email address** (`business.email`) — left empty on purpose. An invented
+  `info@21stcenturycarenm.com` was used earlier, but that domain isn't registered, so
+  anyone could have bought it and received messages from people seeking care. The
+  footer, Contact and Careers pages skip email when it's empty (Careers says "call
+  us" instead). Fill in a real address once the client has one on a domain they own.
+- **Search indexing** (`metadata.preview` in `metadata.json`) — `true` while any
+  item in this list is still a placeholder. It adds `<meta name="robots"
+  content="noindex, nofollow">` to every page so sample staff, quotes and listings
+  can't show up in search results. Set it to `false` at launch. (`robots.txt` stays
+  `Allow: /` on purpose: blocking crawlers there would stop them from seeing the
+  `noindex` tag and dropping pages they've already indexed.)
 - **"How to Get Started" steps** (`components/get-started-steps.njk`) and the
   **FAQ answers** (`src/_data/faq.json`) — reasonable, generically-correct
   restatements of how CCSS/PSS work, but not confirmed against this specific
