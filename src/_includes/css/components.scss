@@ -882,7 +882,9 @@
   display: inline-block;
   font-size: 0.8rem;
   font-style: italic;
-  color: $color-safety;
+  // $color-safety darkened slightly: on the tinted background the base red
+  // measured 4.41:1, just under WCAG AA's 4.5:1 for small text.
+  color: #a82e24;
   background: rgba($color-safety, 0.08);
   border: 1px dashed rgba($color-safety, 0.4);
   border-radius: 0.4rem;
