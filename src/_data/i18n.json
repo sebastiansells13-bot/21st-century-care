@@ -49,6 +49,10 @@
     "en": "Call, email, or send a referral form — yours or a case manager's, family member's, or provider's on your behalf.",
     "es": "Llame, envíe un correo electrónico o envíe un formulario de remisión — el suyo o el de un administrador de casos, familiar o proveedor en su nombre."
   },
+  "getStarted.step1.bodyNoEmail": {
+    "en": "Call or send a referral form — yours or a case manager's, family member's, or provider's on your behalf.",
+    "es": "Llame o envíe un formulario de remisión — el suyo o el de un administrador de casos, familiar o proveedor en su nombre."
+  },
   "getStarted.step2.title": { "en": "Brief assessment", "es": "Evaluación breve" },
   "getStarted.step2.body": {
     "en": "A short conversation to understand your needs, goals, and Medicaid eligibility for CCSS or PSS.",
@@ -68,6 +72,7 @@
   "referral.prefix": { "en": "Have a referral to send in? Download the", "es": "¿Tiene una remisión para enviar? Descargue el" },
   "referral.linkText": { "en": "CCSS / PSS referral form (PDF)", "es": "formulario de remisión de CCSS/PSS (PDF)" },
   "referral.suffix": { "en": "and fax or email it to us.", "es": "y envíelo por fax o correo electrónico." },
+  "referral.suffixNoEmail": { "en": "and fax it to us.", "es": "y envíelo por fax." },
 
   "testimonials.heading": { "en": "What Clients Say", "es": "Lo Que Dicen Nuestros Clientes" },
 

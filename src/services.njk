@@ -20,7 +20,7 @@ ogImage: /img/hero/services-hero.jpg
       </p>
     </div>
     <div class="hero__media">
-      <img class="hero__bg" src="/img/hero/services-hero.jpg" alt="" width="1600" height="1200">
+      <img class="hero__bg" src="/img/hero/services-hero.jpg" alt="" fetchpriority="high" width="1600" height="1200">
     </div>
   </div>
   {# First category band uses tintClass(0), i.e. green — keep in sync. #}
@@ -44,7 +44,7 @@ ogImage: /img/hero/services-hero.jpg
       {% for service in items %}
       <div class="service-card">
         {% if service.icon %}
-          <img src="{{ service.icon }}" alt="" class="service-card__icon">
+          <img src="{{ service.icon }}" alt="" class="service-card__icon" loading="lazy" decoding="async">
         {% else %}
           <span class="service-card__badge">{{ service.title | serviceIcon }}</span>
         {% endif %}
