@@ -8,6 +8,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title{% if titleKey %} data-i18n-title="{{ titleKey }}"{% endif %}>{{ pageTitle }}</title>
   <meta name="description" content="{{ pageDescription }}">
+  {#- While metadata.preview is true (sample content still on the site), keep
+      every page out of search results. Set it to false at launch. #}
+  {%- if metadata.preview %}
+  <meta name="robots" content="noindex, nofollow">
+  {%- endif %}
   <meta property="og:type" content="website">
   <meta property="og:title" content="{{ pageTitle }}">
   <meta property="og:description" content="{{ pageDescription }}">

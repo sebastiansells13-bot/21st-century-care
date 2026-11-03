@@ -12,10 +12,12 @@ Actions build/deploy to GitHub Pages.
 ## ⚠️ Before sharing this site as "the real thing"
 
 Several sections (Team, Testimonials, Hours, Insurance & Payment specifics, Careers
-listings, social media handles, and the email address) currently hold **fictitious,
-placeholder content**, added so the finished site could be reviewed end to end before
-real information exists. Each is marked with a visible "sample" note on the page
-itself. **See AGENTS.md's "Needs client review" section for the full list before
+listings, and social media handles) currently hold **fictitious, placeholder
+content**, added so the finished site could be reviewed end to end before real
+information exists. Each is marked with a visible "sample" note on the page itself,
+and every page carries a `noindex` tag while `metadata.preview` is `true`, so none
+of it appears in search results. The email address is left empty until the client
+has a real one. **See AGENTS.md's "Needs client review" section for the full list before
 publicizing this site or its live URL to real prospective clients.**
 
 ## What's in here
