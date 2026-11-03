@@ -20,7 +20,7 @@ eleventyNavigation:
       </div>
     </div>
     <div class="hero__media">
-      <img class="hero__bg" src="/img/hero/organ-mountains-hero.jpg" alt="" width="1600" height="1153">
+      <img class="hero__bg" src="/img/hero/organ-mountains-hero.jpg" alt="" fetchpriority="high" width="1600" height="1153">
     </div>
   </div>
   {% set waveTint = "green" %}
@@ -42,7 +42,7 @@ eleventyNavigation:
   {% for service in services.list | head(6) %}
   <div class="service-card">
     {% if service.icon %}
-      <img src="{{ service.icon }}" alt="" class="service-card__icon">
+      <img src="{{ service.icon }}" alt="" class="service-card__icon" loading="lazy" decoding="async">
     {% else %}
       <span class="service-card__badge">{{ service.title | serviceIcon }}</span>
     {% endif %}

@@ -18,7 +18,7 @@ ogImage: /img/hero/contact-hero.jpg
       </div>
     </div>
     <div class="hero__media">
-      <img class="hero__bg" src="/img/hero/contact-hero.jpg" alt="" width="2000" height="1211">
+      <img class="hero__bg" src="/img/hero/contact-hero.jpg" alt="" fetchpriority="high" width="2000" height="1211">
     </div>
   </div>
   {% include "components/hero-wave.njk" %}
@@ -79,7 +79,7 @@ ogImage: /img/hero/contact-hero.jpg
     <p class="referral-download">
       <span data-i18n="referral.prefix">Have a referral to send in? Download the</span>
       <a href="/files/referral-form.pdf" data-i18n="referral.linkText">CCSS / PSS referral form (PDF)</a>
-      <span data-i18n="referral.suffix">and fax or email it to us.</span>
+      {% if business.email %}<span data-i18n="referral.suffix">and fax or email it to us.</span>{% else %}<span data-i18n="referral.suffixNoEmail">and fax it to us.</span>{% endif %}
     </p>
   </div>
 </div>

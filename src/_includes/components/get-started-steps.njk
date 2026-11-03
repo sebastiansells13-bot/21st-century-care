@@ -10,8 +10,15 @@
     <span class="steps__number">1</span>
     <div>
       <h3 data-i18n="getStarted.step1.title">Reach out</h3>
+      {# Only mention email while business.email is set (it's empty until the
+         client has a real address — see AGENTS.md). #}
+      {% if business.email %}
       <p data-i18n="getStarted.step1.body">Call, email, or send a referral form — yours or a case manager's, family
         member's, or provider's on your behalf.</p>
+      {% else %}
+      <p data-i18n="getStarted.step1.bodyNoEmail">Call or send a referral form — yours or a case manager's, family
+        member's, or provider's on your behalf.</p>
+      {% endif %}
     </div>
   </li>
   <li class="steps__item">

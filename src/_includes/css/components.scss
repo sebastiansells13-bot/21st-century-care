@@ -129,6 +129,28 @@
     &::after {
       top: 5px;
     }
+
+    &,
+    &::before,
+    &::after {
+      transition: transform 0.2s ease, top 0.2s ease, background-color 0.2s ease;
+    }
+  }
+
+  // Open state: the three bars fold into an ✕ so it's clear the same
+  // button closes the menu.
+  .nav-toggle[aria-expanded="true"] .nav-toggle__bars {
+    background-color: transparent;
+
+    &::before {
+      top: 0;
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      top: 0;
+      transform: rotate(-45deg);
+    }
   }
 
   @media (max-width: 70rem) {
@@ -426,12 +448,15 @@
       gap: 2.5rem;
     }
 
+    // Shorter, wider arch on phones so the photo keeps the motif without
+    // pushing the page's real content (e.g. the first service) a full
+    // extra screen down.
     .hero__media {
-      width: min(80%, 20rem);
+      width: min(78%, 20rem);
     }
 
     .hero__bg {
-      aspect-ratio: 1 / 1;
+      aspect-ratio: 5 / 4;
     }
 
     .hero__wave {

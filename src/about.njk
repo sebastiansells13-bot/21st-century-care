@@ -35,7 +35,7 @@ ogImage: /img/about/corrales-sunset.jpg
 
 <div class="section">
   <div class="wrapper about-photo-block">
-    <img src="/img/about/corrales-sunset.jpg" alt="Rio Grande valley at sunset, New Mexico" data-i18n-alt="about.photoAlt" width="1600" height="1067">
+    <img src="/img/about/corrales-sunset.jpg" alt="Rio Grande valley at sunset, New Mexico" data-i18n-alt="about.photoAlt" loading="lazy" decoding="async" width="1600" height="1067">
   </div>
 </div>
 
@@ -63,7 +63,7 @@ ogImage: /img/about/corrales-sunset.jpg
     <div class="services-grid">
       {% for member in team.list %}
       <div class="service-card">
-        {% if member.photo %}<img src="{{ member.photo }}" alt="{{ member.name }}" class="team-avatar">{% endif %}
+        {% if member.photo %}<img src="{{ member.photo }}" alt="{{ member.name }}" class="team-avatar" width="80" height="80" loading="lazy" decoding="async">{% endif %}
         <h3>{{ member.name }}</h3>
         <p><em>{{ member.role }}</em></p>
         <p>{{ member.bio | safe }}</p>

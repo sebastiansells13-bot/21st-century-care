@@ -292,7 +292,12 @@ for real information about this business without the client confirming it first:
   `info@21stcenturycarenm.com` was used earlier, but that domain isn't registered, so
   anyone could have bought it and received messages from people seeking care. The
   footer, Contact and Careers pages skip email when it's empty (Careers says "call
-  us" instead). Fill in a real address once the client has one on a domain they own.
+  us" instead), and so does copy that tells people how to reach us: the first "How to
+  Get Started" step and Contact's referral line switch to `*NoEmail` dictionary keys
+  ("Call or send a referral form", "and fax it to us"). The FAQ's "How do I get
+  started?" answer is CMS text, so it was simply edited to drop email. Add email back
+  there by hand when a real address exists. Fill in a real address once the client
+  has one on a domain they own.
 - **Search indexing** (`metadata.preview` in `metadata.json`) — `true` while any
   item in this list is still a placeholder. It adds `<meta name="robots"
   content="noindex, nofollow">` to every page so sample staff, quotes and listings
