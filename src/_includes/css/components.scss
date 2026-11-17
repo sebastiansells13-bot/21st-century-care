@@ -87,7 +87,7 @@
     }
   }
 
-  // Menu button: hidden on wide screens and whenever JS is off (nav.js adds
+  // Menu button: hidden on wide screens and whenever JS is off (base.njk adds
   // .js to <html>), so the nav never ends up unreachable. Below 70rem the
   // 8-link nav wraps (three rows on a phone, pushing the hero a third of the
   // way down the screen; two rows on a tablet in Spanish, whose labels are
