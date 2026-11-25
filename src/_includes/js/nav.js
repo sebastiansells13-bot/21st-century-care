@@ -1,6 +1,8 @@
 // Collapses the primary nav behind a "Menu" button on narrow screens (see
 // .nav-toggle in components.scss). The .js class gates that CSS, so with
 // scripts off the nav simply stays expanded rather than becoming unreachable.
+// base.njk also adds .js inline in <head> so the menu paints collapsed (no
+// layout shift); adding it here again is harmless.
 (function () {
   var header = document.querySelector(".site-header");
   var toggle = header && header.querySelector(".nav-toggle");
